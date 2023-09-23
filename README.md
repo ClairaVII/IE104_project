@@ -1,6 +1,4 @@
-# IE104_project
-
-Đồ án Internet và Công nghệ Web
+# Đồ án Internet và Công nghệ Web
 
 ## Thành viên:
 
@@ -15,4 +13,4 @@
 ## Liên kết:
 
 - Github: https://github.com/hoangphuc2611/IE104_project
-- Trello: 
+- Trello: https://trello.com/b/9u24QAb6/doanie104
