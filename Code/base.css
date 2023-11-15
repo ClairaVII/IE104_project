@@ -8,6 +8,8 @@
     --black-color: #000;
     --text-color: #333;
     --border-color: #dbdbdb;
+    --growth-from: 0.7;
+    --growth-to: 1;
 }
 html {
     line-height: 1.5;
@@ -88,6 +90,23 @@ ol,ul,menu{
     display: flex;
     flex-wrap: wrap;
 }
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
 
 .modal{
     position: fixed;
@@ -96,6 +115,7 @@ ol,ul,menu{
     bottom: 0;
     left: 0;
     display: flex;
+    animation: fadeIn linear 0.5s;
 }
 
 .modal_overlay{
@@ -109,6 +129,7 @@ ol,ul,menu{
     margin: auto;
     position: relative;
     z-index: 1;
+    animation: growth linear 0.5s;
 }
 p{
     font: 1rem;
