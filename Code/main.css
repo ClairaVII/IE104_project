@@ -223,9 +223,31 @@ header-navbar-item:hover{
 }
 
 .auth-form_socials-title{
-    margin: 0 36px;
+    margin: 0 30px;
 }
 
 .auth-form_socials--google{
     background-color: #fff;
+}
+
+.auth-form_help{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form_help-link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #939393;
+}
+
+.auth-form_help-separate{
+    display: block;
+    border-left: 1px solid var(--border-color);
+    height: 24px;
+    margin: 4px 12px 0;
+}
+
+.auth-form_help-forgot{
+    color: red;
 }
