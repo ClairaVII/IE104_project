@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;  
+}
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+}
+html {
+    line-height: 1.5;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+    -moz-tab-size: 4;
+    /* 3 */
+    -o-tab-size: 4;
+    tab-size: 4;
+    /* 4 */
+    font-feature-settings: normal;
+    /* 5 */
+    font-variation-settings: normal;
+    /* 6 */
+    box-sizing: border-box;
+}
+  
+.header {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 640px) {
+    .header {
+        max-width: 640px;
+    }
+}
+@media (min-width: 768px) {
+    .header {
+        max-width: 768px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+}
+@media (min-width: 1024px) {
+    .header {
+        max-width: 1024px;
+    }
+}
+  @media (min-width: 1280px) {
+      .header {
+          max-width: 1280px;
+      }
+  }
+@media (min-width: 1536px) {
+    .header {
+        max-width: 1536px;
+    }
+}
+  
+button,
+select {
+    text-transform: none;
+}
+  
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+ol,ul,menu{
+    list-style-type: none;
+    list-style-image: initial;
+    list-style-position: initial;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid_full-width{
+    width: 100%;
+}
+.grid_row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.modal_overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_body{
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+p{
+    font: 1rem;
+}
+
+/*button*/
+
+.btn{
+    min-width: 142px;
+    min-height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    padding: 0 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn.btn--normal{
+    background-color: #fff;
+}
+.btn.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.btn.btn--size-s{
+    height: 32x;
+    font-size: 16px;
+    padding: 0 8px;
+}
+.btn.btn--primary{
+    color: var(--text-color);
+    background-color: aqua;
+}
+
+.btn.btn--disable{
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+    filter: brightness(80%);
+}
