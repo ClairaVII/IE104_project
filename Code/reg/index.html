@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="/assets/font-icon/themify-icons/themify-icons.css">
+    <title>Document</title>
+</head>
+<body class="body">
+    <header>
+        <nav id="header">
+            <div class="icon">
+                <a href="#home">
+                   <span style="color: red;">Hiney</span>
+                </a>
+            </div>
+                <div>
+                     <ul id="nav">
+                        <li><a href="#home">Trang Chủ</a></li>
+                        <li><a href="#features">Dịch vụ</a></li>
+                        <li><a href="#notif">Thông báo</a></li>
+                        <li><a href="#search">Tìm kiếm</a></li>
+                        <li><a href="#more">Chơi cùng 
+                            <i class="nav-arrow-down ti-angle-down"></i>
+                        </a>
+                            <ul class="subnav">
+                                <li><a href="">Bạn Nam</a></li>
+                                <li><a href="">Bạn Nữ</a></li>
+                            </ul>
+                        </li>
+                     </ul>   
+                </div>
+                <div class="search-btn">
+                    <i class="search-icon ti-search"></i>
+                </div>
+                <div>
+                    <ul id="btn">
+                        <li class="header-navbar-item header-navbar-item--strong"><a href="./reg/index.html">Đăng kí</a></li>
+                        <li class="header-navbar-item header-navbar-item--strong"><a href="./login/index.html">Đăng nhập</a></li>
+                    </ul>
+                </div>
+        </nav>
+    </header>
+    <main>
+        <div id="slider"></div>
+         <!--content-->
+        <div id="content"></div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <div class="modal">
+        <div class="modal_overlay"></div>
+
+        <div class="modal_body">
+            <!--Đăng ký-->
+
+            <div class="auth-form">
+                <div class="auth-form_container">
+                    <div class="auth-form_header">
+                        <h3 class="auth-form_heading">Đăng ký</h3>
+                        <span class="auth-form_switch-btn">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form_form">
+                        <div class="auth-form_group">
+                            <input type="text" class="auth-form_input" placeholder="Nhập email hoặc số điện thoại">
+                        </div>
+                        <div class="auth-form_group">
+                            <input type="password" class="auth-form_input" placeholder="Mật khẩu">
+                        </div>
+                        <div class="auth-form_group">
+                            <input type="password" class="auth-form_input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form_aside">
+                        <p class="auth-form_policy">Bằng việc đăng kí, bạn đã đồng ý với Hiney về 
+                            <a href="" class="auth-form_text-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form_text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+                    <div class="auth-form_controls">
+                        <button class="btn auth-form_controls-back btn--normal">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+                <div class="auth-form_socials">
+                    <a href="" class="auth-form_socials--facebook btn btn--size-s btn--with-icon">
+                        <i class="auth-form_socials-icon ti-facebook"></i>
+                        <span class="auth-form_socials-title">
+                            Kết nối qua Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form_socials--google btn btn--size-s btn--with-icon">
+                        <i class="auth-form_socials-icon ti-google"></i>
+                        <span class="auth-form_socials-title">
+                            Kết nối qua Google
+                        </span> 
+                    </a>
+                </div>
+            </div>
+
+            <!--Đăng nhập-->
+            
+            <!-- <div class="auth-form">
+                <div class="auth-form_container">
+                    <div class="auth-form_header">
+                        <h3 class="auth-form_heading">Đăng nhập</h3>
+                        <span class="auth-form_switch-btn">Đăng ký</span>
+                    </div>
+
+                    <div class="auth-form_form">
+                        <div class="auth-form_group">
+                            <input type="text" class="auth-form_input" placeholder="Nhập email hoặc số điện thoại">
+                        </div>
+                        <div class="auth-form_group">
+                            <input type="password" class="auth-form_input" placeholder="Mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form_aside">
+                        <div class="auth-form_help">
+                            <a href="" class="auth-form_help-link auth-form_help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form_help-separate"></span>
+                            <a href="" class="auth-form_help-link">Cần trợ giúp ?</a>
+                        </div>
+                    </div>
+                    <div class="auth-form_controls">
+                        <button class="btn auth-form_controls-back btn--normal">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+                <div class="auth-form_socials">
+                    <a href="" class="auth-form_socials--facebook btn btn--size-s btn--with-icon">
+                        <i class="auth-form_socials-icon ti-facebook"></i>
+                        <span class="auth-form_socials-title">
+                            Đăng nhập qua Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form_socials--google btn btn--size-s btn--with-icon">
+                        <i class="auth-form_socials-icon ti-google"></i>
+                        <span class="auth-form_socials-title">
+                            Đăng nhập qua Google
+                        </span> 
+                    </a>
+                </div>
+            </div> -->
+        <!-- </div>
+    </div> -->
+</body>
+</html>

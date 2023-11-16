@@ -129,6 +129,8 @@ header-navbar-item:hover{
 /*Authen*/
 .auth-form{
     width: 650px;
+    max-width: calc(100%-32px);
+    min-height: 200px;
     background-color: #fff;
     border-radius: 5px;
     overflow: hidden;
