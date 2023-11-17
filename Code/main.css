@@ -187,6 +187,7 @@ header .header-bottom .cart-button:hover {
   flex-direction: column;
   align-items: center;
   background: #f5f7f8;
+  justify-content: center;
 }
 
 #main > .img {
@@ -210,9 +211,9 @@ header .header-bottom .cart-button:hover {
 #main > .game-container>.game>.game-text{
   text-align: center;
   margin: 10px 10px 0;
-
+  font-size: 0.9rem;
 }
-#main > .game-title > .space {
+#main > .game-title > .space { 
   width: 600px;
 }
 
@@ -238,6 +239,9 @@ header .header-bottom .cart-button:hover {
   border-radius: 10px;
   overflow: hidden;
   width: 200px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
 }
 
 #main > .game-container > .game:hover {
@@ -261,7 +265,7 @@ header .header-bottom .cart-button:hover {
   align-items: center;
 }
 #main > .player-title > .space {
-  width: 20vh;
+  margin: 0 50vh;
 }
 #main > .player-title > .name {
   /* background-color: #b1abab; */
@@ -276,7 +280,7 @@ header .header-bottom .cart-button:hover {
   border-radius: 10px;
   padding: 5px;
   line-height: 43.6px;
-  margin-right: 400px; 
+  margin-right: 400px;
 }
 #main > .player-container > .player {
   border-radius: 10px;
