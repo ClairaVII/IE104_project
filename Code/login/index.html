@@ -106,7 +106,7 @@
                 <div class="auth-form_container">
                     <div class="auth-form_header">
                         <h3 class="auth-form_heading">Đăng nhập</h3>
-                        <span class="auth-form_switch-btn">Đăng ký</span>
+                        <span  onclick="redirectToReg()" class="auth-form_switch-btn" >Đăng ký</span>
                     </div>
 
                     <div class="auth-form_form">
@@ -126,26 +126,44 @@
                         </div>
                     </div>
                     <div class="auth-form_controls">
-                        <button class="btn auth-form_controls-back btn--normal">z<a href="/Code/index.html">TRỞ LẠI</a></button>
+                        <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
                         <button class="btn btn--primary">ĐĂNG NHẬP</button>
                     </div>
                 </div>
                 <div class="auth-form_socials">
-                    <a href="" class="auth-form_socials--facebook btn btn--size-s btn--with-icon">
-                        <i class="auth-form_socials-icon ti-facebook"></i>
-                        <span class="auth-form_socials-title">
-                            Đăng nhập qua Facebook
-                        </span>
-                    </a>
-                    <a href="" class="auth-form_socials--google btn btn--size-s btn--with-icon">
-                        <i class="auth-form_socials-icon ti-google"></i>
-                        <span class="auth-form_socials-title">
-                            Đăng nhập qua Google
-                        </span> 
-                    </a>
+                    <div class="auth-length ">
+
+                        <a href="" class="auth-form_socials--facebook btn btn--size-s btn--with-icon">
+                            <i class="auth-form_socials-icon ti-facebook"></i>
+                            <span class="auth-form_socials-title">
+                                 Facebook
+                            </span>
+                        </a>
+                    </div>
+                    <div class="auth-length ">
+
+                        <a href="" class="auth-form_socials--google btn btn--size-s btn--with-icon">
+                            <i class="auth-form_socials-icon ti-google"></i>
+                            <span class="auth-form_socials-title">
+                                 Google
+                            </span> 
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 </body>
+    <script>
+        function redirectToReg() {
+            window.location.href = "../reg/index.html";
+        }
+    </script>
+    <script>
+        function redirectToHome() {
+            window.location.href = "../index.html";
+        }
+    </script>
 </html>

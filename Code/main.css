@@ -206,6 +206,12 @@ header .header-bottom .cart-button:hover {
   font-weight: 700;
   font-size: 1.6rem;
 }
+
+#main > .game-container>.game>.game-text{
+  text-align: center;
+  margin: 10px 10px 0;
+
+}
 #main > .game-title > .space {
   width: 600px;
 }
@@ -297,8 +303,8 @@ header .header-bottom .cart-button:hover {
   width: 650px;
   max-width: calc(100%-32px);
   min-height: 200px;
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: #777;
+  border-radius: 10px;
   overflow: hidden;
 }
 .auth-form_container{
@@ -376,6 +382,9 @@ header .header-bottom .cart-button:hover {
   justify-content: space-between;
   margin-top: 28px;
 }
+.auth-length{
+  width: 250px;
+}
 .auth-form_socials-icon{
   font-size: 1.4rem;
 }
@@ -391,7 +400,8 @@ header .header-bottom .cart-button:hover {
 }
 
 .auth-form_socials-title{
-  margin: 0 30px;
+  margin: 0 5px;
+  width: fit-content;
 }
 
 .auth-form_socials--google{
