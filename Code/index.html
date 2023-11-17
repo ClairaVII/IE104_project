@@ -10,52 +10,412 @@
 </head>
 <body class="body">
     <header>
-        <nav id="header">
-            <div class="icon">
-                <a href="#home">
-                   <span style="color: red;">Hiney</span>
-                </a>
-            </div>
-                <div>
-                     <ul id="nav">
-                        <li><a href="#home">Trang Chủ</a></li>
-                        <li><a href="#features">Dịch vụ</a></li>
-                        <li><a href="#notif">Thông báo</a></li>
-                        <li><a href="#search">Tìm kiếm</a></li>
-                        <li><a href="#more">Chơi cùng 
-                            <i class="nav-arrow-down ti-angle-down"></i>
-                        </a>
-                            <ul class="subnav">
-                                <li><a href="">Bạn Nam</a></li>
-                                <li><a href="">Bạn Nữ</a></li>
-                            </ul>
-                        </li>
-                     </ul>   
-                </div>
-                <div class="search-btn">
-                    <i class="search-icon ti-search"></i>
-                </div>
-                <div>
-                    <ul id="btn">
-                        <li class="header-navbar-item header-navbar-item--strong"><a href="./reg/index.html">Đăng kí</a></li>
-                        <li class="header-navbar-item header-navbar-item--strong"><a href="./login/index.html">Đăng nhập</a></li>
+        
+        <div id="navbar">
+            <div class="logo">HINEY</div>
+            <nav class="nav">
+                <div class="menu">
+                    <div class="menu-button">☰ Menu </div>
+                    <ul class="menu-list">
+                        <li>LOL</li>
+                        <li>CSGO</li>
+                        <li>NARAKA</li>
+                        <li>PUBG</li>
+                        <li>LIÊN QUÂN MOBILE</li>
                     </ul>
                 </div>
-        </nav>
+                <div class="nav-content">
+                    <a href="/" class="home">Home</a>
+                </div>
+                <div class="nav-content">Khoảnh khắc</div>
+                <div class="nav-content">Contact</div>
+                <div class="nav-content">Player</div>
+                <div class="nav-content">More</div>
+            </nav>
+            <div>
+
+                <div class="header-bottom">
+                    
+                    <form class="search-container">
+                        <input class="search-bar" type="text" placeholder="Search" />
+                        <button class="search-button">🔍</button>
+                    </form>
+                    <button class="cart-button" onclick="redirectToLogin()">
+                        login 👌🏻
+                    </button>
+                </div>
+            </div>
+        </div>
     </header>
-    <main>
-        <div id="slider"></div>
-        <img src="https://www.lita.gg/assets/bg-banner.672cdc94.png" alt="">
-         <!--content-->
-        <div id="content"></div>
+    <main id="main" >
+        <div class="img">
+            <img src="https://www.lita.gg/assets/bg-banner.672cdc94.png" alt="">
+        </div>
+        <div class="game-title" >
+            <div class="">
+                Tìm đồng hành chơi game 
+            </div>
+            <div class="space"></div>
+            <div>
+                 Toàn bộ kĩ năng 
+            </div>
+        </div>
+        <div class="game-container">
+            <div  class="game">
+            <div class="game-img" ><img  src="https://data.lita.cool/mgr/skill/202310081616/vi_garena-rov_pc-image.jpeg?width=253&height=320" alt=""></div>
+                <div>Liên quân mobile</div>
+            </div>
+            <div  class="game">
+            <div class="game-img" ><img  src="https://data.lita.cool/mgr/skill/202310081616/vi_garena-rov_pc-image.jpeg?width=253&height=320" alt=""></div>
+                <div>Liên quân mobile</div>
+            </div>
+            <div  class="game">
+            <div class="game-img" ><img  src="https://data.lita.cool/mgr/skill/202310081617/vi_pubg-mobile_pc-image.jpeg?width=253&height=320" alt=""></div>
+                <div>CS:GO</div>
+            </div>
+            <div  class="game">
+            <div class="game-img" ><img  src="https://data.lita.cool/mgr/skill/202310081616/vi_garena-rov_pc-image.jpeg?width=253&height=320" alt=""></div>
+                <div>Liên quân mobile</div>
+            </div>
+            <div  class="game">
+            <div class="game-img" ><img  src="../assets/imgs/Saint-League-of-Legends[1].jpg" alt=""></div>
+                <div>Liên minh huyền thoại</div>
+            </div>
+        </div>
+        <div class="player-title">
+            <div class="name">Liên Quân Mobile</div>
+            <!-- <div class="space"></div> -->
+            <div class="more">Xem tất cả</div>
+        </div>
+            <div class="player-container">
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSGO -->
+        
+        <div class="player-title">
+            <div class="name">CS:GO</div>
+            <div class="space"></div>
+            <div class="more">Xem tất cả</div>
+        </div>
+            <div class="player-container">
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VALORANT -->
+
+        <div class="player-title">
+            <div class="name">VALORANT</div>
+            <div class="space"></div>
+            <div class="more">Xem tất cả</div>
+        </div>
+            <div class="player-container">
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liên minh huyền thoại -->
+
+        <div class="player-title">
+            <div class="name">Liên minh huyền thoại</div>
+            <div class="space"></div>
+            <div class="more">Xem tất cả</div>
+        </div>
+            <div class="player-container">
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+                <div class="player">
+                    <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
+                     <div class="info">
+                     <div> ABCD</div>
+                        <div class="detail" >
+                             <div>⭐4.95</div>
+                             <div>|</div>   
+                             <div>Đã phục vụ: 10000</div>   
+                        </div>
+                    </div>
+                    <div>🪙 500/trận</div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
     </main>
     <footer>
-
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>Email: contact@example.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <p><a href="#" class="social-link">Facebook</a></p>
+                <p><a href="#" class="social-link">Twitter</a></p>
+                <p><a href="#" class="social-link">Instagram</a></p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Your Website Name. All Rights Reserved.</p>
+        </div>
     </footer>
+    
 
     <script>
-        function dieu_huong(){
-            location.assign("./reg/index.html")
+        // JavaScript function to scroll to the top of the page
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+    </script>
+    <script>
+        // Show/hide scroll-to-top button based on scroll position
+        window.onscroll = function () {
+            scrollFunction();
+        };
+    
+        function scrollFunction() {
+            var scrollBtn = document.querySelector('.scroll-to-top-btn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        }
+    </script>
+    <script>
+        function redirectToLogin() {
+            window.location.href = "./login/index.html";
         }
     </script>
 </body>
