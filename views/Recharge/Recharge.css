@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  header {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  header a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+  }
+
+  .main-content {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #idInput{
+    display: block;
+    margin-top: 20px;
+  }
+
+  #methodSelection, #cardAmounts, #atmOptions, #qrCode {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  .error-message {
+    color: red;
+  }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .payment-method {
+    margin-top: 10px;
+  }
+
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }

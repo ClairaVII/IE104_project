@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Recharge.css">
+  <title>Nạp Tiền</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+</head>
+<body>
+
+  <header>
+    <a href="index.html">Logo</a>
+    <a href="home.html">Trang Chủ</a>
+    <a href="login.html">Đăng Nhập</a>
+  </header>
+
+  <div class="main-content">
+    <h2>Nạp Tiền</h2>
+    
+    <div id="idInput">
+      <label for="playerId">ID Người Chơi:</label>
+      <input type="text" id="playerId" name="playerId" required>
+      <br>
+      <button onclick="checkPlayerId()">Kiểm Tra ID</button>
+      <p id="Message" class="error-message"></p>
+    </div>
+
+    <div id="methodSelection" class="payment-method">
+      <label for="paymentMethod">Chọn Phương Thức Nạp:</label>
+      <select id="paymentMethod" onchange="showPaymentOptions()">
+        <option value="none">-- Chọn phương thức --</option>
+        <option value="card">Nạp Thẻ</option>
+        <option value="atm">Nạp ATM</option> 
+      </select>
+    </div>
+
+    <div id="cardAmounts" class="payment-method">
+      <label for="cardAmount">Chọn Mệnh Giá Thẻ:</label>
+      <select id="cardAmount">
+        <option value="50">50,000 VND</option>
+        <option value="100">100,000 VND</option>
+        <option value="200">200,000 VND</option>
+      </select>
+      <label for="cardSerial">Nhập Số Seri Thẻ:</label>
+      <input type="text" id="cardSerial" name="cardSerial" required>
+      <button onclick="Check_seri()">Thanh toán</button>
+      <p id="Message_card" class="error-message"></p>
+    </div>
+
+    <div id="atmOptions" class="payment-method">
+      <label for="bank">Chọn Ngân Hàng:</label>
+      <select id="bank">
+        <option value="vietcombank">Vietcombank</option>
+        <option value="vietinbank">Vietinbank</option>
+        <option value="acb">ACB</option>
+      </select>
+      <br>
+      <label for="atmAmount">Chọn Mệnh Giá:</label>
+      <select id="atmAmount">
+        <option value="50">50,000 VND</option>
+        <option value="100">200,000 VND</option>
+        <option value="200">500,000 VND</option>
+      </select>
+      <br>
+      <button onclick="generateQRCode()">Thanh Toán</button>
+    </div>
+
+    <div id="qrCode" class="payment-method">
+      <img id="qrCodeImage" src="" alt="QR Code">
+      <p id="successMessage" class="success-message"></p>
+    </div>
+  </div>
+
+  <script src="Recharge.js"></script>
+</body>
+</html>

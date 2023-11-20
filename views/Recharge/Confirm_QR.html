@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <p id="Message"></p>
+  <script>
+    function confirmSignal() {
+      fetch('/confirm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': '',
+        },
+        body: 'confirmation=true',
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success === true) {
+            alert('Xác nhận đã được gửi!');
+          } else {
+            alert('Có lỗi xảy ra khi gửi tín hiệu xác nhận.');
+          }
+        })
+        .catch(error => {
+          console.error('Lỗi khi gửi tín hiệu xác nhận:', error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Xác nhận thanh toán</h1>
+  <button onclick="confirmSignal()">Xác nhận</button>
+</body>
+</html>
