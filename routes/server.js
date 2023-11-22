@@ -19,9 +19,9 @@ function removeRoute(routePath) {
 }
 
 const currentDirectory = path.basename(__dirname);
-const customDirectory = path.resolve(__dirname, '../views/Recharge');
+const customDirectory = path.resolve(__dirname, '../views/Home/Code');
 router.get('/', (req, res) => {
-  res.sendFile(path.join(customDirectory, 'Recharge.html'));
+  res.sendFile(path.join(customDirectory, 'index.html'));
 });
 
 router.get('/data', async (req, res) => {

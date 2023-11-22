@@ -13,17 +13,14 @@ db.once("open", function () {
   console.log("Connected");
 });
 
-const User = require('../models/renters'); 
-User.updateMany({name: 'Lê Hoàng Văn'}, {$set: { money: 550 }});
-/*
-const User = require('../models/renters'); 
+/*const User = require('../models/renters'); 
    const dummyUser = {
-     name: 'Nguyễn Thanh Tùng',
+     name: 'Huy',
      birthday: new Date('2002-12-23'),
      gender: 'Male',
      address: 'Quãng Ngải',
-     phone: '09812131415',
-     email: 'tung123@gmail.com',
+     phone: '09800022200',
+     email: 'tung12345@gmail.com',
      joining_date: new Date(),
      money: 0,
      rented_object: []
@@ -52,7 +49,7 @@ User.create(dummyUser)
      status: 'available',
      date_available: 6
    };
-//   /////////### Add record/// thêm thằng thông dô db
+  /////////### Add record/// thêm thằng thông dô db
 User.create(dummyUser)
 .then((createdUser) => {
   console.log('Dummy data inserted successfully:', createdUser);
