@@ -181,6 +181,7 @@ header .header-bottom .cart-button:hover {
   padding: 10px;
   overflow-y: scroll;
   border-radius: 5px;
+  z-index: 3;
 }
 
 #chat-header {
