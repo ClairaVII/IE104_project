@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="/assets/font-icon/themify-icons/themify-icons.css">
-    <title>Document</title>
+    <script src="home.js"></script>
+    <title>Welcome to Hiney!!</title>
 </head>
 <body class="body">
     <header>
-        
+        <!-- navbar -->
         <div id="navbar">
             <div class="logo">HINEY</div>
             <nav class="nav">
@@ -25,15 +26,32 @@
                     </ul>
                 </div>
                 <div class="nav-content">
-                    <a href="/" class="home">Home</a>
+                    <a href="/" class="home">Trang chủ</a>
                 </div>
-                <div class="nav-content">Khoảnh khắc</div>
-                <div class="nav-content">Contact</div>
-                <div class="nav-content">Player</div>
-                <div class="nav-content">More</div>
+                <div class="nav-content">Người chơi</div>
+                <div class="nav-content" id="chat-button">Chat</div>
             </nav>
-            <div>
 
+            <!-- chat button ở đây -->
+            <div id="chat-container">
+                <div id="chat-header">
+                    <img src="../assets/imgs/chat-icon.png" id="chat-logo">
+                    <h1 id="chat-heading">MESSAGE</h1>
+                    <button id="close-button"></button>
+                </div>
+                <div id="chat-messages"></div>
+                    <!--Tin nhắn được thêm ở đây-->
+                <div id="user-input-container"> 
+                    <div id="user-input">
+                        <input type="text" id="user-message" placeholder="Nhập tin nhắn của bạn..." >
+                        <button id="send-button">Gửi</button>
+                
+                    </div>
+                </div>
+            </div>
+
+            <!-- thanh tìm kiếm -->
+            <div>
                 <div class="header-bottom">
                     
                     <form class="search-container">
@@ -41,15 +59,19 @@
                         <button class="search-button">🔍</button>
                     </form>
                     <button class="cart-button" onclick="redirectToLogin()">
-                        login 👌🏻
+                        Login 👌🏻
                     </button>
                 </div>
             </div>
         </div>
     </header>
     <main id="main" >
+        <!-- <div class="bg-color1"></div>
+        <div class="bg-color2"></div>
+        <div class="bg-color3"></div> -->
         <div class="img">
-            <img src="https://www.lita.gg/assets/bg-banner.672cdc94.png" alt="">
+            <h1 class="img-content">Đừng chơi game một mình. Hãy chơi cùng với nhau</h1>
+            <img src="https://www.lita.gg/assets/bg-banner.672cdc94.png" alt="Picture">
         </div>
         <div class="game-title" >
             <div class="">
@@ -91,7 +113,7 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/1594924/album/photo_20230919_194051_696_R19196.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Thùy Dương</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
@@ -103,11 +125,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/1413118/album/photo_20231006_015758_067_R70061.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Thùy Linh</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐5.00</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 1054</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -115,38 +137,38 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/1273036/album/photo_20231007_083222_855_R34221.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div>Mỹ Linh</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.83</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 1200</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 300/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/2737396/album/photo_20230907_005752_279_R31967.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Lê My</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.65</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 325</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 800/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/2214625/album/photo_20230915_031237_687_R87681.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Diệu Chi</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.96</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 65</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 400/trận</div>
                 </div>
             </div>
         </div>
@@ -162,11 +184,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/3682718/album/photo_20231109_221426_090_R74492.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Công Vinh</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.68</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 35</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -174,11 +196,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/6309704/album/photo_20231111_084456_561_R84053.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Diệu Anh</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 98</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -186,38 +208,38 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/380191/album/photo_20230613_041339_667_R46685.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Mỹ Linh</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.5</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 165</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 450/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/6034561/album/photo_20221001_155038_926_R76130.png.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Du Ca</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.78</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 153</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 200/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/10690344/album/photo_20231113_105615_266_R94742.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Linh Lee</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 58</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 350/trận</div>
                 </div>
             </div>
         </div>
@@ -233,11 +255,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/5551344/album/photo_20221201_083857_903_R92158.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Senaa</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 230</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -245,19 +267,19 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/9179039/album/photo_20230526_121826_840_R11308.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Nhi Lê</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.74</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 35</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 250/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/6301201/album/photo_20230406_161252_148_R40266.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Lý Mỹ</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
@@ -269,11 +291,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/12487481/album/photo_20231114_163248_624_R48916.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Diệu Linh</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 100</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -281,11 +303,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/9837505/album/photo_20231109_173344_310_R45502.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Bảo Vy</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.35</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 235</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -304,35 +326,35 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/403410/album/photo_20220704_031935_346_R22747.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Vy Lê</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.85</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 110</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 400/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/12404549/album/photo_20231006_211630_194_R29011.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> A linh</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 60</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 400/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/12065311/album/photo_20230918_163245_808_R12130.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Miêu Lee</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.56</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 180</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -340,11 +362,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/7393552/album/photo_20231023_013116_506_R99399.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Ngọc Nhi</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.78</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 125</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -352,14 +374,14 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/4353404/album/photo_20220720_162034_203_R25948.png.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Mỹ Đỗ</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.45</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 255</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 350/trận</div>
                 </div>
             </div>
         </div>
@@ -375,11 +397,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/6191496/album/photo_20231111_123920_029_R38799.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Thủy Tiên</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.28</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 322</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -387,23 +409,23 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/1454801/album/photo_20211203_161207_335_R57681.png.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Thùy Nga</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 32</div>   
                         </div>
                     </div>
-                    <div>🪙 500/trận</div>
+                    <div>🪙 250/trận</div>
                 </div>
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/1054403/album/photo_20230801_122510_767_R79769.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Linh Đỗ</div>
                         <div class="detail" >
                              <div>⭐4.95</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 120</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -411,11 +433,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/2653028/album/photo_20231107_205654_099_R67636.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Ngân Nhi</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.90</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 230</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -423,11 +445,11 @@
                 <div class="player">
                     <div class="player-img"><img src="https://data-resize.lita.cool/user/2858781/album/photo_20231024_173455_803_R65423.jpg.resize/299*" alt=""></div>
                      <div class="info">
-                     <div> ABCD</div>
+                     <div> Linh Nhi</div>
                         <div class="detail" >
-                             <div>⭐4.95</div>
+                             <div>⭐4.92</div>
                              <div>|</div>   
-                             <div>Đã phục vụ: 10000</div>   
+                             <div>Đã phục vụ: 100</div>   
                         </div>
                     </div>
                     <div>🪙 500/trận</div>
@@ -446,9 +468,9 @@
             </div>
             <div class="footer-section">
                 <h2>Follow Us</h2>
-                <p><a href="#" class="social-link">Facebook</a></p>
-                <p><a href="#" class="social-link">Twitter</a></p>
-                <p><a href="#" class="social-link">Instagram</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Facebook</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Twitter</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Instagram</a></p>
             </div>
             <div class="footer-section">
                 <h2>Quick Links</h2>
@@ -461,33 +483,5 @@
         </div>
     </footer>
     
-
-    <script>
-        // JavaScript function to scroll to the top of the page
-        function scrollToTop() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-        }
-    </script>
-    <script>
-        // Show/hide scroll-to-top button based on scroll position
-        window.onscroll = function () {
-            scrollFunction();
-        };
-    
-        function scrollFunction() {
-            var scrollBtn = document.querySelector('.scroll-to-top-btn');
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        }
-    </script>
-    <script>
-        function redirectToLogin() {
-            window.location.href = "./login/index.html";
-        }
-    </script>
 </body>
 </html>

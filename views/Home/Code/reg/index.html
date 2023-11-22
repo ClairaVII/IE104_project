@@ -10,7 +10,7 @@
 </head>
 <body class="body">
     <header>
-        
+        <!-- navbar -->
         <div id="navbar">
             <div class="logo">HINEY</div>
             <nav class="nav">
@@ -25,23 +25,40 @@
                     </ul>
                 </div>
                 <div class="nav-content">
-                    <a href="/" class="home">Home</a>
+                    <a href="/" class="home">Trang chủ</a>
                 </div>
-                <div class="nav-content">Khoảnh khắc</div>
-                <div class="nav-content">Contact</div>
-                <div class="nav-content">Player</div>
-                <div class="nav-content">More</div>
+                <div class="nav-content">Người chơi</div>
+                <div class="nav-content" id="chat-button">Chat</div>
             </nav>
-            <div>
 
+            <!-- chat button ở đây -->
+            <div id="chat-container">
+                <div id="chat-header">
+                    <img src="../assets/imgs/chat-icon.png" id="chat-logo">
+                    <h1 id="chat-heading">MESSAGE</h1>
+                    <button id="close-button"></button>
+                </div>
+                <div id="chat-messages"></div>
+                    <!--Tin nhắn được thêm ở đây-->
+                <div id="user-input-container"> 
+                    <div id="user-input">
+                        <input type="text" id="user-message" placeholder="Nhập tin nhắn của bạn..." >
+                        <button id="send-button">Gửi</button>
+                
+                    </div>
+                </div>
+            </div>
+
+            <!-- thanh tìm kiếm -->
+            <div>
                 <div class="header-bottom">
                     
                     <form class="search-container">
                         <input class="search-bar" type="text" placeholder="Search" />
                         <button class="search-button">🔍</button>
                     </form>
-                    <button class="cart-button" >
-                        login 👌🏻
+                    <button class="cart-button" onclick="redirectToLogin()">
+                        Login 👌🏻
                     </button>
                 </div>
             </div>
