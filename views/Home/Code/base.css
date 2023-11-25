@@ -1,7 +1,10 @@
 body {
   background-color: #f7e9f3;
 }
-
+@font-face {
+  font-family: lucy;
+  src: url(../assets/fonts/LucySaidOkPersonalUseItalic-OV9ee.ttf);
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
