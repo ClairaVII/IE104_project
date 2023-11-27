@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sendButton.addEventListener("click", sendMessage);
     userMessageInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
+            event.preventDefault(); // Ngăn chặn việc gửi form khi nhấn Enter
             sendMessage();
         }
     });
@@ -62,7 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function appendUserMessage(message) {
         var userMessageElement = document.createElement("div");
         userMessageElement.classList.add("user-message");
-        userMessageElement.textContent = message;
+        var messageContent = document.createElement("div");
+        messageContent.classList.add("message-content");
+        messageContent.textContent = message;
+        userMessageElement.appendChild(messageContent);
         chatMessages.appendChild(userMessageElement);
         chatMessages.scrollTop = chatMessages.scrollHeight; // Tự động cuộn xuống khi có tin nhắn mới
     }
@@ -70,7 +74,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function appendChatbotMessage(message) {
         var chatbotMessageElement = document.createElement("div");
         chatbotMessageElement.classList.add("chatbot-message");
-        chatbotMessageElement.textContent = message;
+        var messageContent = document.createElement("div");
+        messageContent.classList.add("message-content");
+        messageContent.textContent = message;
+        chatbotMessageElement.appendChild(messageContent);
         chatMessages.appendChild(chatbotMessageElement);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
