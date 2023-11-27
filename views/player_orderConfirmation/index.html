@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="MainTTND.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="/assets/font-icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<body class="body">
+    <header>
+        <div id="navbar">
+            <div class="logo">HINEY</div>
+            <nav class="nav">
+                <div class="menu">
+                    <div class="menu-button">☰ Menu </div>
+                    <ul class="menu-list">
+                        <li>LOL</li>
+                        <li>CSGO</li>
+                        <li>NARAKA</li>
+                        <li>PUBG</li>
+                        <li>LIÊN QUÂN MOBILE</li>
+                    </ul>
+                </div>
+                <div class="nav-content">
+                    <a href="/index.html" class="home">Trang Chủ</a>
+                </div>
+                <div class="nav-content">Khoảnh khắc</div>
+
+            </nav>
+            <div>
+
+                <div class="header-bottom">
+
+                    <form class="search-container">
+                        <input class="search-bar" type="text" placeholder="Tìm Kiếm..." />
+                        <button class="search-button">🔍</button>
+                    </form>
+                    <div class="header-tools">
+                        <button class="coin-btn" onclick="reloadCoins()">Nạp Xu 💰</button>
+                        <button class="chat-btn" onclick="openChat()">Chat 💬</button>
+                        <div class="user-info">
+                            <img src="https://placekitten.com/30/30" alt="Avatar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-profile" id="userProfile">
+            <div class="user-profile-info">
+                <div class="user-info">
+                    <img src="https://placekitten.com/30/30" alt="Avatar">
+                    <div>
+                        <h2>User123</h2>
+                        <p class="user-id">ID: 123456</p>
+                    </div>
+                </div>
+                <div class="user-buttons">
+                    <button class="share-btn" onclick="shareUserInfo()">Chia sẻ</button>
+                    <!-- Thêm một phần tử để chứa ID và ẩn nó -->
+                    <div id="userIdContainer" style="display: none;"></div>
+                    <button class="follow-btn" onclick="toggleFollow()">Theo dõi</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mục Lý Lịch Người Dùng -->
+        <div class="user-details-container">
+            <div class="user-details">
+                <h2>Lý Lịch</h2>
+                <!-- Thêm menu hiển thị ảnh -->
+                <div class="image-menu">
+                    <img src="https://motgame.vn/stores/news_dataimages/2023/112023/20/07/croped/402104552-894281785390266-5288031277101585794-n20231120071007.jpg?231120092919"
+                        alt="Image 1" onclick="displayImage('path/to/image1.jpg')">
+                    <!-- Thêm các ảnh khác vào đây -->
+                </div>
+                <div class="additional-details">
+                    <!-- Nội dung của khung nhỏ mới -->
+                    <h2> Hồ Sơ</h2>
+                    <p>Nhà Vô Địch Chung Kết Thế Giới 2023</p>
+                </div>
+            </div>
+
+            <!-- Mục Kỹ Năng Người Dùng -->
+            <div class="user-details">
+                <h2>Kỹ Năng</h2>
+
+                <!-- Thanh cuộn và ô tìm kiếm -->
+                <div class="skills-list">
+                    <input type="text" placeholder="Tìm kiếm kỹ năng..." oninput="filterSkills()">
+                    <div class="scrollable-skills" id="skillsList">
+                        <!-- Danh sách kỹ năng -->
+                        <p>Liên Minh Huyền Thoại</p>
+                        <p>fifa</p>
+                        <p>Tán Gẫu</p>
+                        <!-- Thêm các kỹ năng khác ... -->
+                    </div>
+                    <!-- Nút Đặt Đơn -->
+                    <button id="orderBtn" class="order-btn" onclick="displayOrderDetails()">Đặt Đơn</button>
+                    <!-- Nút Chat -->
+                    <button class="chat-btn" onclick="openChat()">Chat</button>
+                    <!-- Phần hiển thị nội dung chat -->
+                    <div class="chat-box" id="chatBox">
+                        <!-- Nội dung chat sẽ được hiển thị ở đây -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Order Confirmation Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Xác Nhận Đơn Hàng</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="order-details">
+                        <!-- Order details will be displayed here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-primary" onclick="confirmOrder()">Xác Nhận</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            &copy; 2023 Hiney. Tất cả các quyền đã được đăng ký.
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function showTab(tabId) {
+                // Ẩn tất cả các tab-content
+                document.querySelectorAll('.tab-content').forEach(tabContent => tabContent.classList.remove('active'));
+
+                // Hiển thị tab-content được chọn
+                const selectedTabContent = document.getElementById(tabId);
+                if (selectedTabContent) {
+                    selectedTabContent.classList.add('active');
+                }
+            }
+
+            function reloadCoins() {
+                // Your coin reload logic goes here
+                alert('Coins reloaded!');
+            }
+
+            function shareUserInfo() {
+                // Thêm logic xử lý cho chức năng chia sẻ thông tin
+                alert('Thông tin đã được chia sẻ!');
+            }
+
+            function toggleFollow() {
+                // Thêm logic xử lý cho chức năng theo dõi
+                const followBtn = document.querySelector('.follow-btn');
+                followBtn.classList.toggle('following'); // Thay đổi trạng thái theo dõi
+
+                const followStatus = followBtn.classList.contains('following') ? 'Đang theo dõi' : 'Theo dõi';
+                followBtn.innerText = followStatus;
+
+                // Có thể thêm thêm logic như gửi yêu cầu theo dõi đến server ở đây
+            }
+
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                const brand = document.querySelector('.brand h1');
+
+                // Thêm hoặc xóa lớp scrolled khi cuộn trang
+                nav.classList.toggle('scrolled', window.scrollY > 0);
+                brand.classList.toggle('scrolled', window.scrollY > 0);
+            });
+            function filterSkills() {
+                const input = document.querySelector('.skills-list input');
+                const filter = input.value.toLowerCase();
+                const skills = document.querySelectorAll('.scrollable-skills p');
+
+                skills.forEach(skill => {
+                    const skillText = skill.innerText.toLowerCase();
+                    skill.style.display = skillText.includes(filter) ? 'block' : 'none';
+                });
+            }
+    
+            function displayImage(imagePath) {
+                // Cập nhật đường dẫn ảnh trong phần tử hiển thị
+                document.getElementById('selectedImage').src = imagePath;
+            }
+            function reloadCoins() {
+                // Thêm logic xử lý cho chức năng nạp xu
+                alert('Coins reloaded!');
+            }
+            function placeOrder() {
+                // Thêm logic xử lý cho chức năng đặt đơn
+                // Ở đây, chúng ta sẽ chuyển hướng sang trang web khác
+                window.location.href = 'Dat Don.html';
+            }
+            function openChat() {
+                // Chuyển sang trang chat.html
+                window.location.href = "Chat.html";
+            }
+            function shareUserInfo() {
+                // Lấy ID từ nơi bạn lưu trữ ID (trong trường hợp này, tôi giả sử bạn đã có một phần tử với ID 'userIdContainer')
+                var userId = document.getElementById('userIdContainer').innerText;
+
+                // Gọi hàm để sao chép vào Clipboard
+                copyToClipboard(userId);
+
+                // Thông báo cho người dùng biết rằng ID đã được sao chép
+                alert('ID đã được sao chép vào Clipboard!');
+            }
+
+            function copyToClipboard(text) {
+                // Tạo một thẻ textarea ẩn để chứa văn bản cần sao chép
+                var textarea = document.createElement('textarea');
+                textarea.value = text;
+
+                // Thêm textarea vào trang web
+                document.body.appendChild(textarea);
+
+                // Chọn nội dung của textarea
+                textarea.select();
+
+                // Thực hiện thao tác sao chép vào Clipboard
+                document.execCommand('copy');
+
+                // Xóa textarea sau khi đã sao chép
+                document.body.removeChild(textarea);
+            }
+
+        const orderData = {
+            playerName: "ABCD",
+            service: "Dịch Vụ Đặc Biệt",
+            unitPricePerMatch: 500,
+        };
+
+        function displayOrderDetails() {
+            // Mock data, replace with actual data from your application
+            const orderData = {
+                playerName: "ABCD",
+                service: "Dịch Vụ Đặc Biệt",
+                unitPricePerMatch: 500,
+            };
+
+            const orderDetails = document.getElementById("order-details");
+            const quantityInput = document.createElement("input");
+            quantityInput.type = "number";
+            quantityInput.min = "1";
+            quantityInput.value = 1;
+            quantityInput.id = "quantityInput";
+
+            orderDetails.innerHTML = `
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <img src="https://data-resize.lita.cool/user/12487481/album/photo_20231114_163248_624_R48916.jpg.resize/299*" alt="" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                    <p><strong>${orderData.playerName}</strong></p>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <p>Dịch Vụ: ${orderData.service}</p>
+                    <p>Đơn Giá: ${orderData.unitPricePerMatch} 🪙/trận</p>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <p>Số Lượng: <input type="number" min="1" value="1" id="quantityInput"></p>
+                </div>`;
+
+            const totalValueElement = document.createElement("p");
+            totalValueElement.id = "totalValue";
+            orderDetails.appendChild(totalValueElement);
+
+            document.getElementById("quantityInput").addEventListener("input", updateTotalValue);
+
+            $('#confirmationModal').modal('show');
+            updateTotalValue();
+        }
+
+        function updateTotalValue() {
+            const quantityInput = document.getElementById("quantityInput");
+            const totalValueElement = document.getElementById("totalValue");
+            const quantity = parseInt(quantityInput.value);
+
+            if (!isNaN(quantity) && quantity >= 1) {
+                const totalValue = quantity * orderData.unitPricePerMatch;
+                totalValueElement.textContent = `Tổng Giá Trị: ${totalValue} 🪙`;
+            }
+        }
+
+        function confirmOrder() {
+            alert('Đơn hàng đã được xác nhận!');
+            $('#confirmationModal').modal('hide');
+
+            // Show a success feedback pop-up
+            const feedbackPopup = document.createElement("div");
+            feedbackPopup.innerHTML = "<p>Đã đặt thành công!</p>";
+            feedbackPopup.style.position = "fixed";
+            feedbackPopup.style.top = "50%";
+            feedbackPopup.style.left = "50%";
+            feedbackPopup.style.transform = "translate(-50%, -50%)";
+            feedbackPopup.style.backgroundColor = "#4CAF50";
+            feedbackPopup.style.color = "#fff";
+            feedbackPopup.style.padding = "15px";
+            feedbackPopup.style.borderRadius = "10px";
+            document.body.appendChild(feedbackPopup);
+
+            // Automatically close the feedback pop-up after 3 seconds
+            setTimeout(() => {
+                document.body.removeChild(feedbackPopup);
+            }, 3000);
+        }
+        </script>
+</body>
+
+</html>

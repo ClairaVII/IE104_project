@@ -1,0 +1,559 @@
+/* Code từ đây */
+
+.body {
+  background-color: #f4f7f8;
+  color: #000;
+  letter-spacing: 0.05rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Fuggles", cursive;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: #2ecc71;
+  width: 100%;
+  /* padding: 5px; */
+}
+/*header*/
+header .header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header-top .service {
+  font-weight: bold;
+  color: white;
+}
+
+header .header-top .login {
+  border: none;
+  background-color: black;
+  color: aliceblue;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header .header-top .login:hover {
+  color: rgb(148, 201, 204);
+  text-decoration: underline;
+}
+
+header .header-bottom {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  height: 60px;
+}
+
+#navbar > .logo {
+  font-size: xx-large;
+  color: #2f3d3f;
+  padding-right: 30px;
+  padding-left: 15PX;
+  align-items: center;
+  display: flex;
+}
+
+header .header-bottom .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px 10;
+}
+
+header .header-bottom .search-container .search-bar {
+  height: 100%;
+  width: 20vw;
+  border-radius: 30px 0 0 30px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+}
+
+header .header-bottom .search-container .search-button {
+  border: none;
+  padding: 0;
+  height: 100%;
+  width: 3rem;
+  background-color: #a8f5ff;
+  border-radius: 0 30px 30px 0;
+}
+
+header .header-bottom .search-container .search-button:hover {
+  background-color: #32ffee;
+}
+
+header .header-bottom .cart-button {
+  background-color: #adebf0;
+  color: aliceblue;
+  border: none;
+  width: 100px;
+}
+
+header .header-bottom .cart-button:hover {
+  color: rgb(0, 0, 0);
+  /* background-color: rgb(65, 65, 65); */
+}
+
+/* Navbar Styles */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #adebf0;
+  width: 100%;
+  /* padding: 0px 100px; */
+}
+
+#navbar > .nav > .menu {
+  background-color: #2fc8c4;
+  position: relative;
+  height: auto;
+  z-index: 50;
+}
+
+#navbar > .nav > .menu .menu-button {
+  padding: 18px;
+  width: 250px;
+}
+
+#navbar > .nav > .menu .menu-list {
+  display: none;
+  position: absolute;
+  /* margin-top: 8px; */
+  top: 100%;
+  left: 0;
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  background-color: #2fc8c4;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+#navbar > .nav > .menu .menu-list li {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+#navbar .nav {
+  display: flex;
+  gap: 40px;
+  margin-left: 40px;
+  align-items: center;
+}
+
+#navbar > .nav > .menu:hover .menu-list {
+  display: flex;
+}
+
+#navbar .nav .nav-content:hover {
+  color: rgb(224, 42, 42);
+  cursor: pointer;
+}
+
+#navbar .nav .nav-content .home {
+  text-decoration: none;
+  color: black;
+}
+#navbar .nav .nav-content .home:hover{
+  color: rgb(224, 42, 42);;
+}
+
+/*button -tìm kieems*/
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0;
+  }
+
+  .search-container .search-bar {
+  height: 25pt;
+  width: 20vw;
+  border-radius: 30px 0 0 30px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  }
+
+  .search-container .search-button {
+  border: none;
+  padding: 0;
+  height: 25pt;
+  width: 20pt;
+  background-color: #a8f5ff;
+  border-radius: 0 30px 30px 0;
+  }
+
+  .search-container .search-button:hover {
+  background-color: #32ffee;
+  }
+
+  
+  .coin-btn, .chat-btn {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  /*--------------------*/
+  .coin-btn {
+      background-color: #4CAF50;
+      color: #fff;
+  }
+
+  .coin-btn:hover {
+      background-color: #45a049;
+  }
+
+  .chat-btn {
+      background-color: #555;
+      color: #fff;
+  }
+
+  .user-info {
+      display: flex;
+      align-items: center;
+      margin: 0 15px;
+  }
+
+  .user-info img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+  }
+
+  .user-info p {
+      margin: 0;
+      font-size: 1em;
+      color: #333;
+  }
+
+  .user-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Đặt khoảng cách giữa các nút */
+      margin-right: 15px;
+  }
+
+  .share-btn, .follow-btn {
+      padding: 12px 50px; /* Tăng kích thước của nút */
+      margin-bottom: 5px;
+      border: none;
+      border-radius: 8px; /* Bo tròn góc */
+      cursor: pointer;
+      font-size: 1.2em; /* Tăng kích thước chữ */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng hover */
+  }
+
+  .share-btn {
+      background-color: #3498db;
+      color: #fff;
+  }
+
+  .follow-btn {
+      background-color: #e74c3c;
+      color: #fff;
+  }
+
+  .follow-btn:hover, .share-btn:hover {
+      background-color: #2980b9; /* Màu nền thay đổi khi hover */
+      transform: scale(1.1); /* Hiệu ứng scale khi hover */
+  }
+
+  .following {
+      background-color: #2ecc71;
+  }  
+
+  .user-profile {
+    max-width: 90%; /* Đặt kích thước tối đa của khung thông tin người dùng */
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Điều chỉnh khoảng cách từ trên xuống */
+    margin-bottom: 2px; /* Điều chỉnh khoảng cách từ dưới lên */
+    margin-left:70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.user-profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+  .user-profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+  }
+
+  .user-profile-info h2,
+  .user-profile-info p {
+      margin: 0;
+      font-size: 1em;
+      color: #333;
+      text-align: left;
+  }
+
+  .user-id {
+      margin-top: 5px;
+      color: #666;
+      font-size: 0.8em;
+  }
+
+  .tab-content {
+      max-width: 1200px;
+      width: 90%;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      margin-top: 100px;
+      margin-bottom: 20px;
+      display: none;
+  }
+
+  .tab-content.active {
+      display: block;
+  }
+
+  h1, h2, h3 {
+      color: #333;
+  }
+
+  h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 1px #666;
+  }
+
+  h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+  }
+
+  p {
+      color: #555;
+      line-height: 1.6;
+  }
+
+  footer {
+      background-color: #fff;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+      border-radius: 0 0 15px 15px;
+      width: 100%;
+      margin-top: 10pt;
+  }
+
+  /* Hiển thị của mục Lý Lịch Người Dùng */
+.user-details-container {
+  display: flex;
+  gap: 5px; /* Khoảng cách giữa các khối */
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 70px
+}
+.additional-details {
+  flex: 1;
+  background-color: #32ffcf;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 20px; /* Thêm padding để làm đẹp */
+}
+.user-details {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px; /* Thêm padding để làm đẹp */
+}
+
+.user-details h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-details img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+/* Mục Kỹ Năng Người Dùng */
+.user-details .skills-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details .skills-list input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user-details .scrollable-skills {
+  max-height: 200px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.user-details .scrollable-skills p {
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+  background-color: #eee;
+}
+
+.user-details .scrollable-skills p.active {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.user-details .action-buttons {
+  display: flex;
+  flex-direction: column; /* Để các nút đặt đơn và chat nằm dọc */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.user-details .order-btn,
+.user-details .chat-btn {
+  padding: 12px 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.user-details .order-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.user-details .order-btn:hover {
+  background-color: #2980b9;
+}
+
+.user-details .chat-btn {
+  background-color: #555;
+  color: #fff;
+}
+
+.user-details .chat-btn:hover {
+  background-color: #333;
+}
+
+.user-details .chat-box {
+  max-height: 150px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  display: none;
+}
+
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Dịch phần header-tools về phải */
+}
+
+.header-tools button {
+  margin-right: 5px; /* Khoảng cách giữa các nút */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.header-tools .user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Khoảng cách giữa nút và thông tin người dùng */
+}
+
+.header-tools .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/*CSS ĐẶT ĐƠN*/
+
+/* Style the modal */
+.modal-content {
+  border-radius: 15px; /* Add border-radius for a rounded modal */
+}
+
+.modal-header {
+  background-color: #007bff; /* Set a background color for the modal header */
+  color: #fff;
+  border-radius: 15px 15px 0 0; /* Adjust border-radius for a rounded top */
+}
+
+.modal-footer {
+  border-radius: 0 0 15px 15px; /* Adjust border-radius for a rounded bottom */
+}
+
+/* Add styling for order details */
+#order-details p {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #e9ecef;
+  margin-bottom: 8px;
+}
+
+#order-details img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Add a subtle box shadow to the modal for depth */
+.modal-content {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
