@@ -59,7 +59,7 @@ header .header-bottom {
   padding-left: 25PX;
   align-items: center;
   display: flex;
-  margin-top: 5px;
+  margin-top: 4.5px;
   background-color: #ffb79d; /* Replace with your desired background color */
   border-radius: 9999px; /* This creates a circular shape */
   /* width: 100px; Adjust the width to your liking */
@@ -129,7 +129,7 @@ header .header-bottom .cart-button:hover {
 
 #navbar > .nav > .menu .menu-button {
   padding: 18px;
-  width: 250px;
+  width: 206px;
 }
 
 #navbar > .nav > .menu .menu-list {
@@ -153,28 +153,69 @@ header .header-bottom .cart-button:hover {
 
 #navbar .nav {
   display: flex;
-  gap: 40px;
-  margin-left: -330px;
+  gap: 5px;
+  margin-left: -505px;
   align-items: center;
 }
 
 #navbar > .nav > .menu:hover .menu-list {
   display: flex;
   z-index: 10;
+  cursor: pointer;
 }
 
+#navbar > .nav > .star {
+  background-color: #2fc8c4;
+  position: relative;
+  height: auto;
+}
+
+#navbar > .nav > .star .star-button {
+  padding: 18px;
+  width: 206px;
+}
+
+#navbar > .nav > .star .star-list {
+  display: none;
+  position: absolute;
+  /* margin-top: 8px; */
+  top: 100%;
+  left: 0;
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  background-color: #2fc8c4;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+#navbar > .nav > .star .star-list li {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+#navbar > .nav > .star:hover .star-list {
+  display: flex;
+  z-index: 10;
+  cursor: pointer;
+}
 #navbar .nav .nav-content:hover {
   color: rgb(224, 42, 42);
   cursor: pointer;
 }
+#navbar .logo .home {
+  text-decoration: none;
+  color: black;
+  font-family: 'lucy';
+}
 
-#navbar .nav .nav-content .home {
+/* #navbar .nav .nav-content .home {
   text-decoration: none;
   color: black;
 }
 #navbar .nav .nav-content .home:hover{
   color: rgb(224, 42, 42);;
-}
+} */
 
 /* Chatbox ở đây */
 
