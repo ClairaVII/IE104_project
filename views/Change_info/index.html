@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="../Home/Code/assets/font-icon/themify-icons/themify-icons.css">
+    <title>Welcome to Hiney!!</title>
+</head>
+<body class="body">
+    <header>
+        <!-- navbar -->
+        <div id="navbar">
+            <div class="logo">
+                <a href="/" class="home">Hiney</a>
+            </div>
+            <nav class="nav">
+                <div class="menu">
+                    <div class="menu-button">☰ Menu </div>
+                    <ul class="menu-list">
+                        <li>LEAGUE OF LEGENDS</li>
+                        <li>CSGO</li>
+                        <li>NARAKA</li>
+                        <li>PUBG</li>
+                        <li>LIÊN QUÂN MOBILE</li>
+                    </ul>
+                </div>
+                <!-- <div class="nav-content">
+                    <a href="/" class="home">Trang chủ</a>
+                </div> -->
+                <div class="star">
+                    <div class="star-button"> Ngôi sao </div>
+                    <ul class="star-list">
+                        <li>Tiến Trung</li>
+                        <li>Thanh Tùng(BTQ)</li>
+                        <li>Nhật Lâm</li>
+                        <li>Khả Trình (Bé mèo)</li>
+                        <li>Hoàng Phúc</li>
+                        <li>Hoàng Văn</li>
+                    </ul>
+                </div>
+                <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
+            </nav>
+
+            <!-- chat button ở đây -->
+            <div id="chat-container">
+                <div id="chat-header">
+                    <img src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/chat-1024.png" id="chat-logo">
+                    <h1 id="chat-heading">MESSAGE</h1>
+                    <button id="close-button"></button>
+                </div>
+                <div id="chat-messages"></div>
+                    <!--Tin nhắn được thêm ở đây-->
+                <div id="user-input-container"> 
+                    <div id="user-input">
+                        <input type="text" id="user-message" placeholder="Nhập tin nhắn của bạn..." >
+                        <button id="send-button">Gửi</button>
+                
+                    </div>
+                </div>
+            </div>
+
+            <!-- thanh tìm kiếm -->
+            <div>
+                <div class="header-bottom">
+                    
+                    <form class="search-container">
+                        <input class="search-bar" type="text" placeholder="Search" />
+                        <button class="search-button">🔍</button>
+                    </form>
+                    <button class="cart-button" onclick="redirectToLogin()">
+                        Login 👌🏻
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main" >
+        <div class="main-container">
+            <div class="personal-nav">
+                <div class="personal-center">Trung tâm cá nhân
+                </div>
+                <div class="personal-list">
+                    <ul class="list">
+                        <li class="info">Thông tin cá nhân</li>
+                        <li class="wallet">Ví</li>
+                        <li class="order">Đơn hàng</li>
+                        <li class="logout">Đăng xuất</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="edit-profile">
+                <div class="edit-content">Sửa hồ sơ</div>
+                <div class="edit">
+                    <div class="avatar">
+                        <p class="avatar-content">Ảnh</p>
+                        <div class="avatar-images">
+                            <i class="ti-plus" class="icon"></i>
+                            <input type="file" class="img"></input>
+                        </div>
+                    </div>
+                    <div class="editor">
+                        Hồ sơ
+                        <div class="name"></div>
+                        <div class="gender"></div>
+                        <div class="birthday"></div>
+                        <div class="phone-number"></div>
+                        <div class="email"></div>
+                        <div class="games"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>Email: hoangphuc@gmail.com</p>
+                <p>Phone: +84223453232</p>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Facebook</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Twitter</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Instagram</a></p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HINEY. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
