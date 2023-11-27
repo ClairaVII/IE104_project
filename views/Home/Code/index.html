@@ -31,7 +31,7 @@
                     <a href="/" class="home">Trang chủ</a>
                 </div> -->
                 <div class="star">
-                    <div class="star-button"> Ngôi sao </div>
+                    <div class="star-button"> ☰ Ngôi sao ⭐ </div>
                     <ul class="star-list">
                         <li>Tiến Trung</li>
                         <li>Thanh Tùng(BTQ)</li>
@@ -43,24 +43,7 @@
                 </div>
                 <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
             </nav>
-
-            <!-- chat button ở đây -->
-            <div id="chat-container">
-                <div id="chat-header">
-                    <img src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/chat-1024.png" id="chat-logo">
-                    <h1 id="chat-heading">MESSAGE</h1>
-                    <button id="close-button"></button>
-                </div>
-                <div id="chat-messages"></div>
-                    <!--Tin nhắn được thêm ở đây-->
-                <div id="user-input-container"> 
-                    <div id="user-input">
-                        <input type="text" id="user-message" placeholder="Nhập tin nhắn của bạn..." >
-                        <button id="send-button">Gửi</button>
-                
-                    </div>
-                </div>
-            </div>
+           
 
             <!-- thanh tìm kiếm -->
             <div>
@@ -82,7 +65,8 @@
         <div class="bg-color2"></div>
         <div class="bg-color3"></div> -->
         <div class="img">
-            <h1 class="img-content">Đừng chơi game một mình. Hãy chơi cùng với nhau</h1>
+            <h1 class="img-content">Đừng chơi game một mình - 
+                                    Hãy chơi cùng với nhau</h1>
             <img src="https://www.lita.gg/assets/bg-banner.672cdc94.png" alt="Picture">
         </div>
         <div class="game-title" >
@@ -468,8 +452,42 @@
                 </div>
             </div>
         </div>
-        
-        <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
+
+
+        <!-- chat button ở đây -->
+
+        <div id="chatbot-container">
+            <div id="chat-header">
+                <div id="chat-button">Chat 💬</div>
+                <div id="close-button" class="hidden"></div>
+              </div>
+            <div id="chat-container">
+              
+              <div id="chat-messages"></div>
+              <div id="user-input">
+                <input type="text" id="user-message" placeholder="Type your message..." />
+                <button id="send-button">Send 👆</button>
+              </div>
+            </div>
+          </div>
+
+        <button id="chat-button" class="chat-container">
+            <img src="https://e7.pngegg.com/pngimages/498/917/png-clipart-computer-icons-desktop-chatbot-icon-blue-angle.png" alt="Chatbot" />
+          </button>
+          
+        <div id="chat-container" style="display: none;">
+            <div id="chat-header">
+              <img src="https://th.bing.com/th/id/R.93d0c15873ef877349d43ebb4dfd56db?rik=4Rf3JueVAVmFBw&pid=ImgRaw&r=0" alt="Chat" />
+              <span>Chatbot</span>
+              <button id="close-button">Close</button>
+            </div>
+            <div id="chat-messages"></div>
+            <div id="user-input-container">
+              <input type="text" id="user-message" placeholder="Type a message..." />
+              <button id="send-button">Send</button>
+            </div>
+          </div>
+          
     </main>
     <footer>
         <div class="footer-content">
@@ -494,6 +512,6 @@
             <p>&copy; 2023 HINEY. All Rights Reserved.</p>
         </div>
     </footer>
-    
+
 </body>
 </html>
