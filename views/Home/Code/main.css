@@ -55,11 +55,8 @@ header .header-bottom {
   font-family: lucy;
   font-size: xx-large;
   color: #2f3d3f;
-  padding-right: 30px;
-  padding-left: 25PX;
-  align-items: center;
-  display: flex;
-  margin-top: 4.5px;
+  padding-right: 10px; /* Adjust padding to your liking */
+  padding-left: 10px; /* Adjust padding to your liking */
   background-color: #ffb79d; /* Replace with your desired background color */
   border-radius: 9999px; /* This creates a circular shape */
   /* width: 100px; Adjust the width to your liking */
@@ -118,13 +115,14 @@ header .header-bottom .cart-button:hover {
   justify-content: space-between;
   background-color: #adebf0;
   width: 100%;
+  align-items: center;
   /* padding: 0px 100px; */
 }
 
 #navbar > .nav > .menu {
   background-color: #2fc8c4;
   position: relative;
-  height: auto;
+  /* height: auto; */
 }
 
 #navbar > .nav > .menu .menu-button {
@@ -154,8 +152,8 @@ header .header-bottom .cart-button:hover {
 #navbar .nav {
   display: flex;
   gap: 5px;
-  margin-left: -505px;
-  align-items: center;
+  margin-left: -34rem;
+  /* align-items: center; */
 }
 
 #navbar > .nav > .menu:hover .menu-list {
