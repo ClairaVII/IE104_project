@@ -51,19 +51,7 @@ header .header-bottom {
   height: 60px;
 }
 
-#navbar > .logo {
-  font-family: lucy;
-  font-size: xx-large;
-  color: #2f3d3f;
-  padding-right: 10px; /* Adjust padding to your liking */
-  padding-left: 10px; /* Adjust padding to your liking */
-  background-color: #ffb79d; /* Replace with your desired background color */
-  border-radius: 9999px; /* This creates a circular shape */
-  /* width: 100px; Adjust the width to your liking */
-  height: 50px; /* Adjust the height to your liking */
-  font-weight: 700;
-  letter-spacing: 0.45rem;
-}
+
 
 header .header-bottom .search-container {
   display: flex;
@@ -118,6 +106,20 @@ header .header-bottom .cart-button:hover {
   align-items: center;
   /* padding: 0px 100px; */
 }
+#navbar > .nav > .logo {
+  font-family: lucy;
+  font-size: xx-large;
+  color: #2f3d3f;
+  padding-right: 10px; /* Adjust padding to your liking */
+  padding-left: 10px; /* Adjust padding to your liking */
+  background-color: #ffb79d; /* Replace with your desired background color */
+  border-radius: 9999px; /* This creates a circular shape */
+  /* width: 100px; Adjust the width to your liking */
+  height: 50px; /* Adjust the height to your liking */
+  font-weight: 700;
+  letter-spacing: 0.45rem;
+  margin-top: 4.5px;
+}
 
 #navbar > .nav > .menu {
   background-color: #2fc8c4;
@@ -152,7 +154,7 @@ header .header-bottom .cart-button:hover {
 #navbar .nav {
   display: flex;
   gap: 5px;
-  margin-left: -34rem;
+  /* margin-left: -2rem; */
   /* align-items: center; */
 }
 

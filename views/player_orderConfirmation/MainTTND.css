@@ -237,7 +237,65 @@ header .header-bottom .cart-button:hover {
       font-size: 1em;
       color: #333;
   }
+  /* Thêm hiệu ứng khi hover vào avatar */
+  .user-info-popup {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    top: 40pt;
+    right: 30pt;
+    z-index: 50;
+    display: none;
+    width: 250px;
+    height: auto;
+    text-align: left;
+}
 
+.user-info:hover .user-info-popup {
+    display: block;
+}
+
+.user-info-popup img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-info-text {
+    text-align: left;
+}
+
+.user-info-text h2,
+.user-info-text p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.user-info-popup .user-stats {
+    margin-bottom: 10px;
+}
+
+.user-info-popup button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin: 5px 0;
+    width: 100%; /* Nút chiếm toàn bộ chiều ngang */
+}
+
+.user-info-popup button:hover {
+    background-color: #45a049;
+}
+  /*-----------------------------------------------------*/
   .user-buttons {
       display: flex;
       align-items: center;
@@ -317,27 +375,7 @@ header .header-bottom .cart-button:hover {
       margin-top: 5px;
       color: #666;
       font-size: 0.8em;
-  }
-
-  .tab-content {
-      max-width: 1200px;
-      width: 90%;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-      user-select: none;
-      position: relative;
-      margin-top: 100px;
-      margin-bottom: 20px;
-      display: none;
-  }
-
-  .tab-content.active {
-      display: block;
-  }
+  } 
 
   h1, h2, h3 {
       color: #333;
@@ -408,7 +446,7 @@ header .header-bottom .cart-button:hover {
 }
 
 .user-details img {
-  width: 80%;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   margin: 0 auto;

@@ -41,8 +41,25 @@
                     <div class="header-tools">
                         <button class="coin-btn" onclick="reloadCoins()">Nạp Xu 💰</button>
                         <button class="chat-btn" onclick="openChat()">Chat 💬</button>
-                        <div class="user-info">
-                            <img src="https://placekitten.com/30/30" alt="Avatar">
+                        <div class="user-info" >
+                                <img src="https://placekitten.com/30/30" alt="Avatar">
+                                <div class="user-info-popup" >
+                                    <!-- Thông tin số người theo dõi và số xu sẽ được hiển thị ở đây -->
+                                    <img src="https://placekitten.com/30/30" alt="Avatar">
+                                    <div>
+                                        <h2>User123</h2>
+                                        <p class="user-id">ID: 123456</p>
+                                    </div>
+                                    <div class="user-stats">
+                                        <p>Theo dõi: <span id="followersCount">100</span> 👁️‍🗨️</p>
+                                        <p>Đang theo dõi: <span id="followingCount">50</span> 👤</p>
+                                        <p>Xu: <span id="coinsCount">500</span> 💰</p>
+                                    </div>
+                                    <div class="user-actions">
+                                        <button onclick="adjustUserInfo()">🛠️ Điều Chỉnh Thông Tin</button>
+                                        <button onclick="logout()">🚪 Đăng Xuất</button>
+                                    </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,16 +156,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script>
-            function showTab(tabId) {
-                // Ẩn tất cả các tab-content
-                document.querySelectorAll('.tab-content').forEach(tabContent => tabContent.classList.remove('active'));
 
-                // Hiển thị tab-content được chọn
-                const selectedTabContent = document.getElementById(tabId);
-                if (selectedTabContent) {
-                    selectedTabContent.classList.add('active');
-                }
-            }
 
             function reloadCoins() {
                 // Your coin reload logic goes here
@@ -312,6 +320,19 @@
             setTimeout(() => {
                 document.body.removeChild(feedbackPopup);
             }, 3000);
+            // Thêm hàm này để cập nhật số người theo dõi và số xu
+            function updateStats() {
+                // Giả sử bạn có các biến để lưu trữ số người theo dõi và số xu
+                const followersCount = 200;
+                const coinsCount = 1000;
+                const followingCount = 100
+                // Cập nhật các phần tử HTML
+                document.getElementById('followersCount').innerText = followersCount;
+                document.getElementById('coinsCount').innerText = coinsCount;
+            }
+
+            // Gọi hàm updateStats khi trang web tải xong
+            document.addEventListener('DOMContentLoaded', updateStats);
         }
         </script>
 </body>
