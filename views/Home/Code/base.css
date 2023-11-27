@@ -3,7 +3,7 @@ body {
 }
 @font-face {
   font-family: lucy;
-  src: url(../assets/fonts/LucySaidOkPersonalUseItalic-OV9ee.ttf);
+  src: url(./assets/fonts/LucySaidOkPersonalUseItalic-OV9ee.ttf);
 }
 /*
   1. Use a more-intuitive box-sizing model.
