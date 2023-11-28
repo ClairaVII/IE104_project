@@ -290,6 +290,11 @@ body {
   line-height: 43.6px;
   margin-right: 180px;
 }
+
+#main > .player-title > .more:hover {
+  transform: scale(1.05);
+}
+
 #main > .player-container > .player {
   border-radius: 10px;
   overflow: hidden;
