@@ -21,18 +21,32 @@ function redirectToLogin() {
 }
 
 
-
-
 // Script của chatbox
 
 document.addEventListener("DOMContentLoaded", function() {
-    var chatMessages = document.getElementById("chat-messages");
+    var chatButton = document.getElementById("chat-button");
+    var chatContainer = document.getElementById("chat-container");
+    var closeButton = document.getElementById("close-button");
     var userMessageInput = document.getElementById("user-message");
     var sendButton = document.getElementById("send-button");
+    var chatMessages = document.getElementById("chat-messages");
 
+    // Show the chatbox when the "Chat" element is clicked
+    chatButton.addEventListener("click", function() {
+        chatContainer.style.display = "block";
+        userMessageInput.focus(); // Focus vào ô nhập tin nhắn người dùng khi chatbox hiển thị
+    });
+
+    // Hide the chatbox when the close button is clicked
+    closeButton.addEventListener("click", function() {
+        chatContainer.style.display = "none";
+    });
+
+    // Send message when the send button is clicked or Enter key is pressed
     sendButton.addEventListener("click", sendMessage);
     userMessageInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
+            event.preventDefault(); // Ngăn chặn việc gửi form khi nhấn Enter
             sendMessage();
         }
     });
@@ -49,53 +63,29 @@ document.addEventListener("DOMContentLoaded", function() {
     function appendUserMessage(message) {
         var userMessageElement = document.createElement("div");
         userMessageElement.classList.add("user-message");
-        userMessageElement.textContent = message;
+        var messageContent = document.createElement("div");
+        messageContent.classList.add("message-content");
+        messageContent.textContent = message;
+        userMessageElement.appendChild(messageContent);
         chatMessages.appendChild(userMessageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Tự động cuộn xuống khi có tin nhắn mới
     }
 
     function appendChatbotMessage(message) {
         var chatbotMessageElement = document.createElement("div");
         chatbotMessageElement.classList.add("chatbot-message");
-        chatbotMessageElement.textContent = message;
+        var messageContent = document.createElement("div");
+        messageContent.classList.add("message-content");
+        messageContent.textContent = message;
+        chatbotMessageElement.appendChild(messageContent);
         chatMessages.appendChild(chatbotMessageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
     function simulateChatbotResponse(userMessage) {
-        var chatbotMessage = "Hiney: " + userMessage; 
+        var chatbotMessage = "Hiney: " + userMessage;
         setTimeout(function() {
             appendChatbotMessage(chatbotMessage);
-        }, 500); // độ trễ trước khi hiển thị phản hồi của chatbot (đơn vị ms)
+        }, 500); // Độ trễ trước khi hiển thị phản hồi của chatbot (đơn vị ms)
     }
-
-    var closeButton = document.getElementById("close-button");
-    closeButton.addEventListener("mouseenter", function() {
-        closeButton.classList.add("hover-effect");
-    });
-
-    closeButton.addEventListener("mouseleave", function() {
-        closeButton.classList.remove("hover-effect");
-    });
-
-    closeButton.addEventListener("click", function() {
-        var chatContainer = document.getElementById("chat-container");
-        chatContainer.style.display = "none";
-    });
-});
-
-//Script click tắt bật chatbox
-
-document.addEventListener("DOMContentLoaded", function () {
-    var chatButton = document.getElementById("chat-button");
-    var chatContainer = document.getElementById("chat-container");
-    var closeButton = document.getElementById("close-button");
-
-    // Show the chatbox when the "Chat" element is clicked
-    chatButton.addEventListener("click", function () {
-        chatContainer.style.display = "block";
-    });
-
-    // Hide the chatbox when the close button is clicked
-    closeButton.addEventListener("click", function () {
-        chatContainer.style.display = "none";
-    });
 });
