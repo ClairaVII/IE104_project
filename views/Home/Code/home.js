@@ -22,7 +22,6 @@ function redirectToLogin() {
 
 
 // Script của chatbox
-
 document.addEventListener("DOMContentLoaded", function() {
     var chatButton = document.getElementById("chat-button");
     var chatContainer = document.getElementById("chat-container");
@@ -30,62 +29,61 @@ document.addEventListener("DOMContentLoaded", function() {
     var userMessageInput = document.getElementById("user-message");
     var sendButton = document.getElementById("send-button");
     var chatMessages = document.getElementById("chat-messages");
-
-    // Show the chatbox when the "Chat" element is clicked
+  
     chatButton.addEventListener("click", function() {
-        chatContainer.style.display = "block";
-        userMessageInput.focus(); // Focus vào ô nhập tin nhắn người dùng khi chatbox hiển thị
+      chatContainer.style.display = "block";
+      closeButton.classList.remove("hidden");
+      userMessageInput.focus();
     });
-
-    // Hide the chatbox when the close button is clicked
+  
     closeButton.addEventListener("click", function() {
-        chatContainer.style.display = "none";
+      chatContainer.style.display = "none";
+      closeButton.classList.add("hidden");
     });
-
-    // Send message when the send button is clicked or Enter key is pressed
+  
     sendButton.addEventListener("click", sendMessage);
     userMessageInput.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Ngăn chặn việc gửi form khi nhấn Enter
-            sendMessage();
-        }
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendMessage();
+      }
     });
-
+  
     function sendMessage() {
-        var userMessage = userMessageInput.value;
-        if (userMessage.trim() !== "") {
-            appendUserMessage(userMessage);
-            userMessageInput.value = "";
-            simulateChatbotResponse(userMessage);
-        }
+      var userMessage = userMessageInput.value;
+      if (userMessage.trim() !== "") {
+        appendUserMessage(userMessage);
+        userMessageInput.value = "";
+        simulateChatbotResponse(userMessage);
+      }
     }
-
+  
     function appendUserMessage(message) {
-        var userMessageElement = document.createElement("div");
-        userMessageElement.classList.add("user-message");
-        var messageContent = document.createElement("div");
-        messageContent.classList.add("message-content");
-        messageContent.textContent = message;
-        userMessageElement.appendChild(messageContent);
-        chatMessages.appendChild(userMessageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Tự động cuộn xuống khi có tin nhắn mới
+      var userMessageElement = document.createElement("div");
+      userMessageElement.classList.add("user-message");
+      var messageContent = document.createElement("div");
+      messageContent.classList.add("message-content");
+      messageContent.textContent = message;
+      userMessageElement.appendChild(messageContent);
+      chatMessages.appendChild(userMessageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-
+  
     function appendChatbotMessage(message) {
-        var chatbotMessageElement = document.createElement("div");
-        chatbotMessageElement.classList.add("chatbot-message");
-        var messageContent = document.createElement("div");
-        messageContent.classList.add("message-content");
-        messageContent.textContent = message;
-        chatbotMessageElement.appendChild(messageContent);
-        chatMessages.appendChild(chatbotMessageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+      var chatbotMessageElement = document.createElement("div");
+      chatbotMessageElement.classList.add("chatbot-message");
+      var messageContent = document.createElement("div");
+      messageContent.classList.add("message-content");
+      messageContent.textContent = message;
+      chatbotMessageElement.appendChild(messageContent);
+      chatMessages.appendChild(chatbotMessageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-
+  
     function simulateChatbotResponse(userMessage) {
-        var chatbotMessage = "Hiney: " + userMessage;
-        setTimeout(function() {
-            appendChatbotMessage(chatbotMessage);
-        }, 500); // Độ trễ trước khi hiển thị phản hồi của chatbot (đơn vị ms)
+      var chatbotMessage = "Hiney: " + userMessage;
+      setTimeout(function() {
+        appendChatbotMessage(chatbotMessage);
+      }, 500);
     }
-});
+  });
