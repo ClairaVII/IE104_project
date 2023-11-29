@@ -12,6 +12,6 @@ const ServiceSchema = new mongoose.Schema({
     },
   });
 
-const Renter = mongoose.model('services', ServiceSchema);
+const service = mongoose.model('services', ServiceSchema);
 
 module.exports = service;

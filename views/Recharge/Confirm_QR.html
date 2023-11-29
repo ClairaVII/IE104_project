@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Xác nhận thanh toán</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <p id="Message"></p>
   <script>
     function confirmSignal() {
-      fetch('/confirm', {
+      fetch('/Recharge/Confirm', {
         method: 'POST',
         headers: {
           'Content-Type': '',
