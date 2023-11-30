@@ -3,75 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Recharge.css">
-  <title>Nạp Tiền</title>
+  <link rel="stylesheet" href="/Recharge/Recharge.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  <title>Nạp Tiền</title>
 </head>
 <body>
 
   <header>
-    <a href="index.html">Logo</a>
-    <a href="home.html">Trang Chủ</a>
-    <a href="login.html">Đăng Nhập</a>
-  </header>
-
-  <div class="main-content">
-    <h2>Nạp Tiền</h2>
-    
-    <div id="idInput">
-      <label for="playerId">ID Người Chơi:</label>
-      <input type="text" id="playerId" name="playerId" required>
-      <br>
-      <button onclick="checkPlayerId()">Kiểm Tra ID</button>
-      <p id="Message" class="error-message"></p>
+    <div id="navbar">
+        <nav class="nav">
+            <div class="logo">
+                <a href="/" class="home">Hiney</a>
+            </div>
+            <div class="menu">
+                <div class="menu-button">☰ Menu </div>
+                <ul class="menu-list">
+                    <li>LEAGUE OF LEGENDS</li>
+                    <li>CSGO</li>
+                    <li>NARAKA</li>
+                    <li>PUBG</li>
+                    <li>LIÊN QUÂN MOBILE</li>
+                </ul>
+            </div>
+            <!-- <div class="nav-content">
+                <a href="/" class="home">Trang chủ</a>
+            </div> -->
+            <div class="star">
+                <div class="star-button"> ☰ Ngôi sao ⭐ </div>
+                <ul class="star-list">
+                    <li>Tiến Trung</li>
+                    <li>Thanh Tùng(BTQ)</li>
+                    <li>Nhật Lâm</li>
+                    <li>Khả Trình (Bé mèo)</li>
+                    <li>Hoàng Phúc</li>
+                    <li>Hoàng Văn</li>
+                </ul>
+            </div>
+            <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
+        </nav>
+       
+        <!-- thanh tìm kiếm -->
+        <div>
+            <div class="header-bottom">
+                
+                <form class="search-container">
+                    <input class="search-bar" type="text" placeholder="Search" />
+                    <button class="search-button">🔍</button>
+                </form>
+                <button class="cart-button" onclick="redirectToLogin()">
+                    Login 👌🏻
+                </button>
+            </div>
+        </div>
     </div>
+</header>
 
-    <div id="methodSelection" class="payment-method">
-      <label for="paymentMethod">Chọn Phương Thức Nạp:</label>
-      <select id="paymentMethod" onchange="showPaymentOptions()">
-        <option value="none">-- Chọn phương thức --</option>
-        <option value="card">Nạp Thẻ</option>
-        <option value="atm">Nạp ATM</option> 
-      </select>
-    </div>
+<div class="main-content">
 
-    <div id="cardAmounts" class="payment-method">
-      <label for="cardAmount">Chọn Mệnh Giá Thẻ:</label>
-      <select id="cardAmount">
-        <option value="50">50,000 VND</option>
-        <option value="100">100,000 VND</option>
-        <option value="200">200,000 VND</option>
-      </select>
-      <label for="cardSerial">Nhập Số Seri Thẻ:</label>
-      <input type="text" id="cardSerial" name="cardSerial" required>
-      <button onclick="Check_seri()">Thanh toán</button>
-      <p id="Message_card" class="error-message"></p>
-    </div>
-
-    <div id="atmOptions" class="payment-method">
-      <label for="bank">Chọn Ngân Hàng:</label>
-      <select id="bank">
-        <option value="vietcombank">Vietcombank</option>
-        <option value="vietinbank">Vietinbank</option>
-        <option value="acb">ACB</option>
-      </select>
-      <br>
-      <label for="atmAmount">Chọn Mệnh Giá:</label>
-      <select id="atmAmount">
-        <option value="50">50,000 VND</option>
-        <option value="100">200,000 VND</option>
-        <option value="200">500,000 VND</option>
-      </select>
-      <br>
-      <button onclick="generateQRCode()">Thanh Toán</button>
-    </div>
-
-    <div id="qrCode" class="payment-method">
-      <img id="qrCodeImage" src="" alt="QR Code">
-      <p id="successMessage" class="success-message"></p>
-    </div>
+  <div id="idInput">
+    <label for="playerId">1. Nhập ID người dùng</label>
+    <input type="text" id="playerId" name="playerId" required>
+    <button onclick="checkPlayerId()">Kiểm Tra ID</button>
+    <p id="Message" class="error-message"></p>
   </div>
 
-  <script src="Recharge.js"></script>
+  <div id="methodSelection" class="payment-method">
+    <label for="paymentMethod">2. Chọn Phương Thức Nạp:</label>
+    <select id="paymentMethod" onchange="showPaymentOptions()">
+      <option value="none">-- Chọn phương thức --</option>
+      <option value="card">Nạp Thẻ</option>
+      <option value="atm">Nạp ATM</option> 
+    </select>
+  </div>
+
+  <div id="cardAmounts" class="payment-method">
+    <label for="cardAmount">3. Chọn Mệnh Giá Thẻ:</label>
+    <select id="cardAmount">
+      <option value="50">50,000 VND</option>
+      <option value="100">100,000 VND</option>
+      <option value="200">200,000 VND</option>
+    </select>
+    <label for="cardSerial">Nhập Số Seri Thẻ:</label>
+    <input type="text" id="cardSerial" name="cardSerial" required>
+    <button onclick="Check_seri()">Thanh toán</button>
+    <p id="Message_card" class="error-message"></p>
+  </div>
+
+  <div id="atmOptions" class="payment-method">
+    <label for="bank">3. Chọn Ngân Hàng:</label>
+    <select id="bank">
+      <option value="vietcombank">Vietcombank</option>
+      <option value="vietinbank">Vietinbank</option>
+      <option value="acb">ACB</option>
+    </select>
+    <br>
+    <label for="atmAmount">Chọn Mệnh Giá:</label>
+    <select id="atmAmount">
+      <option value="50">50,000 VND</option>
+      <option value="100">100,000 VND</option>
+      <option value="200">200,000 VND</option>
+    </select>
+    <br>
+    <button onclick="generateQRCode()">Thanh Toán</button>
+  </div>
+
+  <div id="qrCode" class="payment-method">
+    <img id="qrCodeImage" src="" alt="QR Code">
+    <p id="successMessage" class="success-message"></p>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h2>Contact Us</h2>
+            <p>Email: hoangphuc@gmail.com</p>
+            <p>Phone: +84223453232</p>
+        </div>
+        <div class="footer-section">
+            <h2>Follow Us</h2>
+            <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Facebook</a></p>
+            <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Twitter</a></p>
+            <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Instagram</a></p>
+        </div>
+        <div class="footer-section">
+            <h2>Quick Links</h2>
+            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 HINEY. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/Recharge/Recharge.js"></script>
 </body>
 </html>
