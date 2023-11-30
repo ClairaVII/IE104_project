@@ -232,6 +232,7 @@ body {
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 #main > .game-container > .game {
   background-color: white;
@@ -262,6 +263,7 @@ body {
   gap: 3rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 #main > .player-title {
   /* background: #c3bbbb; */
