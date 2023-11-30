@@ -254,6 +254,8 @@ async function setUpLogIn(){
             document.getElementById("money").textContent = item.money;
         }
     })
+
+    document.getElementById("login-button").style.display = "none";
 }
 
 //hàm thêm vào list theo từng loại game
