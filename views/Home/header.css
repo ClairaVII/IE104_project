@@ -77,8 +77,32 @@ header {
     width: 100px;
     font-size: 1.2rem;
     border-radius: 9999px;
+    margin-left: 10px;
   }
   
+  header .header-bottom .recharge-button {
+    display: none;
+    background-color: #4fcafa;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 140px;
+    font-size: 1.2rem;
+    border-radius: 9999px;
+    margin-right: 10px;
+  }
+
+  header .header-bottom .recharge-button #recharge_but {
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.473);
+    margin-left: 10px;
+    position: absolute;
+    font-size: 14px;
+  }
+
+  header .header-bottom .recharge-button #money {
+    margin-left: 40px;
+  }
+
   header .header-bottom .cart-button:hover {
     color: rgb(237, 16, 16);
     /* background-color: rgb(65, 65, 65); */

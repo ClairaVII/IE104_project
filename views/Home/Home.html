@@ -49,7 +49,11 @@
             <!-- thanh tìm kiếm -->
             <div>
                 <div class="header-bottom">
-                    
+                    <div class="recharge-button" id="recharge-button">
+                        <button id="recharge_but" onclick="recharge()"> + </button>
+                        <a id="money"></a>
+                        <a > 🪙  </a>
+                      </div>
                     <form class="search-container">
                         <input class="search-bar" type="text" placeholder="Search" />
                         <button class="search-button">🔍</button>
@@ -85,7 +89,7 @@
         <div class="player-title"></div>
         <div class="player-container"></div>
     </main>
-
+    <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
      <!-- chat button ở đây -->
      <div id="chatbot-container">
         <div id="chat-header">
@@ -116,23 +120,31 @@
 
                     <div class="auth-form_form">
                         <div class="auth-form_group">
-                            <input type="text" class="auth-form_input" placeholder="Nhập email hoặc số điện thoại">
+                            <input type="text" class="auth-form_input" id="email" placeholder="Nhập email hoặc số điện thoại">
+                            <p id="Message_email" class="error-message"></p>
                         </div>
                         <div class="auth-form_group">
-                            <input type="password" class="auth-form_input" placeholder="Mật khẩu">
+                            <input type="password" class="auth-form_input" id="password" laceholder="Mật khẩu">
+                            <p id="Message_password" class="error-message"></p>
                         </div>
                     </div>
-
+                    
                     <div class="auth-form_aside">
                         <div class="auth-form_help">
+                            <select id="role">
+                                <option value="none">-- Chọn loại tài khoản --</option>
+                                <option value="renter">Người thuê</option>
+                                <option value="rented">Người được thuê</option> 
+                            </select>
                             <a href="" class="auth-form_help-link auth-form_help-forgot">Quên mật khẩu</a>
                             <span class="auth-form_help-separate"></span>
                             <a href="" class="auth-form_help-link">Cần trợ giúp ?</a>
                         </div>
+                        <p id="Message_role" class="error-message"></p>
                     </div>
                     <div class="auth-form_controls">
                         <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                        <button class="btn btn--primary" onclick="signUp()">ĐĂNG NHẬP</button>
                     </div>
                 </div>
                 <div class="auth-form_socials">
@@ -220,8 +232,6 @@
             </div>
         </div>
     </div>
-
-`      <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
 
     <footer>
         <div class="footer-content">

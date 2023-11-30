@@ -1,3 +1,4 @@
+getLoggedInUser();
 
 // JavaScript function to scroll to the top of the page
 function scrollToTop() {
@@ -156,6 +157,104 @@ let listRented_NARAKA = [];
 let listRented_CSGO = [];
 var listCurrent = [0, 0, 0, 0, 0];
 var max_list = [];
+var user_id = null;
+var user_role;
+
+function recharge(){
+    window.location.href = "http://localhost:3000/Recharge";
+}
+
+function check_account(email_exist, password_exist, email, password){
+    if (email == '') {
+        document.getElementById("Message_email").textContent = 'Chưa nhập email tài khoản';
+        document.getElementById("Message_password").textContent = '';
+    }
+    else if (email_exist == false) {
+        document.getElementById("Message_email").textContent = 'Tài khoản không tồn tại';
+        document.getElementById("Message_password").textContent = '';
+    }
+    else if (password == '') {
+        document.getElementById("Message_email").textContent = '';
+        document.getElementById("Message_password").textContent = 'Chưa nhập mật khẩu';
+    }
+    else if (email_exist == true && password_exist == false) {
+        document.getElementById("Message_email").textContent = '';
+        document.getElementById("Message_password").textContent = 'Sai mật khẩu';
+    }
+    else if (email_exist == true && password_exist == true) {
+        document.getElementById("Message_email").textContent = '';
+        document.getElementById("Message_password").textContent = '';
+        redirectToHome();
+    }
+}
+
+function signUp(){
+    var role = document.getElementById("role").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var email_exist = false;
+    var password_exist = false; 
+    user_role = role;
+
+    if (role == 'renter'){
+        document.getElementById("Message_role").textContent = '';
+
+        fetch('/Data/Renters')
+        .then(response => response.json())
+        .then(data => {
+        // data là một mảng chứa các đối tượng, trong trường hợp này chỉ có một đối tượng
+            data.forEach(item => {
+                if (email == item.email) {email_exist = true;}
+                
+                if (email_exist == true && password == item.password){
+                    password_exist = true; 
+                    user_id = item._id;
+                }
+            });
+            if (email_exist == true && password_exist == true){setUpLogIn();loginUser();}
+            check_account(email_exist, password_exist, email, password);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }   
+    else if (role == 'rented'){
+        document.getElementById("Message_role").textContent = '';
+
+        fetch('/Data/Rented_persons')
+        .then(response => response.json())
+        .then(data => {
+        // data là một mảng chứa các đối tượng, trong trường hợp này chỉ có một đối tượng
+            data.forEach(item => {
+                if (email == item.email) {email_exist = true;}
+                
+                if (email_exist == true && password == item.password){
+                    password_exist = true; 
+                    user_id = item._id;
+                    document.getElementById("money").textContent = item.money;
+                }
+            });
+            check_account(email_exist, password_exist, email, password);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+    else {
+        document.getElementById("Message_role").textContent = 'Chưa chọn loại tài khoản';
+        document.getElementById("Message_email").textContent = '';
+        document.getElementById("Message_password").textContent = '';
+    }
+}
+
+async function setUpLogIn(){
+    const response = await fetch('/Data/Renters');
+    const result = await response.json();
+
+    document.getElementById("recharge-button").style.display = "flex";
+
+    result.forEach(item => {
+        if (item._id == user_id){
+            document.getElementById("money").textContent = item.money;
+        }
+    })
+}
 
 //hàm thêm vào list theo từng loại game
 function pushRented(game, id){
@@ -181,7 +280,7 @@ function change_displayRented(list, n, k){
                         if (playerCount == (n * 5 + 5)) {
                             return;
                         }
-                        console.log(player._id);
+
                         const Birthday = new Date(player.birthday);
                         const year = Birthday.getFullYear();
                         const month = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
@@ -268,7 +367,6 @@ function displayRented(list, n, game, id, k){
             data.forEach(player => {
                 if (list.includes(player._id) ){
                     if (playerCount >= (n * 5)){
-                        console.log(player.name);
                         if (playerCount == (n * 5 + 5)) {
                             return;
                         }
@@ -347,3 +445,28 @@ Promise.all([fetchGame(), fetchRentedPersons()])
         displayRented(listRented_CSGO, listCurrent[4], 'CSGO', 'CSGO', 4);
     })
     .catch(error => console.error('Error fetching data:', error));
+
+//Kiểm tra session đã có id chưa
+async function loginUser() {
+    const response = await fetch('/Login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: user_id, type: user_role })
+    });
+}
+
+  // Function to handle GET request
+async function getLoggedInUser() {
+    const response = await fetch('Logged-In-User');
+    const result = await response.json();
+
+    if (result.loggedIn) {
+      console.log('Logged In User:', result.userId);
+      user_id = result.userId;
+      if (result.type == 'renter') {setUpLogIn();}
+    } else {
+      console.log('User not logged in');
+    }
+}

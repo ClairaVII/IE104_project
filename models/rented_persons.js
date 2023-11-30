@@ -17,7 +17,7 @@ const rented_personSchema = new mongoose.Schema({
         type: String,
     },
     phone: {
-        type: Number,
+        type: String,
     },
     email: {
         type: String,

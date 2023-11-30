@@ -10,7 +10,6 @@ var indexRouter = require('./routes/server');
 var app = express();
 
 // view engine setup
-
 app.use(express.static('views'));
 
 app.set('views', path.join(__dirname, 'views'));
