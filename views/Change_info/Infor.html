@@ -3,9 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="change_info.css">
     <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="../Home/Code/assets/font-icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../Home/header.css">
+    <link rel="stylesheet" href="../Home/assets/font-icon/themify-icons/themify-icons.css">
     <title>Welcome to Hiney!!</title>
 </head>
 <body class="body">
@@ -83,10 +84,26 @@
                 </div>
                 <div class="personal-list">
                     <ul class="list">
-                        <li class="info">Thông tin cá nhân</li>
-                        <li class="wallet">Ví</li>
-                        <li class="order">Đơn hàng</li>
-                        <li class="logout">Đăng xuất</li>
+                        <li class="info">
+                            <i class="ti-user"></i>
+                            Thông tin cá nhân
+                        </li>
+                        <li class="wallet">
+                            <i class="ti-wallet"></i>
+                            Ví
+                        </li>
+                        <li class="order">
+                            <i class="ti-notepad"></i>
+                            Đơn hàng
+                        </li>
+                        <li class="change-password">
+                            <i class="ti-lock"></i>
+                            Đổi mật khẩu
+                        </li>
+                        <li class="logout">
+                            <i class="ti-export"></i>
+                            Đăng xuất
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -99,15 +116,38 @@
                             <i class="ti-plus" class="icon"></i>
                             <input type="file" class="img"></input>
                         </div>
+                        <div class="avatar-images">
+                            <i class="ti-plus" class="icon"></i>
+                            <input type="file" class="img"></input>
+                        </div>
                     </div>
                     <div class="editor">
-                        Hồ sơ
-                        <div class="name"></div>
-                        <div class="gender"></div>
-                        <div class="birthday"></div>
-                        <div class="phone-number"></div>
-                        <div class="email"></div>
-                        <div class="games"></div>
+                        <div class="editor-content">Hồ sơ</div>
+                        <div class="input-attribute" class="name">
+                            <div class="input-content">Họ và tên</div>
+                            <input class="input-list" type="text" placeholder="Nhập họ và tên">
+                        </div>
+                        <div class="input-attribute" class="gender">
+                            <div class="input-content">Giới tính</div>
+                            <input class="input-list" type="text" placeholder="Nam / Nữ / Khác">
+                        </div>
+                        <div class="input-attribute" class="birthday">
+                            <div class="input-content">Ngày sinh</div>
+                            <input class="input-list" type="date" placeholder="Nhập ngày sinh">
+                        </div>
+                        <div class="input-attribute" class="phone-number">
+                            <div class="input-content">Số điện thoại</div>
+                            <input class="input-list" type="tel" placeholder="Nhập số điện thoại" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="input-attribute" class="address">
+                            <div class="input-content">Địa chỉ</div>
+                            <input class="input-list" type="text" placeholder="Nhập địa chỉ">
+                        </div>
+                        <div class="input-attribute" class="email">
+                            <div class="input-content">Email</div>
+                            <input class="input-list" type="email" placeholder="Nhập email">
+                        </div>
+                        <input class="submit-change" type="submit" value="Lưu thay đổi">
                     </div>
                 </div>
             </div>

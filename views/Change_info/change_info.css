@@ -144,7 +144,7 @@
     margin: 0.2rem 1rem;
 }
 
-.editor > .input-attribute > .input-list {
+.editor > .input-attribute > input {
     margin-left: 1rem;
     border: 0.2rem solid rgb(200, 200, 200);
     border-radius: 0.5rem;
