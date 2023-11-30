@@ -91,17 +91,6 @@ header .header-bottom .search-container .search-button:hover {
   background-color: #32ffee;
 }
 
-header .header-bottom .cart-button {
-  background-color: #adebf0;
-  color: aliceblue;
-  border: none;
-  width: 100px;
-}
-
-header .header-bottom .cart-button:hover {
-  color: rgb(0, 0, 0);
-  /* background-color: rgb(65, 65, 65); */
-}
 
 /* Navbar Styles */
 #navbar {

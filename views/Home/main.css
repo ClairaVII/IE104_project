@@ -10,14 +10,19 @@ body {
   margin: 0;
   font-family: "Fuggles", cursive;
 }
+#navbar .nav .nav-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* #navbar .nav .nav-content .home {
+#navbar .nav .nav-content .home-main {
   text-decoration: none;
   color: black;
 }
-#navbar .nav .nav-content .home:hover{
+#navbar .nav .nav-content .home-main:hover{
   color: rgb(224, 42, 42);;
-} */
+}
 
 /* Chatbot ở đây */
 #chatbot-container {
@@ -242,6 +247,8 @@ body {
   padding: 5px;
   line-height: 43.6px;
   margin-left: 1000px;
+  cursor: pointer;
+  transition: transform 1s ease;
 }
 #main > #rented-persons > .player-title > .moreRight {
   background-color: #b1abab;
@@ -249,11 +256,14 @@ body {
   padding: 5px;
   line-height: 43.6px;
   margin-left: 10px;
+  cursor: pointer;
+  transition: transform 1s ease;
 }
 
 #main > #rented-persons > .player-title > .moreLeft:hover, 
 #main > #rented-persons > .player-title > .moreRight:hover {
   transform: scale(1.05);
+  transition: transform 0.1s ease;
 }
 
 #main > #rented-persons > .player-container > .player {
@@ -446,7 +456,6 @@ body {
 .auth-form_help-forgot{
   color: red;
 }
-
 
 /* footer */
 

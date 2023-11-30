@@ -248,14 +248,15 @@ async function setUpLogIn(){
     const result = await response.json();
 
     document.getElementById("recharge-button").style.display = "flex";
+    document.getElementById("tools-button").style.display = "flex";
 
     result.forEach(item => {
         if (item._id == user_id){
             document.getElementById("money").textContent = item.money;
         }
     })
-
     document.getElementById("login-button").style.display = "none";
+
 }
 
 //hàm thêm vào list theo từng loại game
