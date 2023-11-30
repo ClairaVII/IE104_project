@@ -1,62 +1,120 @@
 var express = require('express');
 var router = express.Router();
 var Renter = require('../models/renters')
+var Rented = require('../models/rented_persons')
+var Service = require('../models/services')
 const path = require('path');
 
 var confirmationSignal = -1;
+var time = 0;
 /* GET home page. */
-// Hàm xóa route
+//----------function----------
 function removeRoute(routePath) {
-  const removedRoutes = router.stack.filter(layer => {
-    return layer.route && layer.route.path === routePath;
-  });
-
-  removedRoutes.forEach(route => {
-    router.stack.splice(router.stack.indexOf(route), 1);
+  router.stack.forEach((layer, index, stack) => {
+    if (layer.route && layer.route.path === routePath && layer.route.methods.get) {
+        stack.splice(index, 1); // Remove the route from the stack
+    }
   });
 
   console.log(`Route ${routePath} đã bị xóa.`);
 }
 
-const currentDirectory = path.basename(__dirname);
-const customDirectory = path.resolve(__dirname, '../views/Home/Code');
+async function updateMoneyById(ID_client, NewMoneyValue) {
+  const filter = { _id: ID_client };
+  const update = { $set: { money: NewMoneyValue } };
+
+  const result = await Renter.updateMany(filter, update);
+  console.log(`${result.modifiedCount} documents were updated`);
+}
+
+//----------Send full html----------
 router.get('/', (req, res) => {
-  res.sendFile(path.join(customDirectory, 'index.html'));
+  res.sendFile(path.join(__dirname, '../views/Home/Home.html'));
 });
 
-router.get('/data', async (req, res) => {
+router.get('/Recharge', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/Recharge/Recharge.html'));
+});
+
+router.get('/Order', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/player_orderConfirmation/Order.html'));
+});
+
+router.get('/Infor', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/Change_info/Infor.html'));
+});
+
+//----------Get database----------
+router.get('/Data/Renters', async (req, res) => {
   try {
     const data = await Renter.find({}); // Lấy dữ liệu từ database
     res.json(data); // Gửi dữ liệu dưới dạng JSON về client
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send('Server Error');
   }
 });
 
-router.post('/QR', (req, res) => {
-  confirmationSignal = 0;
+router.get('/Data/Rented_persons', async (req, res) => {
+  try {
+    const data = await Rented.find({}); // Lấy dữ liệu từ database
+    res.json(data); // Gửi dữ liệu dưới dạng JSON về client
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
 
-  router.get('/Confirm-QR', (req, res) => {
-    res.sendFile(path.join(customDirectory, 'Confirm_QR.html'));
-    // Xóa route sau 2 phút
-    setTimeout(() => {
-      removeRoute('/Confirm-QR');
-    }, 30 * 1000); // 2 phút
-  });
+router.get('/Data/Services', async (req, res) => {
+  try {
+    const data = await Service.find({}); // Lấy dữ liệu từ database
+    res.json(data); // Gửi dữ liệu dưới dạng JSON về client
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
 
-  router.get('/data-QR', (req, res) => {
+//----------Recharge----------
+
+router.get('/Recharge/data-QR', (req, res) => {
     res.json({confirmation: confirmationSignal});
   });
 
-  setTimeout(() => {
-    confirmationSignal = -1;
-  }, 30 * 1000); // 2 phút
-});
-
-router.post('/confirm', (req, res) => {
+router.post('/Recharge/Confirm', (req, res) => {
   confirmationSignal = 1;
   res.json({ success: true});
 });
+
+router.post('/Recharge/QR', async (req, res) => {
+  confirmationSignal = 0;
+  time = 0;
+
+  router.get('/Recharge/Confirm-QR', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/Recharge/Confirm_QR.html'));
+  });
+
+  var waitPay = setInterval(() => {  //sau 30s không thanh toán thì thanh toán không thành công
+    time = time + 1;
+    if (time == 30){
+      confirmationSignal = -1;
+      removeRoute('/Recharge/Confirm-QR'); // Xóa route sau 2 phút
+      clearInterval(waitPay);
+    }
+    else if (confirmationSignal == 1){
+      removeRoute('/Recharge/Confirm-QR');
+      clearInterval(waitPay);
+    }
+  }, 1000); // 30 giây
+});
+
+router.post('/Recharge/UpdateMoney', (req, res) => {
+  const _id = req.body._id;
+  const NewMoney = req.body.money;
+  updateMoneyById(_id, NewMoney);
+});
+
+
+
 
 module.exports = router;

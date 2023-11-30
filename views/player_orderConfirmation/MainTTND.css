@@ -14,7 +14,7 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  background-color: #2ecc71;
+  background-color: #f4f7f8;
   width: 100%;
   /* padding: 5px; */
 }
@@ -66,6 +66,7 @@ header .header-bottom .search-container {
   align-items: center;
   height: 100%;
   padding: 10px 10;
+  margin-right: 10pt;
 }
 
 header .header-bottom .search-container .search-bar {
@@ -284,17 +285,14 @@ header .header-bottom .cart-button:hover {
 .user-info-popup button {
     padding: 10px 15px;
     cursor: pointer;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #adebf0;
+    color: #000;
     border: none;
     border-radius: 3px;
     margin: 5px 0;
     width: 100%; /* Nút chiếm toàn bộ chiều ngang */
 }
 
-.user-info-popup button:hover {
-    background-color: #45a049;
-}
   /*-----------------------------------------------------*/
   .user-buttons {
       display: flex;
@@ -431,7 +429,7 @@ header .header-bottom .cart-button:hover {
 }
 .user-details {
   flex: 1;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
   overflow: hidden;

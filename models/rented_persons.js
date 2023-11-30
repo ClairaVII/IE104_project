@@ -1,3 +1,4 @@
+const { Double } = require('mongodb');
 const mongoose = require('mongoose');
 
 const rented_personSchema = new mongoose.Schema({
@@ -39,12 +40,11 @@ const rented_personSchema = new mongoose.Schema({
         type: Array,
         default: [],
     },
-    status: {
+    password: {
         type: String,
-        enum: ['available', 'unavailable', 'stop'],
     },
-    day_available: {
-        type: Number,
+    avatar: {
+        type: String,
     },
   });
 

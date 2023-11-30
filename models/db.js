@@ -13,6 +13,30 @@ db.once("open", function () {
   console.log("Connected");
 });
 
+/*const User = require('../models/rented_persons'); 
+   const dummyUser = {
+     name: 'Bảo Vy',
+     birthday: new Date('2001-8-04'),
+     gender: 'Female',
+     address: 'Thanh Hóa',
+     phone: '09849307307',
+     email: 'BV123@gmail.com',
+     joining_date: new Date(),
+     evaluate: 4.73,
+     number_of_rentals: 102,
+     service: ['6558bafe119a10741addee4d'],
+     password:'BV123',
+     avatar: 'https://data-resize.lita.cool/user/9837505/album/photo_20231109_173344_310_R45502.jpg.resize/299*'
+   };
+//   /////////### Add record/// thêm thằng thông dô db
+User.create(dummyUser)
+.then((createdUser) => {
+  console.log('Dummy data inserted successfully:', createdUser);
+})
+.catch((err) => {
+  console.error('Error inserting dummy data:', err);
+}); */
+
 /*const User = require('../models/renters'); 
    const dummyUser = {
      name: 'Huy',

@@ -1,30 +1,14 @@
-var Rent = require('../models/renters');
-
 var UserId = null;
 var NewMoneyValue = 0;
 var OldMoneyValue = 0;
-
-async function updateMoneyById(UserId, NewMoney) {
-    try {
-  
-      const result = await Rent.updateMany(
-        { _id: UserId },
-        { $set: { money: NewMoney } }
-      );
-  
-      console.log(`Cập nhật xu id ${UserId} thành ${NewMoney}`);
-    } catch (error) {
-      console.error('lỗi cập nhật xu:', error.message);
-    }
-  }
-
+ 
 function checkPlayerId() {
     var Flag_er = 1;
     //lấy giá trị vừa nhập
     var playerId = document.getElementById("playerId").value;
 
     // kiểm tra id trên server
-    fetch('/data')
+    fetch('/Data/Renters')
     .then(response => response.json())
     .then(data => {
       // data là một mảng chứa các đối tượng, trong trường hợp này chỉ có một đối tượng
@@ -63,13 +47,13 @@ function checkPlayerId() {
     NewMoneyValue = document.getElementById("atmAmount").value;
 
     // Simulate generating QR code on the server
-    var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent('http://localhost:3000/Confirm-QR');
+    var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent('http://192.168.105.49:3000/Confirm-QR');
     
     document.getElementById("qrCodeImage").src = qrCodeUrl;
     document.getElementById("qrCode").style.display = "block";
     document.getElementById("successMessage").textContent = "Quét mã QR để thanh toán.";
 
-    fetch('/QR', {
+    fetch('/Recharge/QR', {
       method: 'POST',
       headers: {
         'Content-Type': 'ID_client',
@@ -84,7 +68,7 @@ function checkPlayerId() {
   }
   
   function checkConfirmation() {
-    fetch('/data-QR')
+    fetch('/Recharge/Data-QR')
       .then(response => response.json())
       .then(data => {
         if (data.confirmation == 1) {
@@ -106,19 +90,26 @@ function checkPlayerId() {
   function Payment_successful() { 
     var NewMoney = parseInt(NewMoneyValue, 10);
     NewMoney += OldMoneyValue;
-    updateMoneyById(UserId, NewMoney);
-
+  
+    fetch('/Recharge/UpdateMoney', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({_id: UserId, money: NewMoney})
+    })
+      
     Swal.fire({
       title: 'Thanh toán thành công!',
       text: 'Chọn hành động:',
       showCancelButton: true,
-      confirmButtonText: 'Đi sang trang Home',
-      cancelButtonText: 'Tiếp tục nạp tiền'
+      confirmButtonText: 'Trang chủ',
+      cancelButtonText: 'Tiếp tục nạp'
     }).then((result) => {
       if (result.isConfirmed) {
-        alert("Đi sang trang Home!");
+        window.location.href = "http://localhost:3000";
       } else {
-        Continue_pay();
+        window.location.href = "http://localhost:3000/Recharge";
       }
     });
   }
@@ -128,24 +119,15 @@ function checkPlayerId() {
       title: 'Thanh toán quá hạn!',
       text: 'Chọn hành động:',
       showCancelButton: true,
-      confirmButtonText: 'Đi sang trang Home',
-      cancelButtonText: 'Tiếp tục nạp tiền'
+      confirmButtonText: 'Trang chủ',
+      cancelButtonText: 'Tiếp tục nạp'
     }).then((result) => {
       if (result.isConfirmed) {
-        alert("Đi sang trang Home!");
+        window.location.href = "http://localhost:3000";
       } else {
-        Continue_pay();
+        window.location.href = "http://localhost:3000/Recharge";
       }
     });
-  }
-
-  function Continue_pay(){
-    document.getElementById("qrCode").style.display = "none";
-    document.getElementById("atmOptions").style.display = "none";
-    document.getElementById("cardAmounts").style.display = "none";
-    document.getElementById("methodSelection").style.display = "none";
-    var selectElement = document.getElementById("paymentMethod");
-    selectElement.value = "none";
   }
 
   function Check_seri(){
@@ -160,4 +142,5 @@ function checkPlayerId() {
     document.getElementById("Message_card").textContent = 'Đã nhận số seri của thẻ!';
     Payment_successful();
   }
+
 

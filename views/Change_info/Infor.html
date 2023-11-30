@@ -3,10 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../main.css">
-    <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="/assets/font-icon/themify-icons/themify-icons.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="../Home/Code/assets/font-icon/themify-icons/themify-icons.css">
+    <title>Welcome to Hiney!!</title>
 </head>
 <body class="body">
     <header>
@@ -76,76 +76,67 @@
             </div>
         </div>
     </header>
-
-    <div class="modal">
-        <div class="modal_overlay"></div>
-
-        <div class="modal_body">
-
-            <!--Đăng nhập-->
-            
-            <div class="auth-form">
-                <div class="auth-form_container">
-                    <div class="auth-form_header">
-                        <h3 class="auth-form_heading">Đăng nhập</h3>
-                        <span  onclick="redirectToReg()" class="auth-form_switch-btn" >Đăng ký</span>
-                    </div>
-
-                    <div class="auth-form_form">
-                        <div class="auth-form_group">
-                            <input type="text" class="auth-form_input" placeholder="Nhập email hoặc số điện thoại">
-                        </div>
-                        <div class="auth-form_group">
-                            <input type="password" class="auth-form_input" placeholder="Mật khẩu">
-                        </div>
-                    </div>
-
-                    <div class="auth-form_aside">
-                        <div class="auth-form_help">
-                            <a href="" class="auth-form_help-link auth-form_help-forgot">Quên mật khẩu</a>
-                            <span class="auth-form_help-separate"></span>
-                            <a href="" class="auth-form_help-link">Cần trợ giúp ?</a>
-                        </div>
-                    </div>
-                    <div class="auth-form_controls">
-                        <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
-                    </div>
+    <main id="main" >
+        <div class="main-container">
+            <div class="personal-nav">
+                <div class="personal-center">Trung tâm cá nhân
                 </div>
-                <div class="auth-form_socials">
-                    <div class="auth-length ">
-
-                        <a href="" class="auth-form_socials--facebook btn btn--size-s btn--with-icon">
-                            <i class="auth-form_socials-icon ti-facebook"></i>
-                            <span class="auth-form_socials-title">
-                                 Facebook
-                            </span>
-                        </a>
+                <div class="personal-list">
+                    <ul class="list">
+                        <li class="info">Thông tin cá nhân</li>
+                        <li class="wallet">Ví</li>
+                        <li class="order">Đơn hàng</li>
+                        <li class="logout">Đăng xuất</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="edit-profile">
+                <div class="edit-content">Sửa hồ sơ</div>
+                <div class="edit">
+                    <div class="avatar">
+                        <p class="avatar-content">Ảnh</p>
+                        <div class="avatar-images">
+                            <i class="ti-plus" class="icon"></i>
+                            <input type="file" class="img"></input>
+                        </div>
                     </div>
-                    <div class="auth-length ">
-
-                        <a href="" class="auth-form_socials--google btn btn--size-s btn--with-icon">
-                            <i class="auth-form_socials-icon ti-google"></i>
-                            <span class="auth-form_socials-title">
-                                 Google
-                            </span> 
-                        </a>
+                    <div class="editor">
+                        Hồ sơ
+                        <div class="name"></div>
+                        <div class="gender"></div>
+                        <div class="birthday"></div>
+                        <div class="phone-number"></div>
+                        <div class="email"></div>
+                        <div class="games"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
+        <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>Email: hoangphuc@gmail.com</p>
+                <p>Phone: +84223453232</p>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Facebook</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Twitter</a></p>
+                <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Instagram</a></p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HINEY. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
 </body>
-    <script>
-        function redirectToReg() {
-            window.location.href = "../reg/index.html";
-        }
-    </script>
-    <script>
-        function redirectToHome() {
-            window.location.href = "../index.html";
-        }
-    </script>
 </html>
