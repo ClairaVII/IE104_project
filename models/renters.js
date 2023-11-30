@@ -16,7 +16,7 @@ const RenterSchema = new mongoose.Schema({
         type: String,
     },
     phone: {
-        type: String,
+        type: Number,
         unique: true,
     },
     email: {

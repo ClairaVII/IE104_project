@@ -1,0 +1,154 @@
+/* main */
+#main {
+    margin-top: 0;
+    background: rgb(200, 200, 200);
+    height: 100%;
+}
+
+.main-container {
+    display: flex;
+    height: 100%; 
+    width: 100%;
+}
+/* Thanh thông tin */
+.personal-nav {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 20%;
+    height: 100%;
+}
+
+.personal-nav > .personal-center {
+    margin: 2rem 0 1.5rem 0rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.personal-nav > .personal-list > .list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.personal-nav > .personal-list > .list > li{
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+}
+
+.personal-nav > .personal-list > .list > li > i {
+    margin-right: 1rem;
+}
+ 
+.personal-nav > .personal-list > .list > li:hover{
+    background:#308296;
+    color:white;
+}
+
+.personal-nav > .personal-list > .list > li::selection{
+    background:#308296;
+    color:white;
+}
+
+/* Phần chỉnh sửa thông tin */
+.edit-profile { 
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 75%;
+    height: 100%;
+}
+  
+.edit-profile > .edit-content {
+    font-weight: 700;
+    font-size: 1.75rem;  
+}
+  
+.edit-profile > .edit {
+    display: flex;
+    gap: 1.75rem;
+    margin-top: 1rem;
+    height: 100%;
+}
+  
+.edit-profile > .edit > .avatar {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 30%;
+    height: 80%;
+    align-items: center;
+    border-radius: 1rem;
+}
+  
+.edit-profile > .edit > .avatar > .avatar-content {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+  
+.edit-profile > .edit > .avatar > .avatar-images {
+    position: relative;
+    width: 75%;
+    height: 30%;
+    border: 5px solid rgb(200, 200, 200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+  
+/* Plus icon của avatar */
+.edit-profile > .edit > .avatar > .avatar-images > .icon {
+    position: absolute;
+}
+
+.avatar-images > [class="ti-plus"] {
+    font-size: 2rem;
+    color: rgb(200, 200, 200)
+}
+
+
+.edit-profile > .edit > .avatar > .avatar-images > .img {
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+  
+
+/* Code của phần chỉnh sửa thông tin */
+.edit-profile > .edit > .editor {
+    width: 100%;
+    height: 80%;;
+    background: white;
+    display:flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+
+.edit > .editor > .editor-content {
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.editor > .input-attribute {
+    margin: 0.15rem 0;
+}
+
+.editor > .input-attribute > .input-content {
+    margin: 0.2rem 1rem;
+}
+
+.editor > .input-attribute > .input-list {
+    margin-left: 1rem;
+    border: 0.2rem solid rgb(200, 200, 200);
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    width: 50%;
+    background: transparent;
+}
