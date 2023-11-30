@@ -192,14 +192,11 @@ body {
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  cursor: pointer;
 }
 
 #main > .game-container > .game:hover{
   background-color: #a8f5ff;
-  border-radius: 10px;
 }
-
 #main > .game-container > .game > .game-img {
   border-radius: 10px;
   overflow: hidden;
@@ -219,7 +216,6 @@ body {
   gap: 3rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  cursor: pointer;
 }
 #main > #rented-persons > .player-title {
   /* background: #c3bbbb; */
@@ -288,6 +284,24 @@ body {
   z-index: 999; /* Đảm bảo ô đăng nhập hiển thị trước các phần tử khác */
   padding: 20px; /* Điều chỉnh khoảng cách nội dung với mép của ô */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiển thị đường bóng cho ô đăng nhập */
+}
+
+#role {
+  display: block;
+  width: 30%; 
+  height: 30px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align-last: center;
+}
+
+#Message_role {
+  margin-left: 40px;
+}
+
+.error-message {
+  color: red;
 }
 
 /* Các kiểu CSS khác có thể cần thiết cho trang web của bạn */

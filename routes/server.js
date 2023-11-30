@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
 var Renter = require('../models/renters')
 var Rented = require('../models/rented_persons')
@@ -72,6 +73,39 @@ router.get('/Data/Services', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send('Server Error');
+  }
+});
+
+//----------session----------
+router.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true
+}));
+
+router.use(express.json());
+
+router.post('/Login', (req, res) => {
+  const userId = req.body.userId;
+  const type = req.body.type;
+
+  if (userId) {
+    req.session.userId = userId;
+    req.session.type = type;
+    res.send('Đăng nhập thành công');
+  } else {
+    res.status(400).send('Thiếu thông tin đăng nhập');
+  }
+});
+
+router.get('/Logged-In-User', (req, res) => {
+  const loggedInUser = req.session.userId;
+  const typeInUser = req.session.type;
+
+  if (loggedInUser) {
+    res.json({ loggedIn: true, type: typeInUser, userId: loggedInUser });
+  } else {
+    res.json({ loggedIn: false });
   }
 });
 
