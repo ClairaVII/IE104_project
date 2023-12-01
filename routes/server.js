@@ -98,6 +98,12 @@ router.post('/Login', (req, res) => {
   }
 });
 
+router.post('/Logout', (req, res) => {
+  req.session.userId = null;
+  req.session.type = null;
+  res.send('Đăng xuất thành công');
+});
+
 router.get('/Logged-In-User', (req, res) => {
   const loggedInUser = req.session.userId;
   const typeInUser = req.session.type;

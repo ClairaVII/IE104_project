@@ -258,7 +258,6 @@ async function setUpLogIn(){
                 }
             }
         })
-        document.getElementById("login-button").style.display = "none";
     }
     else {
         const response = await fetch('/Data/Rented_persons');
@@ -275,8 +274,8 @@ async function setUpLogIn(){
                 }
             }
         })
-        document.getElementById("login-button").style.display = "none";
     }
+    document.getElementById("login-button").style.display = "none";
 }
 
 //hàm thêm vào list theo từng loại game
@@ -470,6 +469,21 @@ Promise.all([fetchGame(), fetchRentedPersons()])
     .catch(error => console.error('Error fetching data:', error));
 
 //Kiểm tra session đã có id chưa
+async function logout() {
+    const response = await fetch('/Logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: null, type: null })
+    });
+
+    document.getElementById("tools-button").style.display = "none";
+    document.getElementById("chat").style.display = "none";
+    document.getElementById("recharge-button").style.display = "none";
+    document.getElementById("login-button").style.display = "flex";
+}
+
 async function loginUser() {
     const response = await fetch('/Login', {
       method: 'POST',
@@ -488,7 +502,8 @@ async function getLoggedInUser() {
     if (result.loggedIn) {
       console.log('Logged In User:', result.userId);
       user_id = result.userId;
-      if (result.type == 'renter') {setUpLogIn();}
+      user_role = result.type;
+      setUpLogIn();
     } else {
       console.log('User not logged in');
     }
