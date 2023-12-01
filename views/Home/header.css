@@ -176,7 +176,7 @@ header .header-bottom .cart-button:hover {
 }
 
 #navbar > .nav > .star {
-  background-color: #2fc8c4;
+  /*background-color: #2fc8c4;*/
   position: relative;
   height: auto;
 }
@@ -195,7 +195,7 @@ header .header-bottom .cart-button:hover {
   list-style: none;
   flex-direction: column;
   padding: 0;
-  background-color: #2fc8c4;
+  background-color: #adebf0;
   width: 100%;
   /* border: 1px solid black; */
 }
@@ -227,25 +227,11 @@ header .header-bottom .cart-button:hover {
   margin-left: auto; /* Dịch phần header-tools về phải */
 }
 
-.coin-btn, .chat-btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-/*--------------------*/
-.coin-btn {
-  background-color: #4CAF50;
-  color: #fff;
-}
-
-.coin-btn:hover {
-  background-color: #45a049;
-}
-
 .chat-btn {
+  display: none;
   background-color: #555;
   color: #fff;
+  margin-right: 10px;
 }
 
 .user-info {
@@ -255,8 +241,8 @@ header .header-bottom .cart-button:hover {
 }
 
 .user-info img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -266,6 +252,9 @@ header .header-bottom .cart-button:hover {
   font-size: 1em;
   color: #333;
 }
+
+
+
 /* Thêm hiệu ứng khi hover vào avatar */
 .user-info-popup {
 display: flex;
@@ -282,6 +271,17 @@ display: none;
 width: 250px;
 height: auto;
 text-align: left;
+}
+
+.user-info-popup button {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #adebf0;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  margin: 5px 0;
+  width: 100%;
 }
 
 .user-info:hover .user-info-popup {

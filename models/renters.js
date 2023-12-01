@@ -36,6 +36,12 @@ const RenterSchema = new mongoose.Schema({
         type: Array,
         default: null,
     },
+    password: {
+        type: String,
+    },
+    avatar: {
+        type: String,
+    },
   });
 
 const renter = mongoose.model('renters', RenterSchema);

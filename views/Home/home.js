@@ -185,6 +185,7 @@ function check_account(email_exist, password_exist, email, password){
         document.getElementById("Message_email").textContent = '';
         document.getElementById("Message_password").textContent = '';
         redirectToHome();
+        setUpLogIn();loginUser();
     }
 }
 
@@ -211,7 +212,6 @@ function signUp(){
                     user_id = item._id;
                 }
             });
-            if (email_exist == true && password_exist == true){setUpLogIn();loginUser();}
             check_account(email_exist, password_exist, email, password);
         })
         .catch(error => console.error('Error fetching data:', error));
@@ -222,7 +222,6 @@ function signUp(){
         fetch('/Data/Rented_persons')
         .then(response => response.json())
         .then(data => {
-        // data là một mảng chứa các đối tượng, trong trường hợp này chỉ có một đối tượng
             data.forEach(item => {
                 if (email == item.email) {email_exist = true;}
                 
@@ -244,19 +243,40 @@ function signUp(){
 }
 
 async function setUpLogIn(){
-    const response = await fetch('/Data/Renters');
-    const result = await response.json();
-
-    document.getElementById("recharge-button").style.display = "flex";
-    document.getElementById("tools-button").style.display = "flex";
-
-    result.forEach(item => {
-        if (item._id == user_id){
-            document.getElementById("money").textContent = item.money;
-        }
-    })
-    document.getElementById("login-button").style.display = "none";
-
+    if (user_role == "renter"){
+        const response = await fetch('/Data/Renters');
+        const result = await response.json();
+        document.getElementById("tools-button").style.display = "flex";
+        document.getElementById("chat").style.display = "flex";
+        document.getElementById("recharge-button").style.display = "flex";
+        result.forEach(item => {
+            if (item._id == user_id){
+                document.getElementById("money").textContent = item.money;
+                if (item.avatar != ''){
+                    document.getElementById("avatar1").src = item.avatar;
+                    document.getElementById("avatar2").src = item.avatar;
+                }
+            }
+        })
+        document.getElementById("login-button").style.display = "none";
+    }
+    else {
+        const response = await fetch('/Data/Rented_persons');
+        const result = await response.json();
+        document.getElementById("tools-button").style.display = "flex";
+        document.getElementById("chat").style.display = "flex";
+        result.forEach(item => {
+            if (item._id == user_id){
+                document.getElementById("money").textContent = item.money;
+                if (item.avatar != ""){
+                    console.log(item.avatar);
+                    document.getElementById("avatar1").src = item.avatar;
+                    document.getElementById("avatar2").src = item.avatar;
+                }
+            }
+        })
+        document.getElementById("login-button").style.display = "none";
+    }
 }
 
 //hàm thêm vào list theo từng loại game
