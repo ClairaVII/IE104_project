@@ -2,7 +2,7 @@
 #main {
     margin-top: 0;
     background: rgb(200, 200, 200);
-    height: 100%;
+    height: auto;
 }
 
 .main-container {
@@ -15,8 +15,8 @@
     display: flex;
     flex-direction: column;
     background: white;
-    width: 20%;
-    height: 100%;
+    width: 18rem;
+    height: auto;
 }
 
 .personal-nav > .personal-center {
@@ -37,6 +37,10 @@
     padding: 1rem 1.5rem;
 }
 
+.personal-nav > .personal-list > .list > li > [class^="ti-"] {
+    font-size: 1.5rem;
+}
+
 .personal-nav > .personal-list > .list > li > i {
     margin-right: 1rem;
 }
@@ -55,9 +59,7 @@
 .edit-profile { 
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    width: 75%;
-    height: 100%;
+    padding: 3rem 4rem;
 }
   
 .edit-profile > .edit-content {
@@ -67,17 +69,16 @@
   
 .edit-profile > .edit {
     display: flex;
-    gap: 1.75rem;
+    gap: 2rem;
     margin-top: 1rem;
-    height: 100%;
+    height: 50rem;
 }
   
 .edit-profile > .edit > .avatar {
     display: flex;
     flex-direction: column;
     background: white;
-    width: 30%;
-    height: 80%;
+    width: 18rem;
     align-items: center;
     border-radius: 1rem;
 }
@@ -95,7 +96,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin: 3rem 0 0 0;
 }
   
 /* Plus icon của avatar */
@@ -121,19 +122,20 @@
 
 /* Code của phần chỉnh sửa thông tin */
 .edit-profile > .edit > .editor {
-    width: 100%;
-    height: 80%;;
+    width: 50rem;
+    /* height: 90%; */
+
     background: white;
-    display:flex;
+    display: flex;
     flex-direction: column;
     border-radius: 1rem;
+    padding: 1rem 2rem;
 }
 
 .edit > .editor > .editor-content {
     font-size: 1.5rem;
     color: black;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    
 }
 
 .editor > .input-attribute {
@@ -141,14 +143,31 @@
 }
 
 .editor > .input-attribute > .input-content {
-    margin: 0.2rem 1rem;
+    margin: 0.2rem 0;
 }
 
 .editor > .input-attribute > input {
-    margin-left: 1rem;
     border: 0.2rem solid rgb(200, 200, 200);
     border-radius: 0.5rem;
     padding: 0.1rem;
     width: 50%;
     background: transparent;
+}
+
+.editor > .submit-change {
+    width: 10rem;
+    height: 2rem;
+    background: black; 
+    color: white;
+    /* border: 0.2rem solid black; */
+    border-radius: 0.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.editor > .submit-change:hover{
+    
+    background:transparent;
+    color: rgb(107, 100, 100);
+    border: 0.2rem solid rgb(200, 200, 200);
 }
