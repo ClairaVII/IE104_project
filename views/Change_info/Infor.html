@@ -96,7 +96,7 @@
                             <i class="ti-notepad"></i>
                             Đơn hàng
                         </li>
-                        <li class="change-password">
+                        <li class="change-pass">
                             <i class="ti-lock"></i>
                             Đổi mật khẩu
                         </li>
@@ -151,8 +151,11 @@
                     </div>
                 </div>
             </div>
+            <div class="wallet-info"></div>
+            <div class="order-history"></div>
+            <div class="change-password"></div>
         </div>
-        <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
+        <!-- <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button> -->
     </main>
     <footer>
         <div class="footer-content">
@@ -177,6 +180,48 @@
             <p>&copy; 2023 HINEY. All Rights Reserved.</p>
         </div>
     </footer>
-    
+    <script>
+        let info = document.querySelector('.info');
+        let wallet = document.querySelector('.wallet');
+        let order = document.querySelector('.order');
+        let changePass = document.querySelector('.change-pass');
+        let logout = document.querySelector('.logout');
+
+        let editProfileSection = document.querySelector('.edit-profile');
+        let walletInfoSection = document.querySelector('.wallet-info');
+        let orderHistorySection = document.querySelector('.order-history');
+        let changePasswordSection = document.querySelector('.change-password');
+
+        info.addEventListener('click', function () {
+            editProfileSection.style.display = 'block';
+            walletInfoSection.style.display = 'none';
+            orderHistorySection.style.display = 'none';
+            changePasswordSection.style.display = 'none';
+        });
+
+        wallet.addEventListener('click', function () {
+            editProfileSection.style.display = 'none';
+            walletInfoSection.style.display = 'block';
+            orderHistorySection.style.display = 'none';
+            changePasswordSection.style.display = 'none';
+        });
+        
+        order.addEventListener('click', function () {
+            editProfileSection.style.display = 'none';
+            walletInfoSection.style.display = 'none';
+            orderHistorySection.style.display = 'block';
+            changePasswordSection.style.display = 'none';
+        });
+        
+        changePass.addEventListener('click', function () {
+            editProfileSection.style.display = 'none';
+            walletInfoSection.style.display = 'none';
+            orderHistorySection.style.display = 'none';
+            changePasswordSection.style.display = 'block';
+        });
+
+        logout.addEventListener('click', function () {
+        });
+</script>
 </body>
 </html>
