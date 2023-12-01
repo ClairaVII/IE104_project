@@ -189,17 +189,20 @@ function check_account(email_exist, password_exist, email, password){
     }
 }
 
-function signUp(){
-    var role = document.getElementById("role").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+function signUp(fromWeb, email, password, role){
+    if (fromWeb != 'register'){
+        var role = document.getElementById("role").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+    }
+
     var email_exist = false;
     var password_exist = false; 
     user_role = role;
 
     if (role == 'renter'){
         document.getElementById("Message_role").textContent = '';
-
+        
         fetch('/Data/Renters')
         .then(response => response.json())
         .then(data => {
@@ -207,14 +210,14 @@ function signUp(){
             data.forEach(item => {
                 if (email == item.email) {email_exist = true;}
                 
-                if (email_exist == true && password == item.password){
+                if (email_exist == true && password == item.password && password_exist == false){
                     password_exist = true; 
                     user_id = item._id;
                 }
             });
             check_account(email_exist, password_exist, email, password);
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.error('Lỗi:', error));
     }   
     else if (role == 'rented'){
         document.getElementById("Message_role").textContent = '';
@@ -223,17 +226,16 @@ function signUp(){
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
-                if (email == item.email) {email_exist = true;}
+                if (email == item.email) {email_exist = true;console.log(item.email);}
                 
-                if (email_exist == true && password == item.password){
+                if (email_exist == true && password == item.password && password_exist == false){
                     password_exist = true; 
                     user_id = item._id;
-                    document.getElementById("money").textContent = item.money;
                 }
             });
             check_account(email_exist, password_exist, email, password);
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.error('Lỗi:', error));
     }
     else {
         document.getElementById("Message_role").textContent = 'Chưa chọn loại tài khoản';
@@ -242,7 +244,7 @@ function signUp(){
     }
 }
 
-function Register(){
+async function Register(){
     var name = document.getElementById("res_name").value;
     var role = document.getElementById("res_role").value;
     var birthday = document.getElementById("res_birthday").value;
@@ -251,16 +253,82 @@ function Register(){
     var address = document.getElementById("res_address").value;
     var email = document.getElementById("res_email").value;
     var password = document.getElementById("res_password").value;
+    var res_success = true;
 
-    if (name == ""){document.getElementById("Message_res_name").textContent = "Chưa nhập họ tên"}
-    if (role == "none"){document.getElementById("Message_res_role").textContent = "Chưa chọn loại tài khoản"}
-    if (birthday == ""){document.getElementById("Message_res_birthday").textContent = "Chưa nhập ngày sinh"}
-    if (gender == ""){document.getElementById("Message_res_gender").textContent = "Chưa chọn giới tính"}
-    if (phone == ""){document.getElementById("Message_res_phone").textContent = "Chưa nhập số điện thoại"}
-    if (address == ""){document.getElementById("Message_res_address").textContent = "Chưa nhập địa chỉ"}
-    if (email  == ""){document.getElementById("Message_res_email").textContent = "Chưa nhập email"}
-    if (password == ""){document.getElementById("Message_res_password").textContent = "Chưa nhập mật khẩu"}
+    document.getElementById("Message_res_name").textContent = "";
+    document.getElementById("Message_res_role").textContent = "";
+    document.getElementById("Message_res_birthday").textContent = "";
+    document.getElementById("Message_res_gender").textContent = "";
+    document.getElementById("Message_res_phone").textContent = "";
+    document.getElementById("Message_res_address").textContent = "";
+    document.getElementById("Message_res_email").textContent = "";
+    document.getElementById("Message_res_password").textContent = "";
 
+    if (name == "") {document.getElementById("Message_res_name").textContent = "Chưa nhập họ tên"; res_success = false;}
+    if (role == "none") {document.getElementById("Message_res_role").textContent = "Chưa chọn loại tài khoản"; res_success = false;}
+    if (birthday == "") {document.getElementById("Message_res_birthday").textContent = "Chưa nhập ngày sinh"; res_success = false;}
+    if (gender == "") {document.getElementById("Message_res_gender").textContent = "Chưa chọn giới tính"; res_success = false;}
+    if (phone == "") {document.getElementById("Message_res_phone").textContent = "Chưa nhập số điện thoại"; res_success = false;}
+    if (address == "") {document.getElementById("Message_res_address").textContent = "Chưa nhập địa chỉ"; res_success = false;}
+    if (email == "") {document.getElementById("Message_res_email").textContent = "Chưa nhập email"; res_success = false;}
+    if (password == "") {document.getElementById("Message_res_password").textContent = "Chưa nhập mật khẩu"; res_success = false;}
+
+    if (!email.endsWith("@gmail.com") && email != "") {
+        document.getElementById("Message_res_email").innerText = "Email không hợp lệ";
+        res_success = false;
+    } 
+
+    if (password.length < 5 && password != ""){document.getElementById("Message_res_password").textContent = "Độ dài mật khẩu phải lớn hơn 5"; res_success = false;}
+
+    if (role == "renter"){
+        const response = await fetch('/Data/Renters');
+        const result = await response.json();
+
+        result.forEach(item => {
+            if (email == item.email) {
+                document.getElementById("Message_res_email").innerText = "Email đã tồn tại"; 
+                res_success = false;
+            }
+        });
+    }
+    else if (role == "rented"){
+        const response = await fetch('/Data/Rented_persons');
+        const result = await response.json();
+
+        result.forEach(item => {
+            if (email == item.email) {
+                document.getElementById("Message_res_email").innerText = "Email đã tồn tại";
+                res_success = false;
+            }
+        });
+    }
+
+    if (res_success == true){
+        const response = await fetch('/Register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                res_role: role,
+                res_name: name,
+                res_birthday: birthday,
+                res_gender: gender,
+                res_address: address,
+                res_phone: phone,
+                res_email: email,
+                res_password: password
+            })
+          });
+        const responseData = await response.json();
+        console.log('a');
+        console.log(responseData.success);
+        if (responseData.success == true){signUp('register', email, password, role);console.log("Đăng kí thành công");}
+        else {console.log("Đăng ký không thành công");}
+    }
+    else {
+        console.log("Đăng ký không thành công");
+    }
 
 }
 
@@ -271,13 +339,22 @@ async function setUpLogIn(){
         document.getElementById("tools-button").style.display = "flex";
         document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
+
         result.forEach(item => {
             if (item._id == user_id){
+                const Birthday = new Date(item.joining_date);
+                const year = Birthday.getFullYear();
+                const month = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
+                const day = Birthday.getDate().toString().padStart(2, '0');
+
                 document.getElementById("money").textContent = item.money;
                 if (item.avatar != ''){
                     document.getElementById("avatar1").src = item.avatar;
                     document.getElementById("avatar2").src = item.avatar;
                 }
+                document.getElementById("user-info-name").textContent = item.name;
+                document.getElementById("user-info-id").textContent = "ID: " + item._id;
+                document.getElementById("joining-date").textContent = "Ngày tham gia: " + day + "-" + month + "-" + year;
             }
         })
     }
@@ -288,15 +365,21 @@ async function setUpLogIn(){
         document.getElementById("chat").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
+                const Birthday = new Date(item.joining_date);
+                const year = Birthday.getFullYear();
+                const month = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
+                const day = Birthday.getDate().toString().padStart(2, '0');
+
                 document.getElementById("money").textContent = item.money;
                 if (item.avatar != ""){
                     console.log(item.avatar);
                     document.getElementById("avatar1").src = item.avatar;
                     document.getElementById("avatar2").src = item.avatar;
                 }
+                document.getElementById("user-info-name").textContent = item.name;
+                document.getElementById("user-info-id").textContent = "ID: " + item._id;
+                document.getElementById("joining-date").textContent = "Ngày tham gia: " + day + "-" + month + "-" + year;
             }
-
-            
         })
     }
     document.getElementById("login-button").style.display = "none";

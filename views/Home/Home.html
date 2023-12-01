@@ -29,7 +29,7 @@
                         <li onclick="scrollToDiv('LQM')">LIÊN QUÂN MOBILE</li>
                     </ul>
                 </div>
-                <div class="nav-content" class="star">
+                <div class="nav-content">
                     <a href="/" class="home-main">Trang chủ</a>
                 </div>
                 <div class="star">
@@ -72,13 +72,11 @@
                                     <!-- Thông tin số người theo dõi và số xu sẽ được hiển thị ở đây -->
                                     <img id="avatar2" src="https://i.pinimg.com/736x/c6/e5/65/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
                                     <div>
-                                        <h2>User123</h2>
-                                        <p class="user-id">ID: 123456</p>
+                                        <h2 id="user-info-name"></h2>
+                                        <p class="user-id" id="user-info-id"></p>
                                     </div>
                                     <div class="user-stats">
-                                        <p>Theo dõi: <span id="followersCount">100</span> 👁️‍🗨️</p>
-                                        <p>Đang theo dõi: <span id="followingCount">50</span> 👤</p>
-                                        <p>Xu: <span id="coinsCount">500</span> 💰</p>
+                                        <p id="joining-date"></p>
                                     </div>
                                     <div class="user-actions">
                                         <button onclick="adjustUserInfo()">🛠️ Điều Chỉnh Thông Tin</button>
@@ -142,7 +140,7 @@
         <div class="modal_overlay_log"></div>
 
         <div class="modal_body_log">
-            <div class="auth-form">
+            <div class="auth-form_login">
                 <div class="auth-form_container">
                     <div class="auth-form_header">
                         <h3 class="auth-form_heading">Đăng nhập</h3>
@@ -175,7 +173,7 @@
                     </div>
                     <div class="auth-form_controls">
                         <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
-                        <button class="btn btn--primary" onclick="signUp()">ĐĂNG NHẬP</button>
+                        <button class="btn btn--primary" onclick="signUp('sigup','','','')">ĐĂNG NHẬP</button>
                     </div>
                 </div>
                 <div class="auth-form_socials">
@@ -220,23 +218,23 @@
                         </div>
                         <p id="Message_res_name" class="error-message"></p>
                         <div class="auth-form_group">
-                            <select class="auth-form_input" id="res_role">
+                            <select class="auth-form_input_box1" id="res_role">
                                 <option value="none">---Chọn loại tài khoản---</option>
                                 <option value="renter">Người thuê</option>
                                 <option value="rented">Người cho thuê</option>
                             </select>
-                            <input type="date" class="auth-form_input" id="res_birthday" placeholder="Ngày sinh">
+                            <input type="date" class="auth-form_input_box2" id="res_birthday" placeholder="Ngày sinh">
                         </div>
                         <p id="Message_res_role" class="error-message"></p>
                         <p id="Message_res_birthday" class="error-message"></p>
                         <div class="auth-form_group">
-                            <select class="auth-form_input" id="res_gender">
+                            <select class="auth-form_input_box1" id="res_gender">
                                 <option value="none">---Chọn giới tính---</option>
                                 <option value="Male">Nam</option>
                                 <option value="Female">Nữ</option>
                                 <option value="Other">Khác</option>
                             </select>
-                            <input type="text" class="auth-form_input" id="res_phone" placeholder="Số điện thoại">
+                            <input type="text" class="auth-form_input_box2" id="res_phone" placeholder="Số điện thoại">
                         </div>
                         <p id="Message_res_gender" class="error-message"></p>
                         <p id="Message_res_phone" class="error-message"></p>

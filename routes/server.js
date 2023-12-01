@@ -115,6 +115,58 @@ router.get('/Logged-In-User', (req, res) => {
   }
 });
 
+//----------Đăng kí----------
+
+router.post('/Register', (req, res) => {
+  res.json({success: true});
+  if (req.body.res_role == "renter"){
+    const User = require('../models/renters'); 
+    const dummyUser = {
+      name: req.body.res_name,
+      birthday: new Date(req.body.res_birthday),
+      gender: req.body.res_gender,
+      address: req.body.res_address,
+      phone: req.body.res_phone,
+      email: req.body.res_email,
+      joining_date: new Date(),
+      money: 0,
+      rented_object: [],
+      password: req.body.res_password,
+      avatar: "",
+    };
+    User.create(dummyUser)
+    .then((createdUser) => {
+      console.log('Thêm vào database thành công:', createdUser);
+    })
+    .catch((err) => {
+      console.error('Lỗi khi thêm vào database:', err);
+    }); 
+  }
+  else {
+    const User = require('../models/rented_persons'); 
+    const dummyUser = {
+      name: req.body.res_name,
+      birthday: new Date(req.body.res_birthday),
+      gender: req.body.res_gender,
+      address: req.body.res_address,
+      phone: req.body.res_phone,
+      email: req.body.res_email,
+      joining_date: new Date(),
+      evaluate: 0,
+      service: [],
+      password: req.body.res_password,
+      avatar: "",
+    };
+    User.create(dummyUser)
+    .then((createdUser) => {
+      console.log('Thêm vào database thành công:', createdUser);
+    })
+    .catch((err) => {
+      console.error('Lỗi khi thêm vào database:', err);
+    });
+  }
+});
+
 //----------Recharge----------
 
 router.get('/Recharge/data-QR', (req, res) => {
@@ -153,8 +205,5 @@ router.post('/Recharge/UpdateMoney', (req, res) => {
   const NewMoney = req.body.money;
   updateMoneyById(_id, NewMoney);
 });
-
-
-
 
 module.exports = router;
