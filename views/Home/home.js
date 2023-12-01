@@ -242,6 +242,28 @@ function signUp(){
     }
 }
 
+function Register(){
+    var name = document.getElementById("res_name").value;
+    var role = document.getElementById("res_role").value;
+    var birthday = document.getElementById("res_birthday").value;
+    var gender = document.getElementById("res_gender").value;
+    var phone = document.getElementById("res_phone").value;
+    var address = document.getElementById("res_address").value;
+    var email = document.getElementById("res_email").value;
+    var password = document.getElementById("res_password").value;
+
+    if (name == ""){document.getElementById("Message_res_name").textContent = "Chưa nhập họ tên"}
+    if (role == "none"){document.getElementById("Message_res_role").textContent = "Chưa chọn loại tài khoản"}
+    if (birthday == ""){document.getElementById("Message_res_birthday").textContent = "Chưa nhập ngày sinh"}
+    if (gender == ""){document.getElementById("Message_res_gender").textContent = "Chưa chọn giới tính"}
+    if (phone == ""){document.getElementById("Message_res_phone").textContent = "Chưa nhập số điện thoại"}
+    if (address == ""){document.getElementById("Message_res_address").textContent = "Chưa nhập địa chỉ"}
+    if (email  == ""){document.getElementById("Message_res_email").textContent = "Chưa nhập email"}
+    if (password == ""){document.getElementById("Message_res_password").textContent = "Chưa nhập mật khẩu"}
+
+
+}
+
 async function setUpLogIn(){
     if (user_role == "renter"){
         const response = await fetch('/Data/Renters');
@@ -510,3 +532,4 @@ async function getLoggedInUser() {
       console.log('User not logged in');
     }
 }
+

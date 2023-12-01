@@ -215,25 +215,42 @@
 
                     <div class="auth-form_form">
                         <div class="auth-form_group">
-                            <input type="text" class="auth-form_input" placeholder="Nhập tên">
+                            <input type="text" id="res_name" class="auth-form_input" placeholder="Họ tên">
                         </div>
+                        <p id="Message_res_name" class="error-message"></p>
                         <div class="auth-form_group">
-                            <input type="date" class="auth-form_input" placeholder="Nhập ngày sinh">
-                        </div>
-                        <div class="auth-form_group">
-                            <select class="auth-form_input" name="gender">
-                                <option value="Nam">Nam</option>
-                                <option value="Nữ">Nữ</option>
-                                <option value="Khác">Khác</option>
+                            <select class="auth-form_input" id="res_role">
+                                <option value="none">---Chọn loại tài khoản---</option>
+                                <option value="renter">Người thuê</option>
+                                <option value="rented">Người cho thuê</option>
                             </select>
-                            <input type="text" class="auth-form_input" placeholder="Số điện thoại">
+                            <input type="date" class="auth-form_input" id="res_birthday" placeholder="Ngày sinh">
                         </div>
+                        <p id="Message_res_role" class="error-message"></p>
+                        <p id="Message_res_birthday" class="error-message"></p>
                         <div class="auth-form_group">
-                            <input type="text" class="auth-form_input" placeholder="Địa chỉ">
+                            <select class="auth-form_input" id="res_gender">
+                                <option value="none">---Chọn giới tính---</option>
+                                <option value="Male">Nam</option>
+                                <option value="Female">Nữ</option>
+                                <option value="Other">Khác</option>
+                            </select>
+                            <input type="text" class="auth-form_input" id="res_phone" placeholder="Số điện thoại">
                         </div>
+                        <p id="Message_res_gender" class="error-message"></p>
+                        <p id="Message_res_phone" class="error-message"></p>
                         <div class="auth-form_group">
-                            <input type="email" class="auth-form_input" placeholder="Nhập email">
+                            <input type="text" class="auth-form_input" id="res_address" placeholder="Địa chỉ">
                         </div>
+                        <p id="Message_res_address" class="error-message"></p>
+                        <div class="auth-form_group">
+                            <input type="email" class="auth-form_input" id="res_email" placeholder="Email">
+                        </div>
+                        <p id="Message_res_email" class="error-message"></p>
+                        <div class="auth-form_group">
+                            <input type="password" class="auth-form_input" id="res_password" placeholder="Mật khẩu">
+                        </div>
+                        <p id="Message_res_password" class="error-message"></p>
                     </div>
 
                     <div class="auth-form_aside">
@@ -244,7 +261,7 @@
                     </div>
                     <div class="auth-form_controls">
                         <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                        <button class="btn btn--primary" onclick="Register()">ĐĂNG KÝ</button>
                     </div>
                 </div>
                 <div class="auth-form_socials">
