@@ -273,6 +273,8 @@ async function setUpLogIn(){
                     document.getElementById("avatar2").src = item.avatar;
                 }
             }
+
+            
         })
     }
     document.getElementById("login-button").style.display = "none";

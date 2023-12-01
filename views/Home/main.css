@@ -316,6 +316,21 @@ body {
   color: red;
 }
 
+/*Đăng kí*/
+.auth-form_group {
+  display: flex;
+  align-items: center;
+}
+
+.auth-form_input {
+  margin-right: 10px;
+}
+
+.auth-form_select {
+  flex-grow: 1;  /* Cho phần tử select mở rộng theo chiều ngang */
+  text-align: center;  /* Giữ kí tự ở giữa ô */
+}
+
 /* Các kiểu CSS khác có thể cần thiết cho trang web của bạn */
 body {
   position: relative; /* Cần thiết để ô đăng nhập có thể được đặt tuyệt đối trong body */

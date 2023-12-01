@@ -181,19 +181,27 @@
         </div>
     </footer>
     <script>
-        let info = document.querySelector('.info');
-        let wallet = document.querySelector('.wallet');
-        let order = document.querySelector('.order');
-        let changePass = document.querySelector('.change-pass');
-        let logout = document.querySelector('.logout');
+        const info = document.querySelector('.info');
+        const wallet = document.querySelector('.wallet');
+        const order = document.querySelector('.order');
+        const changePass = document.querySelector('.change-pass');
+        const logout = document.querySelector('.logout');
 
-        let editProfileSection = document.querySelector('.edit-profile');
-        let walletInfoSection = document.querySelector('.wallet-info');
-        let orderHistorySection = document.querySelector('.order-history');
-        let changePasswordSection = document.querySelector('.change-password');
+        const infoDisplay = 'flex';
+        const walletDisplay = 'flex';
+        const orderDisplay = 'flex';
+        const changePassDisplay = 'flex';
+
+
+        const editProfileSection = document.querySelector('.edit-profile');
+        const walletInfoSection = document.querySelector('.wallet-info');
+        const orderHistorySection = document.querySelector('.order-history');
+        const changePasswordSection = document.querySelector('.change-password');
+
+        
 
         info.addEventListener('click', function () {
-            editProfileSection.style.display = 'block';
+            editProfileSection.style.display = infoDisplay;
             walletInfoSection.style.display = 'none';
             orderHistorySection.style.display = 'none';
             changePasswordSection.style.display = 'none';
@@ -201,7 +209,7 @@
 
         wallet.addEventListener('click', function () {
             editProfileSection.style.display = 'none';
-            walletInfoSection.style.display = 'block';
+            walletInfoSection.style.display = walletDisplay;
             orderHistorySection.style.display = 'none';
             changePasswordSection.style.display = 'none';
         });
@@ -209,7 +217,7 @@
         order.addEventListener('click', function () {
             editProfileSection.style.display = 'none';
             walletInfoSection.style.display = 'none';
-            orderHistorySection.style.display = 'block';
+            orderHistorySection.style.display = orderDisplay;
             changePasswordSection.style.display = 'none';
         });
         
@@ -217,7 +225,7 @@
             editProfileSection.style.display = 'none';
             walletInfoSection.style.display = 'none';
             orderHistorySection.style.display = 'none';
-            changePasswordSection.style.display = 'block';
+            changePasswordSection.style.display = changePassDisplay;
         });
 
         logout.addEventListener('click', function () {
