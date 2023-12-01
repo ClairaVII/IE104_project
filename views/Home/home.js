@@ -337,7 +337,7 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        document.getElementById("chat").style.display = "flex";
+        // document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
 
         result.forEach(item => {
@@ -586,7 +586,7 @@ async function logout() {
     });
 
     document.getElementById("tools-button").style.display = "none";
-    document.getElementById("chat").style.display = "none";
+    // document.getElementById("chat").style.display = "none";
     document.getElementById("recharge-button").style.display = "none";
     document.getElementById("login-button").style.display = "flex";
 }
