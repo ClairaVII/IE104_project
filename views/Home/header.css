@@ -271,6 +271,7 @@ display: none;
 width: 250px;
 height: auto;
 text-align: left;
+margin-top: -3px;
 }
 
 .user-info-popup button {
