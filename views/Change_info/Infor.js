@@ -1,4 +1,5 @@
 var user_id = null;
+var user_role = null;
 getLoggedInUser();
 
 const info = document.querySelector('.info');
@@ -22,7 +23,6 @@ info.classList.add('selected-li');
 walletInfoSection.style.display = 'none';
 orderHistorySection.style.display = 'none';
 changePasswordSection.style.display = 'none';
-
 
 info.addEventListener('click', function () {
     info.classList.add('selected-li');
@@ -120,7 +120,7 @@ async function setUpLogIn(){
                 document.getElementById("adjust_gender").value = item.gender;
                 document.getElementById("adjust_birthday").value = adjust_birthday;
                 document.getElementById("adjust_phone").value = item.phone;
-                document.getElementById("adjust_adress").value = item.address;
+                document.getElementById("adjust_address").value = item.address;
             }
         })
     }
@@ -131,20 +131,30 @@ async function setUpLogIn(){
         document.getElementById("chat").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
-                const Birthday = new Date(item.joining_date);
-                const year = Birthday.getFullYear();
-                const month = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
-                const day = Birthday.getDate().toString().padStart(2, '0');
+                const Joning_day = new Date(item.joining_date);
+                const year_j = Joning_day.getFullYear();
+                const month_j = (Joning_day.getMonth() + 1).toString().padStart(2, '0'); 
+                const day_j = Joning_day.getDate().toString().padStart(2, '0');
 
                 document.getElementById("money").textContent = item.money;
-                if (item.avatar != ""){
-                    console.log(item.avatar);
+                if (item.avatar != ''){
                     document.getElementById("avatar1").src = item.avatar;
                     document.getElementById("avatar2").src = item.avatar;
                 }
                 document.getElementById("user-info-name").textContent = item.name;
                 document.getElementById("user-info-id").textContent = "ID: " + item._id;
-                document.getElementById("joining-date").textContent = "Ngày tham gia: " + day + "-" + month + "-" + year;
+                document.getElementById("joining-date").textContent = "Ngày tham gia: " + day_j + "-" + month_j + "-" + year_j;
+
+                const Birthday = new Date(item.birthday);
+                const year_b = Birthday.getFullYear();
+                const month_b = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
+                const day_b = Birthday.getDate().toString().padStart(2, '0');
+                const adjust_birthday = year_b + '-' + month_b + '-' + day_b;
+                document.getElementById("adjust_name").value = item.name;
+                document.getElementById("adjust_gender").value = item.gender;
+                document.getElementById("adjust_birthday").value = adjust_birthday;
+                document.getElementById("adjust_phone").value = item.phone;
+                document.getElementById("adjust_address").value = item.address;
             }
         })
     }
@@ -165,13 +175,35 @@ async function getLoggedInUser() {
 }
 
 function change_infor(){
-
+    var link_img = document.getElementById("link_img").value;
+    var adjust_name = document.getElementById("adjust_name").value;
+    var adjust_gender = document.getElementById("adjust_gender").value;
+    var adjust_birthday = document.getElementById("adjust_birthday").value;
+    var adjust_phone = document.getElementById("adjust_phone").value;
+    var adjust_address = document.getElementById("adjust_address").value;
 
     fetch('Infor/updateInfor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({_id: user_id, })
+        body: JSON.stringify({_id: user_id, link_img: link_img, adjust_name: adjust_name, adjust_gender: adjust_gender, adjust_birthday: adjust_birthday, adjust_phone: adjust_phone, adjust_address: adjust_address, role: user_role})
       })
+}
+
+async function lognout() {
+    const response = await fetch('/Logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: null, type: null })
+    });
+
+    document.getElementById("tools-button").style.display = "none";
+    document.getElementById("chat").style.display = "none";
+    document.getElementById("recharge-button").style.display = "none";
+    document.getElementById("login-button").style.display = "flex";
+
+    window.location.href = "http://localhost:3000";
 }

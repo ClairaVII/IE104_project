@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="Change_info/change_info.css">
-    <link rel="stylesheet" href="Change_info/base.css">
-    <link rel="stylesheet" href="Change_info/MainTTND.css">
+    <link rel="stylesheet" href="/Change_info/base.css">
+    <link rel="stylesheet" href="/Change_info/MainTTND.css">
     <link rel="stylesheet" href="/Home/header.css">
     <link rel="stylesheet" href="/Home/base.css">
     <link rel="stylesheet" href="/Home/assets/font-icon/themify-icons/themify-icons.css">
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="user-actions">
                                         <button onclick="adjustUserInfo()">🛠️ Điều Chỉnh Thông Tin</button>
-                                        <button onclick="logout()">🚪 Đăng Xuất</button>
+                                        <button onclick="lognout()">🚪 Đăng Xuất</button>
                                     </div>
                                 </div>
                         </div>
@@ -111,7 +111,7 @@
                             <i class="ti-lock"></i>
                             Đổi mật khẩu
                         </li>
-                        <li class="logout">
+                        <li class="logout" onclick="lognout()">
                             <i class="ti-export"></i>
                             Đăng xuất
                         </li>
@@ -154,7 +154,7 @@
                         </div>
                         <div class="input-attribute">
                             <div class="input-content">Địa chỉ</div>
-                            <input class="input-list" id="adjust_adress" type="text">
+                            <input class="input-list" id="adjust_address" type="text">
                         </div>
                         <button class="submit-change" onclick="change_infor()">Thay đổi</button>
                     </div>

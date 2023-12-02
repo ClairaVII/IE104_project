@@ -28,9 +28,15 @@ async function updateMoneyById(ID_client, NewMoneyValue) {
   console.log(`${result.modifiedCount} documents were updated`);
 }
 
-async function updateInforByID(ID_client, name_adjust, gender_adjust, birthday_adjust, phone_adjust, address_adjust) {
+async function updateInforByID(ID_client, adjust_img, adjust_name, adjust_gender, birthday, adjust_phone, adjust_address, role) {
+  const Birthday = new Date(birthday);
+  const year_b = Birthday.getFullYear();
+  const month_b = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
+  const day_b = Birthday.getDate().toString().padStart(2, '0');
+  const adjust_birthday  = new Date(year_b + '-' + month_b + '-' + day_b);
+
   const filter = { _id: ID_client };
-  const update = { $set: { name: name_adjust, gender: gender_adjust, birthday: birthday_adjust, phone: phone_adjust, address: address_adjust } };
+  const update = { $set: { name: adjust_name, gender: adjust_gender, birthday: adjust_birthday, phone: adjust_phone, address: adjust_address , avatar: adjust_img} };
 
   if (role == "renter"){
     const result = await Renter.updateMany(filter, update);
@@ -240,13 +246,16 @@ router.post('/Recharge/UpdateMoney', (req, res) => {
 //----------Infor----------
 router.post('/Infor/updateInfor', (req, res) => {
   const _id = req.body._id;
-  const NewName = req.body.name_adjust;
-  const NewGender = req.body.gender_adjust;
-  const NewBirthday = req.body.birthday_adjust;
-  const NewPhone = req.body.phone_adjust;
-  const NewAddress = req.body.address_adjust;
+  const NewImg = req.body.link_img;
+  const NewName = req.body.adjust_name;
+  const NewGender = req.body.adjust_gender;
+  const NewBirthday = req.body.adjust_birthday;
+  const NewPhone = req.body.adjust_phone;
+  const NewAddress = req.body.adjust_address;
   const role = req.body.role;
-  updateInforByID(_id, NewName, NewGender, NewBirthday, NewPhone, NewAddress, role);
+
+  updateInforByID(_id, NewImg, NewName, NewGender, NewBirthday, NewPhone, NewAddress, role);
 });
 
 module.exports = router;
+
