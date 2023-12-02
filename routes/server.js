@@ -98,6 +98,12 @@ router.post('/Login', (req, res) => {
   }
 });
 
+router.post('/Home/Rented', (req, res) => {
+  const rentedId = req.body.rentedId;
+  req.session.rentedId = rentedId;
+  res.json({ success: true });
+});
+
 router.post('/Logout', (req, res) => {
   req.session.userId = null;
   req.session.type = null;
@@ -114,6 +120,17 @@ router.get('/Logged-In-User', (req, res) => {
     res.json({ loggedIn: false });
   }
 });
+
+router.get('/Home/Rented_Current', (req, res) => {
+  const rentedID = req.session.rentedId;
+
+  if (rentedID) {
+    res.json({ rentedId: rentedID });
+  } else {
+    res.json({ rentedId: null });
+  }
+});
+
 
 //----------Đăng kí----------
 
