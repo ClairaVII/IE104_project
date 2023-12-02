@@ -34,12 +34,23 @@ body {
   z-index: 9999;
 }
 
+#chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #chat-button {
   background-color: #007bff;
   color: #fff;
   padding: 10px;
   cursor: pointer;
-  flex: 1;
+}
+
+#close-button {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 #chat-container {
@@ -62,9 +73,11 @@ body {
 }
 
 .user-message {
-  align-self: flex-start;
+  align-self: flex-end;
   flex-grow: 1;
   margin-bottom: 10px;
+  margin-left: auto;
+  text-align: right;
 }
 
 .user-message .message-content {
@@ -74,14 +87,13 @@ body {
   padding: 10px;
   border-radius: 10px;
   max-width: 80%;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
 .hiney-message {
   align-self: flex-start;
   flex-grow: 1;
   margin-bottom: 10px;
+  margin-left: 0;
 }
 
 .hiney-message .message-content {
@@ -92,20 +104,6 @@ body {
   max-width: 80%;
   word-break: break-word;
   overflow-wrap: break-word;
-}
-
-#chat-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-#close-button::before {
-  content: "\00D7"; /* Mã Unicode của biểu tượng đóng */
-  font-size: 20px;
-  line-height: 1;
-  display: block;
-  text-align: center;
-  margin-left: -15px;
 }
 
 #user-input {
@@ -122,6 +120,10 @@ body {
   width: 10%;
   flex-shrink: 0;
   white-space: nowrap;
+}
+
+.visible {
+  display: block;
 }
 
 /* nút scroll ở đây */
