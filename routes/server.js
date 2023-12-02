@@ -28,6 +28,20 @@ async function updateMoneyById(ID_client, NewMoneyValue) {
   console.log(`${result.modifiedCount} documents were updated`);
 }
 
+async function updateInforByID(ID_client, name_adjust, gender_adjust, birthday_adjust, phone_adjust, address_adjust) {
+  const filter = { _id: ID_client };
+  const update = { $set: { name: name_adjust, gender: gender_adjust, birthday: birthday_adjust, phone: phone_adjust, address: address_adjust } };
+
+  if (role == "renter"){
+    const result = await Renter.updateMany(filter, update);
+    console.log(`${result.modifiedCount} documents were updated in renter`);
+  }
+  else {
+    const result = await Rented.updateMany(filter, update);
+    console.log(`${result.modifiedCount} documents were updated in rented`);
+  }
+}
+
 //----------Send full html----------
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/Home/Home.html'));
@@ -221,6 +235,18 @@ router.post('/Recharge/UpdateMoney', (req, res) => {
   const _id = req.body._id;
   const NewMoney = req.body.money;
   updateMoneyById(_id, NewMoney);
+});
+
+//----------Infor----------
+router.post('/Infor/updateInfor', (req, res) => {
+  const _id = req.body._id;
+  const NewName = req.body.name_adjust;
+  const NewGender = req.body.gender_adjust;
+  const NewBirthday = req.body.birthday_adjust;
+  const NewPhone = req.body.phone_adjust;
+  const NewAddress = req.body.address_adjust;
+  const role = req.body.role;
+  updateInforByID(_id, NewName, NewGender, NewBirthday, NewPhone, NewAddress, role);
 });
 
 module.exports = router;

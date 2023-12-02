@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="Change_info/change_info.css">
     <link rel="stylesheet" href="Change_info/base.css">
     <link rel="stylesheet" href="Change_info/MainTTND.css">
-    <link rel="stylesheet" href="Home/header.css">
-    <link rel="stylesheet" href="Home/assets/font-icon/themify-icons/themify-icons.css">
-    <title>Welcome to Hiney!!</title>
+    <link rel="stylesheet" href="/Home/header.css">
+    <link rel="stylesheet" href="/Home/base.css">
+    <link rel="stylesheet" href="/Home/assets/font-icon/themify-icons/themify-icons.css">
+    <title>Welcome to Hilay!!</title>
 </head>
 <body class="body">
     <header>
@@ -45,7 +46,6 @@
                 <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
             </nav>
            
-
             <!-- thanh tìm kiếm -->
             <div>
                 <div class="header-bottom">
@@ -127,38 +127,36 @@
                             <i class="ti-plus" class="icon"></i>
                             <input type="file" class="img"></input>
                         </div>
-                        <div class="avatar-images">
-                            <i class="ti-plus" class="icon"></i>
-                            <input type="file" class="img"></input>
-                        </div>
+                        <p class="input-link-img">Nhập link ảnh</p>
+                        <input id="link_img" type="text"></input>
                     </div>
                     <div class="editor">
                         <div class="editor-content">Hồ sơ</div>
                         <div class="input-attribute">
-                            <div class="input-content">Họ và tên</div>
-                            <input class="input-list" type="text" placeholder="Nhập họ và tên">
+                            <div class="input-content">Họ tên</div>
+                            <input class="input-list" id="adjust_name" type="text">
                         </div>
                         <div class="input-attribute">
-                            <div class="input-content">Giới tính</div>
-                            <input class="input-list" type="text" placeholder="Nam / Nữ / Khác">
+                            <div >Giới tính</div>
+                            <select class="input-list" id="adjust_gender" type="text">
+                                <option value="Male">Nam</option>
+                                <option value="Female">Nữ</option>
+                                <option value="Other">Khác</option>
+                            </select>
                         </div>
                         <div class="input-attribute">
                             <div class="input-content">Ngày sinh</div>
-                            <input class="input-list" type="date" placeholder="Nhập ngày sinh">
+                            <input class="input-list" id="adjust_birthday" type="date">
                         </div>
                         <div class="input-attribute">
                             <div class="input-content">Số điện thoại</div>
-                            <input class="input-list" type="tel" placeholder="Nhập số điện thoại" pattern="[0-9]{10}" required>
+                            <input class="input-list" id="adjust_phone" type="tel" pattern="[0-9]{10}" required>
                         </div>
                         <div class="input-attribute">
                             <div class="input-content">Địa chỉ</div>
-                            <input class="input-list" type="text" placeholder="Nhập địa chỉ">
+                            <input class="input-list" id="adjust_adress" type="text">
                         </div>
-                        <div class="input-attribute">
-                            <div class="input-content">Email</div>
-                            <input class="input-list" type="email" placeholder="Nhập email">
-                        </div>
-                        <input class="submit-change" type="submit" value="Lưu thay đổi">
+                        <button class="submit-change" onclick="change_infor()">Thay đổi</button>
                     </div>
                 </div>
             </div>
@@ -205,93 +203,6 @@
             <p>&copy; 2023 HINEY. All Rights Reserved.</p>
         </div>
     </footer> -->
-    <script>
-        const info = document.querySelector('.info');
-        const wallet = document.querySelector('.wallet');
-        const order = document.querySelector('.order');
-        const changePass = document.querySelector('.change-pass');
-        const logout = document.querySelector('.logout');
-
-        const infoDisplay = 'flex';
-        const walletDisplay = 'flex';
-        const orderDisplay = 'flex';
-        const changePassDisplay = 'flex';
-
-
-        const editProfileSection = document.querySelector('.edit-profile');
-        const walletInfoSection = document.querySelector('.wallet-info');
-        const orderHistorySection = document.querySelector('.order-history');
-        const changePasswordSection = document.querySelector('.change-password');
-
-        info.classList.add('selected-li');
-        
-        walletInfoSection.style.display = 'none';
-        orderHistorySection.style.display = 'none';
-        changePasswordSection.style.display = 'none';
-
-
-        info.addEventListener('click', function () {
-            info.classList.add('selected-li');
-            wallet.classList.remove('selected-li');
-            order.classList.remove('selected-li');
-            changePass.classList.remove('selected-li');
-            editProfileSection.style.display = infoDisplay;
-            walletInfoSection.style.display = 'none';
-            orderHistorySection.style.display = 'none';
-            changePasswordSection.style.display = 'none';
-        });
-
-        wallet.addEventListener('click', function () {
-            info.classList.remove('selected-li');
-            wallet.classList.add('selected-li');
-            order.classList.remove('selected-li');
-            changePass.classList.remove('selected-li');
-            editProfileSection.style.display = 'none';
-            walletInfoSection.style.display = walletDisplay;
-            orderHistorySection.style.display = 'none';
-            changePasswordSection.style.display = 'none';
-        });
-        
-        order.addEventListener('click', function () {
-            info.classList.remove('selected-li');
-            wallet.classList.remove('selected-li');
-            order.classList.add('selected-li');
-            changePass.classList.remove('selected-li');
-            document.querySelector('.receive-content').classList.add('selected-order-kind-content');
-            document.querySelector('.sent-order-selected').style.display = 'none';
-            editProfileSection.style.display = 'none';
-            walletInfoSection.style.display = 'none';
-            orderHistorySection.style.display = orderDisplay;
-            changePasswordSection.style.display = 'none';
-        });
-        
-        changePass.addEventListener('click', function () {
-            info.classList.remove('selected-li');
-            wallet.classList.remove('selected-li');
-            order.classList.remove('selected-li');
-            changePass.classList.add('selected-li');
-            editProfileSection.style.display = 'none';
-            walletInfoSection.style.display = 'none';
-            orderHistorySection.style.display = 'none';
-            changePasswordSection.style.display = changePassDisplay;
-        });
-
-        logout.addEventListener('click', function () {
-        });
-
-        document.querySelector('.receive-order').addEventListener('click', function() {
-            document.querySelector('.sent-content').classList.remove('selected-order-kind-content');
-            document.querySelector('.receive-content').classList.add('selected-order-kind-content');
-            document.querySelector('.receive-order-selected').style.display = 'block';
-            document.querySelector('.sent-order-selected').style.display = 'none';
-        });
-
-        document.querySelector('.sent-order').addEventListener('click', function() {
-            document.querySelector('.receive-content').classList.remove('selected-order-kind-content');
-            document.querySelector('.sent-content').classList.add('selected-order-kind-content');
-            document.querySelector('.sent-order-selected').style.display = 'block';
-            document.querySelector('.receive-order-selected').style.display = 'none';
-        });
-</script>
+    <script src="/Change_info/Infor.js"></script>
 </body>
 </html>
