@@ -245,7 +245,12 @@
     gap: 1px;
 }
 
-.service-confirm-input > .text {
+.service-confirm-input > #LMHT,
+.service-confirm-input > #LQM,
+.service-confirm-input > #PUBG,
+.service-confirm-input > #NARAKA,
+.service-confirm-input > #CSGO {
+    display: none;
     margin-right: 15px;
     margin-bottom: 3px;
     margin-left: 15px;
