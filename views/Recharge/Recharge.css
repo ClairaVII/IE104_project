@@ -24,191 +24,303 @@ header {
 }
 
 header .header-top {
-  display: flex;
-  justify-content: space-between;
+display: flex;
+justify-content: space-between;
 }
 
 header .header-top .service {
-  font-weight: bold;
-  color: white;
+font-weight: bold;
+color: white;
 }
 
 header .header-top .login {
-  border: none;
-  background-color: black;
-  color: aliceblue;
-  font-weight: 700;
-  text-decoration: none;
+border: none;
+background-color: black;
+color: aliceblue;
+font-weight: 700;
+text-decoration: none;
 }
 
 header .header-top .login:hover {
-  color: rgb(148, 201, 204);
-  text-decoration: underline;
+color: rgb(148, 201, 204);
+text-decoration: underline;
 }
 
 header .header-bottom {
-  display: flex;
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
-  align-items: center;
-  width: 100%;
-  height: 60px;
+display: flex;
+/* flex-direction: row; */
+/* justify-content: space-between; */
+align-items: center;
+width: 100%;
+height: 60px;
 }
 
+
+
 header .header-bottom .search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 10px 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+padding: 10px 0;
 }
 
 header .header-bottom .search-container .search-bar {
-  height: 100%;
-  width: 20vw;
-  border-radius: 30px 0 0 30px;
-  padding: 0 20px;
-  border: none;
-  outline: none;
+height: 100%;
+width: 20vw;
+border-radius: 30px 0 0 30px;
+padding: 0 20px;
+border: none;
+outline: none;
 }
 
 header .header-bottom .search-container .search-button {
-  border: none;
-  padding: 0;
-  height: 100%;
-  width: 2rem;
-  background-color: #a8f5ff;
-  border-radius: 0 30px 30px 0;
+border: none;
+padding: 0;
+height: 100%;
+width: 2rem;
+background-color: #a8f5ff;
+border-radius: 0 30px 30px 0;
 }
 
 header .header-bottom .search-container .search-button:hover {
-  background-color: #32ffee;
+background-color: #32ffee;
 }
 
 header .header-bottom .cart-button {
-  background-color: #ffb79d;
-  color: rgb(0, 0, 0);
-  border: none;
-  width: 100px;
-  font-size: 1.2rem;
-  border-radius: 9999px;
+background-color: #ffb79d;
+color: rgb(0, 0, 0);
+border: none;
+width: 100px;
+font-size: 1.2rem;
+border-radius: 9999px;
+margin-left: 10px;
+}
+
+header .header-bottom .recharge-button {
+display: none;
+background-color: #4fcafa;
+color: rgb(0, 0, 0);
+border: none;
+width: 140px;
+font-size: 1.2rem;
+border-radius: 9999px;
+margin-right: 10px;
+}
+
+header .header-bottom .recharge-button #recharge_but {
+border-radius: 100%;
+background-color: rgba(255, 255, 255, 0.473);
+margin-left: 10px;
+position: absolute;
+font-size: 14px;
+}
+
+header .header-bottom .recharge-button #money {
+margin-left: 40px;
 }
 
 header .header-bottom .cart-button:hover {
-  color: rgb(237, 16, 16);
-  /* background-color: rgb(65, 65, 65); */
+color: rgb(237, 16, 16);
+/* background-color: rgb(65, 65, 65); */
 }
 
-/*----------Navbar Styles----------*/
+/* Navbar Styles */
 #navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: #adebf0;
-  width: 100%;
-  align-items: center;
-  /* padding: 0px 100px; */
+display: flex;
+justify-content: space-between;
+background-color: #adebf0;
+width: 100%;
+align-items: center;
+/* padding: 0px 100px; */
 }
 #navbar > .nav > .logo {
-  font-family: lucy;
-  font-size: xx-large;
-  color: #2f3d3f;
-  padding-right: 10px; /* Adjust padding to your liking */
-  padding-left: 10px; 
-  background-color: #ffb79d; /* Replace with your desired background color */
-  border-radius: 9999px; /* This creates a circular shape */
-  /* width: 100px; Adjust the width to your liking */
-  height: 50px; 
-  font-weight: 700;
-  letter-spacing: 0.45rem;
-  margin-top: 4.5px;
+font-family: lucy;
+font-size: xx-large;
+color: #2f3d3f;
+padding-right: 10px; /* Adjust padding to your liking */
+padding-left: 10px; /* Adjust padding to your liking */
+background-color: #ffb79d; /* Replace with your desired background color */
+border-radius: 9999px; /* This creates a circular shape */
+/* width: 100px; Adjust the width to your liking */
+height: 50px; /* Adjust the height to your liking */
+font-weight: 700;
+letter-spacing: 0.45rem;
+margin-top: 4.5px;
 }
 
 #navbar > .nav > .menu {
-  background-color: #2fc8c4;
-  position: relative;
-  /* height: auto; */
+background-color: #2fc8c4;
+position: relative;
+
+/* height: auto; */
 }
 
 #navbar > .nav > .menu .menu-button {
-  padding: 18px;
-  width: 206px;
+padding: 18px;
+width: 206px;
 }
 
 #navbar > .nav > .menu .menu-list {
-  display: none;
-  position: absolute;
-  /* margin-top: 8px; */
-  top: 100%;
-  left: 0;
-  list-style: none;
-  flex-direction: column;
-  padding: 0;
-  background-color: #2fc8c4;
-  width: 100%;
-  /* border: 1px solid black; */
+display: none;
+position: absolute;
+/* margin-top: 8px; */
+top: 100%;
+left: 0;
+list-style: none;
+flex-direction: column;
+padding: 0;
+background-color: #2fc8c4;
+width: 100%;
+/* border: 1px solid black; */
 }
 
 #navbar > .nav > .menu .menu-list li {
-  border: 1px solid black;
-  padding: 20px;
+border: 1px solid black;
+padding: 20px;
 }
 
 #navbar .nav {
-  display: flex;
-  gap: 5px;
-  /* margin-left: -2rem; */
-  /* align-items: center; */
+display: flex;
+gap: 5px;
+/* margin-left: -2rem; */
+/* align-items: center; */
 }
 
 #navbar > .nav > .menu:hover .menu-list {
-  display: flex;
-  z-index: 10;
-  cursor: pointer;
+display: flex;
+z-index: 10;
+cursor: pointer;
 }
 
 #navbar > .nav > .star {
-  background-color: #2fc8c4;
-  position: relative;
-  height: auto;
+/*background-color: #2fc8c4;*/
+position: relative;
+height: auto;
+margin-left: -40px;
+}
+
+#navbar > .nav > .nav-content {
+/*background-color: #2fc8c4;*/
+position: relative;
+height: auto;
+margin-left: -40px;
 }
 
 #navbar > .nav > .star .star-button {
-  padding: 18px;
-  width: 206px;
+padding: 18px;
+width: 206px;
 }
 
 #navbar > .nav > .star .star-list {
-  display: none;
-  position: absolute;
-  /* margin-top: 8px; */
-  top: 100%;
-  left: 0;
-  list-style: none;
-  flex-direction: column;
-  padding: 0;
-  background-color: #2fc8c4;
-  width: 100%;
-  /* border: 1px solid black; */
+display: none;
+position: absolute;
+/* margin-top: 8px; */
+top: 100%;
+left: 0;
+list-style: none;
+flex-direction: column;
+padding: 0;
+background-color: #adebf0;
+width: 100%;
+/* border: 1px solid black; */
 }
 
 #navbar > .nav > .star .star-list li {
-  border: 1px solid black;
-  padding: 20px;
+border: 1px solid black;
+padding: 20px;
 }
 
 #navbar > .nav > .star:hover .star-list {
-  display: flex;
-  z-index: 10;
-  cursor: pointer;
+display: flex;
+z-index: 10;
+cursor: pointer;
 }
 #navbar .nav .nav-content:hover {
-  color: rgb(224, 42, 42);
-  cursor: pointer;
+color: rgb(224, 42, 42);
+cursor: pointer;
 }
 #navbar .logo .home {
-  text-decoration: none;
-  color: black;
-  font-family: 'lucy';
+text-decoration: none;
+color: black;
+font-family: 'lucy';
+}
+/* Phần header sau khi đăng nhập */
+
+.header-tools {
+display: none;
+align-items: center;
+margin-left: auto; /* Dịch phần header-tools về phải */
+}
+
+.chat-btn {
+display: none;
+background-color: #868585;
+color: #fff;
+margin-right: 10px;
+border-radius: 9999px;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+margin: 0 15px;
+}
+
+.user-info img {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-right: 10px;
+}
+
+.user-info p {
+margin: 0;
+font-size: 1em;
+color: #333;
+}
+
+
+
+/* Thêm hiệu ứng khi hover vào avatar */
+.user-info-popup {
+display: flex;
+align-items: center; /* Căn giữa theo chiều dọc */
+position: absolute;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+padding: 15px;
+border-radius: 8px;
+top: 40pt;
+right: 30pt;
+z-index: 50;
+display: none;
+width: 250px;
+height: auto;
+text-align: left;
+margin-top: -3px;
+}
+
+.user-info-popup button {
+padding: 10px 15px;
+cursor: pointer;
+background-color: #adebf0;
+color: #000;
+border: none;
+border-radius: 3px;
+margin: 5px 0;
+width: 100%;
+}
+
+.user-info:hover .user-info-popup {
+display: block;
+}
+
+.user-info-popup img {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+margin-right: 20px;
 }
 
 /*----------footer----------*/
@@ -366,7 +478,7 @@ button {
   cursor: pointer;
   width: 150px;
   margin: auto;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 /*----------message----------*/
