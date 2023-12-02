@@ -231,7 +231,7 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        document.getElementById("chat").style.display = "flex";
+        // document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
 
         result.forEach(item => {
@@ -256,7 +256,7 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Rented_persons');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        document.getElementById("chat").style.display = "flex";
+        // document.getElementById("chat").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
                 const Birthday = new Date(item.joining_date);
