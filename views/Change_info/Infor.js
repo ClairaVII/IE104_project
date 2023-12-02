@@ -103,7 +103,7 @@ async function setUpLogIn(){
         document.getElementById("tools-button").style.display = "flex";
         document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
-        document.getElementById("wallet_i").style.display = "block";
+        document.getElementById("wallet_id").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
                 const Joning_day = new Date(item.joining_date);
