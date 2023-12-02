@@ -50,7 +50,7 @@ function checkPlayerId() {
     var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent('http://192.168.105.49:3000/Confirm-QR');
     
     document.getElementById("qrCodeImage").src = qrCodeUrl;
-    document.getElementById("qrCode").style.display = "block";
+    document.getElementById("qrCode").style.display = "flex";
     document.getElementById("successMessage").textContent = "Quét mã QR để thanh toán.";
 
     fetch('/Recharge/QR', {
