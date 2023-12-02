@@ -1,4 +1,7 @@
 var rented_id = null;
+var user_id = null;
+var user_role = null;
+getRentedCurrent();
 getLoggedInUser();
 
 function reloadCoins() {
@@ -293,20 +296,19 @@ async function getRentedData(){
 }
 
 async function getLoggedInUser() {
-    const response = await fetch('Logged-In-User');
+    const response = await fetch('/Logged-In-User');
     const result = await response.json();
 
     if (result.loggedIn) {
-      console.log('Logged In User:', result.userId);
       user_id = result.userId;
       user_role = result.type;
       setUpLogIn();
     } else {
-      console.log('User not logged in');
+      console.log('Không có user trên server');
     }
 }
 
-async function getLoggedInUser() {
+async function getRentedCurrent() {
     const response = await fetch('/Home/Rented_Current');
     const result = await response.json();
 

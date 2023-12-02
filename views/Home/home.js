@@ -73,9 +73,6 @@ function redirectToHome() {
     modal_body_reg.style.display = "none";
 }
 
-<<<<<<< HEAD
-// Script của chatbot
-=======
 function redirectToRecharge(){
     window.location.href = "http://localhost:3000/Recharge";
 }
@@ -93,7 +90,6 @@ async function redirectToOrder(ID){
 }
 
 // Script của chatbox
->>>>>>> 4c13ecde70e41776a9e93598d9594ef82e8c69ba
 
 document.addEventListener("DOMContentLoaded", function() {
     var chatButton = document.getElementById("chat-button");
