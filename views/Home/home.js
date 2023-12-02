@@ -73,7 +73,27 @@ function redirectToHome() {
     modal_body_reg.style.display = "none";
 }
 
+<<<<<<< HEAD
 // Script của chatbot
+=======
+function redirectToRecharge(){
+    window.location.href = "http://localhost:3000/Recharge";
+}
+
+async function redirectToOrder(ID){
+    const response = await fetch('/Home/Rented', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ rentedId: ID })
+      });
+    const responseData = await response.json();
+    window.location.href = "http://localhost:3000/Order";
+}
+
+// Script của chatbox
+>>>>>>> 4c13ecde70e41776a9e93598d9594ef82e8c69ba
 
 document.addEventListener("DOMContentLoaded", function() {
     var chatButton = document.getElementById("chat-button");
@@ -149,20 +169,16 @@ function scrollToDiv(divId) {
 }
 
 //lấy dữ liệu từ database để xử lí
-let listGame = {};
-let listRented_LQM = [];
-let listRented_PUBG = [];
-let listRented_LMHT = [];
-let listRented_NARAKA = [];
-let listRented_CSGO = [];
+var listGame = {};
+var listRented_LQM = [];
+var listRented_PUBG = [];
+var listRented_LMHT = [];
+var listRented_NARAKA = [];
+var listRented_CSGO = [];
 var listCurrent = [0, 0, 0, 0, 0];
 var max_list = [];
 var user_id = null;
 var user_role;
-
-function recharge(){
-    window.location.href = "http://localhost:3000/Recharge";
-}
 
 function check_account(email_exist, password_exist, email, password){
     if (email == '') {
@@ -233,7 +249,7 @@ function signUp(fromWeb, email, password, role){
                     user_id = item._id;
                 }
             });
-            check_account(email_exist, password_exist, email, password);
+            check_account(email_exist, password_exist, email,  password);
         })
         .catch(error => console.error('Lỗi:', error));
     }
@@ -321,8 +337,6 @@ async function Register(){
             })
           });
         const responseData = await response.json();
-        console.log('a');
-        console.log(responseData.success);
         if (responseData.success == true){signUp('register', email, password, role);console.log("Đăng kí thành công");}
         else {console.log("Đăng ký không thành công");}
     }
@@ -337,7 +351,7 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
+        document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
 
         result.forEach(item => {
@@ -372,7 +386,6 @@ async function setUpLogIn(){
 
                 document.getElementById("money").textContent = item.money;
                 if (item.avatar != ""){
-                    console.log(item.avatar);
                     document.getElementById("avatar1").src = item.avatar;
                     document.getElementById("avatar2").src = item.avatar;
                 }
@@ -506,7 +519,7 @@ function displayRented(list, n, game, id, k){
                         const day = Birthday.getDate().toString().padStart(2, '0');
 
                         playerDiv.innerHTML += `
-                            <div class="player">
+                            <buttun class="player" onclick="redirectToOrder('${player._id}')">
                                 <div class="player-img"><img src="${player.avatar}" alt=""></div>
                                 <div class="info">
                                     <div>${player.name}</div>
@@ -517,7 +530,7 @@ function displayRented(list, n, game, id, k){
                                     </div>
                                 </div>
                                     <div>🪙 ${day}-${month}-${year}</div>
-                            </div>`;
+                            </button>`;
                     }
                     playerCount++;
                 }
@@ -586,7 +599,7 @@ async function logout() {
     });
 
     document.getElementById("tools-button").style.display = "none";
-    // document.getElementById("chat").style.display = "none";
+    document.getElementById("chat").style.display = "none";
     document.getElementById("recharge-button").style.display = "none";
     document.getElementById("login-button").style.display = "flex";
 }
@@ -601,7 +614,7 @@ async function loginUser() {
     });
 }
 
-  // Function to handle GET request
+  // lấy id khi reload lại trang
 async function getLoggedInUser() {
     const response = await fetch('Logged-In-User');
     const result = await response.json();
