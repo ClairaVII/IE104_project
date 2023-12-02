@@ -91,15 +91,15 @@
     <main id="main" >
         <div class="main-container">
             <div class="personal-nav">
-                <div class="personal-center">Trung tâm cá nhân
-                </div>
+                <div class="personal-center">Trung tâm cá nhân</div>
+
                 <div class="personal-list">
                     <ul class="list">
                         <li class="info" class="selected-li">
                             <i class="ti-user"></i>
                             Thông tin cá nhân
                         </li>
-                        <li class="wallet" id="Services-ctr">
+                        <li class="wallet" id="wallet_i">
                             <i class="ti-wallet"></i>
                             Dịch vụ
                         </li>
@@ -208,12 +208,25 @@
                             </div>
                         </div>
                 </div>
-
-            <div class="change-password section">
-                <div class="section-content">Đổi mật khẩu</div>
+                <!--thay đổi mật khẩu-->
+            </div>  
+        <!-- <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button> -->         
+        <div class="change-password section">
+            <div class="password_mk">
+            <h2>Đổi mật khẩu</h2>
+            <div class="section-content">
+                <label for="currentPassword">Mật khẩu hiện tại</label>
+                <input type="password" id="currentPassword" name="currentPassword" required>
+        
+                <label for="newPassword">Mật khẩu mới</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+        
+                <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+        
+                <button class ="password_change" onclick="changePassword()">Đổi mật khẩu</button>
             </div>
         </div>
-        <!-- <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button> -->
     </main>
     <footer>
         <div class="footer-content">
