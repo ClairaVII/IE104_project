@@ -90,7 +90,7 @@
                         </li>
                         <li class="wallet">
                             <i class="ti-wallet"></i>
-                            Ví
+                            Dịch vụ
                         </li>
                         <li class="order">
                             <i class="ti-notepad"></i>
@@ -151,7 +151,43 @@
                     </div>
                 </div>
             </div>
-            <div class="wallet-info section"></div>
+
+            <!-- Dịch vụ -->
+
+            <div class="wallet-info section">
+                <!-- content -->
+                <div class="section-content">Dịch vụ</div>
+
+                <!-- hình ảnh tại đây -->
+                <div class="service-selection">
+                    <div class="game-imgs">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiVGGGWtc0sD9hPRAHvMvz4xyyhYTngteZpIstjpgYuT-O4Invkqskbc4uP7En7hjgq78&usqp=CAU" alt="Image 1" onclick="confirmChange(1)">
+                    </div>
+                    <div class="game-imgs">
+                        <img src="https://data.lita.cool/mgr/skill/202310081617/vi_pubg-mobile_pc-image.jpeg?width=253&height=320" alt="Image 2" onclick="confirmChange(2)">
+                    </div>
+                    <div class="game-imgs">
+                        <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/210056139_149291693980014_6757475175732955218_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=yujqmq6nBoQAX-jbzHp&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfD-ZHvHprAnsmWgywWA76i51R8uPDcxw0OQHEdueGP_aA&oe=65665E38" alt="Image 3" onclick="confirmChange(3)">
+                    </div>
+                    <div class="game-imgs">
+                        <img src="https://data.lita.cool/mgr/skill/202310081616/vi_garena-rov_pc-image.jpeg?width=253&height=320" alt="Image 4" onclick="confirmChange(4)">
+                    </div>
+                    <div class="game-imgs">
+                        <img src="https://files.cults3d.com/uploaders/17644157/illustration-file/8e7db1d9-81a0-4b8d-adbc-b907805fae3b/IMG_20210726_064959.jpg" alt="Image 5" onclick="confirmChange(5)">
+                    </div>
+                </div>
+
+                <!-- box xác nhận  -->
+                <div class="service-confirm">
+                    <div class="service-confirm-header">Dịch vụ đã đăng ký</div>
+                        <div class="service-confirm-input">
+                            <p class="text">Game đã chọn</p>
+                            <button class="service-confirm-button">Xóa</button>
+                        </div>
+                </div>
+
+            <!-- order tại đây -->
+            </div>
             <div class="order-history section">
                 <div class="section-content">Đơn hàng</div>
                 <div class="order-selection">
@@ -282,5 +318,19 @@
             document.querySelector('.receive-order-selected').style.display = 'none';
         });
 </script>
+
+
+    <script>
+        function confirmChange(imageNumber) {
+        var result = confirm("Bạn có chắc chắn muốn thay đổi không?");
+        if (result) {
+            alert('Thay đổi thành công');
+            // Add your desired functionality for "Yes" here
+        } else {
+            //
+            // Add your desired functionality for "No" here
+        }
+        }
+  </script>
 </body>
 </html>

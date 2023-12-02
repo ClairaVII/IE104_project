@@ -213,3 +213,64 @@
     margin-top: 0.5rem;
 }
 
+/* Dich vu */
+
+.wallet-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.wallet-info div {
+    display: flex;
+}
+
+.wallet-info img {
+    width: 200px;
+    height: 256px;
+    cursor: pointer;
+}
+.wallet-info > .service-selection {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+.wallet-info > .service-selection >.game-imgs {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.wallet-info > .service-confirm {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    width: 25%;
+}
+
+.service-confirm-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service-confirm-input {
+    display: flex;
+    align-items: center;
+}
+
+.service-confirm-input > .text {
+    margin-right: 10px;
+}
+
+.service-confirm-button {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 9999px;
+}
+
+

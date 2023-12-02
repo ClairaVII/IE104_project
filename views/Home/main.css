@@ -10,21 +10,6 @@ body {
   margin: 0;
   font-family: "Fuggles", cursive;
 }
-#navbar .nav .nav-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 18px;
-  width: 206px;
-}
-
-#navbar .nav .nav-content .home-main {
-  text-decoration: none;
-  color: black;
-}
-#navbar .nav .nav-content .home-main:hover{
-  color: rgb(224, 42, 42);;
-}
 
 /* Chatbot ở đây */
 #chatbot-container {
@@ -203,9 +188,9 @@ body {
   margin-bottom: 1rem;
 }
 
-#main > .game-container > .game:hover{
+/* #main > .game-container > .game:hover{
   background-color: #a8f5ff;
-}
+} */
 #main > .game-container > .game > .game-img {
   border-radius: 10px;
   overflow: hidden;
