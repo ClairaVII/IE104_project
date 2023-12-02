@@ -261,6 +261,7 @@
 .service-confirm-input > #NARAKA,
 .service-confirm-input > #CSGO {
     display: none;
+    gap: 7px;
     margin-right: 15px;
     margin-bottom: 3px;
     margin-left: 15px;
