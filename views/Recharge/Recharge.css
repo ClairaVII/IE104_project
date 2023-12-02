@@ -129,7 +129,9 @@ body {
 }
 
 /*----------button----------*/
-button {
+.main-content > #idInput > button,
+.main-content > #cardAmounts > button,
+.main-content > #atmOptions > button {
   padding: 10px;
   cursor: pointer;
   width: 150px;

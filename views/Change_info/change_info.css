@@ -328,17 +328,18 @@ footer {
     margin-left: 180pt;
     text-decoration: center;
 }
+
 .password_main.h2{
     text-align: center;
     font-size: 1rem;
-    border-radius: 5px #b11c1c;
 }
+
+
 
 label {
     display: block;
     margin-top: 10px;
     font-size: 1rem;
-    border-radius: 5px #b11c1c;
 }
 
 input {
@@ -351,6 +352,16 @@ input {
     border: 0.2rem solid rgb(200, 200, 200);
     border-radius: 5pt;
 }
+
 .password_change{
-    margin-left: 250pt;
+    margin-left: 350pt;
+    width:100pt;
+    font-size:1rem;
+    border-radius: 5pt;
+    background-color: #000;
+    color: #fff;
+}
+
+.error-message {
+    color: red;
 }

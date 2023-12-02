@@ -52,7 +52,7 @@
                     <div class="recharge-button" id="recharge-button">
                         <button id="recharge_but" onclick="redirectToRecharge()"> + </button>
                         <a id="money"></a>
-                        <a > 🪙  </a>
+                        <a > 💰  </a>
                     </div>
                     <button class="chat-btn" id="chat" onclick="openChat()">Chat 💬</button>
                     <form class="search-container">
@@ -99,7 +99,7 @@
                             <i class="ti-user"></i>
                             Thông tin cá nhân
                         </li>
-                        <li class="wallet" id="wallet_i">
+                        <li class="wallet" id="wallet_id">
                             <i class="ti-wallet"></i>
                             Dịch vụ
                         </li>
@@ -217,13 +217,15 @@
             <div class="section-content">
                 <label for="currentPassword">Mật khẩu hiện tại</label>
                 <input type="password" id="currentPassword" name="currentPassword" required>
+                <p id="Message_current" class="error-message"></p>
         
                 <label for="newPassword">Mật khẩu mới</label>
                 <input type="password" id="newPassword" name="newPassword" required>
-        
+
                 <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
                 <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
-        
+                <p id="Message_confirm" class="error-message"></p>
+
                 <button class ="password_change" onclick="changePassword()">Đổi mật khẩu</button>
             </div>
         </div>

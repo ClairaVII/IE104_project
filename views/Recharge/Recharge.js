@@ -2,6 +2,8 @@ var UserId = null;
 var NewMoneyValue = 0;
 var OldMoneyValue = 0;
  
+getLoggedInUser();
+
 function checkPlayerId() {
     var Flag_er = 1;
     //lấy giá trị vừa nhập
@@ -143,4 +145,119 @@ function checkPlayerId() {
     Payment_successful();
   }
 
+  async function lognout() {
+    const response = await fetch('/Logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: null, type: null })
+    });
 
+    document.getElementById("tools-button").style.display = "none";
+    document.getElementById("chat").style.display = "none";
+    document.getElementById("recharge-button").style.display = "none";
+    document.getElementById("login-button").style.display = "flex";
+
+    window.location.href = "http://localhost:3000";
+  }
+
+  function adjustUserInfo(){
+    window.location.href = "http://localhost:3000/Infor";
+  }
+
+  function redirectToRecharge(){
+    window.location.href = "http://localhost:3000/Recharge";
+}
+
+async function setUpLogIn(){
+  document.getElementById("login_button").style.display = "none";
+  if (user_role == "renter"){
+      const response = await fetch('/Data/Renters');
+      const result = await response.json();
+      document.getElementById("tools-button").style.display = "flex";
+      document.getElementById("chat").style.display = "flex";
+      document.getElementById("recharge-button").style.display = "flex";
+      result.forEach(item => {
+          if (item._id == user_id){
+              const Joning_day = new Date(item.joining_date);
+              const year_j = Joning_day.getFullYear();
+              const month_j = (Joning_day.getMonth() + 1).toString().padStart(2, '0'); 
+              const day_j = Joning_day.getDate().toString().padStart(2, '0');
+
+              document.getElementById("money").textContent = item.money;
+              if (item.avatar != ''){
+                  document.getElementById("avatar1").src = item.avatar;
+                  document.getElementById("avatar2").src = item.avatar;
+              }
+              document.getElementById("user-info-name").textContent = item.name;
+              document.getElementById("user-info-id").textContent = "ID: " + item._id;
+              document.getElementById("joining-date").textContent = "Ngày tham gia: " + day_j + "-" + month_j + "-" + year_j;
+
+              const Birthday = new Date(item.birthday);
+              const year_b = Birthday.getFullYear();
+              const month_b = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
+              const day_b = Birthday.getDate().toString().padStart(2, '0');
+              const adjust_birthday = year_b + '-' + month_b + '-' + day_b;
+              document.getElementById("adjust_name").value = item.name;
+              document.getElementById("adjust_gender").value = item.gender;
+              document.getElementById("adjust_birthday").value = adjust_birthday;
+              document.getElementById("adjust_phone").value = item.phone;
+              document.getElementById("adjust_address").value = item.address;
+          }
+      })
+  }
+  else {
+      const response = await fetch('/Data/Rented_persons');
+      const result = await response.json();
+      document.getElementById("tools-button").style.display = "flex";
+      document.getElementById("chat").style.display = "flex";
+      document.getElementById("wallet_id").style.display = "flex";
+      result.forEach(item => {
+          if (item._id == user_id){
+              const Joning_day = new Date(item.joining_date);
+              const year_j = Joning_day.getFullYear();
+              const month_j = (Joning_day.getMonth() + 1).toString().padStart(2, '0'); 
+              const day_j = Joning_day.getDate().toString().padStart(2, '0');
+
+              document.getElementById("money").textContent = item.money;
+              if (item.avatar != ''){
+                  document.getElementById("avatar1").src = item.avatar;
+                  document.getElementById("avatar2").src = item.avatar;
+              }
+              document.getElementById("user-info-name").textContent = item.name;
+              document.getElementById("user-info-id").textContent = "ID: " + item._id;
+              document.getElementById("joining-date").textContent = "Ngày tham gia: " + day_j + "-" + month_j + "-" + year_j;
+
+              const Birthday = new Date(item.birthday);
+              const year_b = Birthday.getFullYear();
+              const month_b = (Birthday.getMonth() + 1).toString().padStart(2, '0'); 
+              const day_b = Birthday.getDate().toString().padStart(2, '0');
+              const adjust_birthday = year_b + '-' + month_b + '-' + day_b;
+              document.getElementById("adjust_name").value = item.name;
+              document.getElementById("adjust_gender").value = item.gender;
+              document.getElementById("adjust_birthday").value = adjust_birthday;
+              document.getElementById("adjust_phone").value = item.phone;
+              document.getElementById("adjust_address").value = item.address;
+
+              //đăng kí thêm dịch vụ
+              item.service.forEach(sv => {
+                  updateServiceInPage_add(sv);
+              })
+          }
+      })
+  }
+}
+
+async function getLoggedInUser() {
+  const response = await fetch('/Logged-In-User');
+  const result = await response.json();
+
+  if (result.loggedIn) {
+    user_id = result.userId;
+    user_role = result.type;
+    setUpLogIn();
+  } else {
+    console.log('Không có user trên server');
+  }
+}

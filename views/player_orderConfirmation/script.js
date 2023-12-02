@@ -14,6 +14,23 @@ function shareUserInfo() {
     alert('Thông tin đã được chia sẻ!');
 }
 
+function toggleFollow() {
+    var button = document.getElementById("follow");
+
+    // Kiểm tra xem nút đã có class 'following-btn' chưa
+    var isFollowing = button.classList.contains("following");
+
+    if (isFollowing) {
+        button.innerHTML = "Theo dõi";
+    } else {
+        button.innerHTML = "Đang theo dõi";
+    }
+
+    // Chuyển đổi giữa class 'follow-btn' và 'following'
+    button.classList.toggle("follow-btn");
+    button.classList.toggle("following");
+}
+
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     const brand = document.querySelector('.brand h1');
@@ -285,7 +302,7 @@ async function getRentedData(){
 
             document.getElementById("pr_name").textContent = "Họ tên: " + item.name;
             document.getElementById("pr_birthday").textContent = "Ngày sinh: " + day_birthday + "-" + month_birthday + "-" + year_birthday;
-            document.getElementById("pr_address").textContent = "Địa chỉ" + item.address;
+            document.getElementById("pr_address").textContent = "Địa chỉ: " + item.address;
             document.getElementById("pr_phone").textContent = "Số điện thoại: " +item.phone;
             document.getElementById("pr_email").textContent = "Email: " + item.email;
             document.getElementById("pr_joningDay").textContent = "Ngày đăng kí: " + day_joing + "-" + month_joing + "-" + year_joing;
@@ -317,3 +334,29 @@ async function getRentedCurrent() {
         getRentedData();
     }
 }
+
+async function lognout() {
+    const response = await fetch('/Logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: null, type: null })
+    });
+
+    document.getElementById("tools-button").style.display = "none";
+    document.getElementById("chat").style.display = "none";
+    document.getElementById("recharge-button").style.display = "none";
+    document.getElementById("login-button").style.display = "flex";
+
+    window.location.href = "http://localhost:3000";
+}
+
+function adjustUserInfo(){
+    window.location.href = "http://localhost:3000/Infor";
+}
+
+function redirectToRecharge(){
+    window.location.href = "http://localhost:3000/Recharge";
+}
+

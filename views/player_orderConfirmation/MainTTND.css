@@ -84,8 +84,13 @@
     /* Hiệu ứng scale khi hover */
   }
 
-  .following {
-    background-color: #2ecc71;
+  .following{
+    background-color: #2ecc71 !important; /* Màu xanh khi đã theo dõi */
+    color: #ffffff !important; /* Màu chữ khi đã theo dõi */
+    width:200pt;
+    height:40pt;
+    border-radius:5pt;
+    font-size: 1.2rem;
   }
 
   .user-profile {
@@ -350,7 +355,7 @@
     margin-bottom: 20px;
     margin-left: 405pt;
     margin-top: -80pt;
-    width: 590pt;
+    width: 57%;
 
   }
 

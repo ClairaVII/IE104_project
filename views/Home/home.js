@@ -223,6 +223,7 @@ function signUp(fromWeb, email, password, role){
         var password = document.getElementById("password").value;
     }
 
+    var exist = false;
     var email_exist = false;
     var password_exist = false; 
     user_role = role;
@@ -235,14 +236,18 @@ function signUp(fromWeb, email, password, role){
         .then(data => {
         // data là một mảng chứa các đối tượng, trong trường hợp này chỉ có một đối tượng
             data.forEach(item => {
-                if (email == item.email) {email_exist = true;}
+                if (email == item.email) {email_exist = true; exist = true;}
                 
-                if (email_exist == true && password == item.password && password_exist == false){
+                if (email_exist == true && password == item.password){
                     password_exist = true; 
                     user_id = item._id;
+                    email_exist = false;
+                }
+                else {
+                    email_exist = false;
                 }
             });
-            check_account(email_exist, password_exist, email, password);
+            check_account(exist, password_exist, email, password);
         })
         .catch(error => console.error('Lỗi:', error));
     }   
@@ -253,14 +258,18 @@ function signUp(fromWeb, email, password, role){
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
-                if (email == item.email) {email_exist = true;console.log(item.email);}
+                if (email == item.email) {email_exist = true; exist = true;}
                 
-                if (email_exist == true && password == item.password && password_exist == false){
+                if (email_exist == true && password == item.password){
                     password_exist = true; 
                     user_id = item._id;
+                    email_exist = false;
+                }
+                else {
+                    email_exist = false;
                 }
             });
-            check_account(email_exist, password_exist, email,  password);
+            check_account(exist, password_exist, email,  password);
         })
         .catch(error => console.error('Lỗi:', error));
     }

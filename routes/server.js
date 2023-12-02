@@ -28,6 +28,20 @@ async function updateMoneyById(ID_client, NewMoneyValue) {
   console.log(`${result.modifiedCount} documents were updated`);
 }
 
+async function updatePasswordById(ID, NewPassword, role) {
+  const filter = { _id: ID };
+  const update = { $set: { password: NewPassword } };
+
+  if (role == 'renter'){
+    const result = await Renter.updateMany(filter, update);
+    console.log(`${result.modifiedCount} mật khẩu đã được cập nhật`);
+  }
+  else {
+    const result = await Rented.updateMany(filter, update);
+    console.log(`${result.modifiedCount} mật khẩu đã được cập nhật`);
+  }
+}
+
 async function updateInforByID(ID_client, adjust_img, adjust_name, adjust_gender, birthday, adjust_phone, adjust_address, role) {
   const Birthday = new Date(birthday);
   const year_b = Birthday.getFullYear();
@@ -284,6 +298,11 @@ router.post('/Infor/updateService', (req, res) => {
   const up = req.body.update;
 
   updateServiceByID(NewService, req.session.userId, up);
+});
+
+router.post('/Infor/updateNewPassword', (req, res) => {
+  const NewPassword = req.body.password;
+  updatePasswordById(req.session.userId, NewPassword, req.session.type);
 });
 
 module.exports = router;

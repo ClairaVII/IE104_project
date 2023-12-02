@@ -103,7 +103,6 @@ async function setUpLogIn(){
         document.getElementById("tools-button").style.display = "flex";
         document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
-        document.getElementById("wallet_i").style.display = "block";
         result.forEach(item => {
             if (item._id == user_id){
                 const Joning_day = new Date(item.joining_date);
@@ -138,7 +137,7 @@ async function setUpLogIn(){
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
         document.getElementById("chat").style.display = "flex";
-        
+        document.getElementById("wallet_id").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
                 const Joning_day = new Date(item.joining_date);
@@ -204,6 +203,8 @@ function change_infor(){
         },
         body: JSON.stringify({_id: user_id, link_img: link_img, adjust_name: adjust_name, adjust_gender: adjust_gender, adjust_birthday: adjust_birthday, adjust_phone: adjust_phone, adjust_address: adjust_address, role: user_role})
       })
+
+      alert('Thay đổi thành công');
 }
 
 async function lognout() {
@@ -224,15 +225,13 @@ async function lognout() {
 }
 
 async function addService(ID, update){
-    console.log(ID);
-    console.log(update);
     const response = await fetch('/Infor/updateService', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ serviceId: ID, update: update})
-      });
+    });
 }
 
 function confirmChange(Number) {
@@ -271,4 +270,91 @@ function confirmDelete(Number) {
     } else {
         alert('Hủy thành công');
     }
+}
+
+async function updateNewPassword(password){
+    const response = await fetch('/Infor/updateNewPassword', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ password: password})
+    });
+}
+
+async function changePassword(){
+    var Current = document.getElementById("currentPassword").value;
+    var New = document.getElementById("newPassword").value;
+    var Confirm = document.getElementById("confirmNewPassword").value;
+
+    if (user_role == 'renter'){
+        const response = await fetch('/Data/Renters');
+        const result = await response.json();
+
+        result.forEach(item => {
+            if (item._id == user_id){
+                if (Current != item.password){
+                    document.getElementById("Message_current").textContent = 'Mật khẩu không đúng';
+                    document.getElementById("Message_confirm").textContent = '';
+                }
+                else {
+                    if (New != Confirm) {
+                        document.getElementById("Message_current").textContent = '';
+                        document.getElementById("Message_confirm").textContent = 'Mật khẩu mới không khớp với nhau';
+                    }
+                    else {
+                        if (New.length > 4){
+                            updateNewPassword(New);
+                            document.getElementById("Message_confirm").textContent = '';
+                            document.getElementById("Message_current").textContent = '';
+                            alert('Thay đổi thành công');
+                        }
+                        else {
+                            document.getElementById("Message_current").textContent = '';
+                            document.getElementById("Message_confirm").textContent = 'Mật khẩu phải nhiều hơn 5 kí tự';
+                        }
+                    }
+                }
+            }
+        })
+    }
+    else {
+        const response = await fetch('/Data/Rented_persons');
+        const result = await response.json();
+
+        result.forEach(item => {
+            if (item._id == user_id){
+                if (Current != item.password){
+                    document.getElementById("Message_current").textContent = 'Mật khẩu không đúng';
+                    document.getElementById("Message_confirm").textContent = '';
+                }
+                else {
+                    if (New != Confirm) {
+                        document.getElementById("Message_current").textContent = '';
+                        document.getElementById("Message_confirm").textContent = 'Mật khẩu mới không khớp với nhau';
+                    }
+                    else {
+                        if (New.length > 4){
+                            updateNewPassword(New);
+                            document.getElementById("Message_confirm").textContent = '';
+                            document.getElementById("Message_current").textContent = '';
+                            alert('Thay đổi thành công');
+                        }
+                        else {
+                            document.getElementById("Message_current").textContent = '';
+                            document.getElementById("Message_confirm").textContent = 'Mật khẩu phải nhiều hơn 5 kí tự';
+                        }
+                    }
+                }
+            }
+        })
+    }
+}
+
+function adjustUserInfo(){
+    window.location.href = "http://localhost:3000/Infor";
+}
+
+function redirectToRecharge(){
+    window.location.href = "http://localhost:3000/Recharge";
 }
