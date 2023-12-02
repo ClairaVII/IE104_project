@@ -3,7 +3,7 @@
     margin-top: 0;
     background: rgb(200, 200, 200);
     height: fit-content;
-    width: 199.1vh; 
+    width: 214.87vh;
 }
 
 .main-container {
@@ -20,6 +20,10 @@
 #main > .main-container > .section {
     padding: 3rem 4rem;
     width: 82%;
+}
+
+.personal-list .list .wallet {
+    display: none;
 }
 
 /* Thanh thông tin */
@@ -223,7 +227,7 @@
     flex-direction: column;
     background-color: white;
     padding: 10px;
-    width: 55%;
+    width: 60%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
