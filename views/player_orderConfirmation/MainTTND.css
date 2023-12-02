@@ -10,6 +10,46 @@
     margin: 0;
     font-family: "Fuggles", cursive;
   }
+    /* footer */
+  footer {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    margin-top: 10pt;
+  }
+
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin: 0 20px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .social-link {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+  }
+
 
   .share-btn,
   .follow-btn {
@@ -121,16 +161,6 @@
     line-height: 1.6;
   }
 
-  footer {
-    background-color: #fff;
-    color: #333;
-    padding: 20px;
-    text-align: center;
-    border-radius: 0 0 15px 15px;
-    width: 100%;
-    margin-top: 10pt;
-  }
-
   /* Hiển thị của mục Lý Lịch Người Dùng */
   .user-details-container {
     display: flex;
@@ -180,20 +210,36 @@
   }
 
   /* Mục Kỹ Năng Người Dùng */
-  .user-details .skills-list {
+  .order {
+    max-width: 90%;
+    margin-top: 10pt;
+    margin-left: 53pt;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  /* Định dạng tiêu đề "Đặt đơn" */
+  .order h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+  }
+  .skills-list {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
   }
 
-  .user-details .skills-list input {
+  .skills-list input {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
   }
 
-  .user-details .scrollable-skills {
+  .scrollable-skills {
     max-height: 200px;
     overflow: auto;
     border: 1px solid #ddd;
@@ -201,7 +247,7 @@
     padding: 10px;
   }
 
-  .user-details .scrollable-skills p {
+  .scrollable-skills p {
     margin: 0;
     padding: 10px;
     cursor: pointer;
@@ -211,12 +257,12 @@
     border-bottom: 2px solid #ccc;
   }
 
-  .user-details .scrollable-skills p.active {
+  .scrollable-skills p.active {
     background-color: #3498db;
     color: #fff;
   }
 
-  .user-details .action-buttons {
+  .action-buttons {
     display: flex;
     flex-direction: column;
     /* Để các nút đặt đơn và chat nằm dọc */
@@ -224,9 +270,8 @@
     margin-top: 10px;
   }
 
-  .user-details .order-btn,
-  .user-details .chat-btn {
-    width: 100%;
+  .order-btn{
+    width: 350pt;
     /* Chiếm toàn bộ chiều rộng của phần tử cha */
     display: block;
     /* Hiển thị mỗi nút trên một dòng */
@@ -236,38 +281,102 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-top: 150px;
     /* Khoảng cách giữa các nút */
   }
 
-  .user-details .order-btn {
+  .order-btn {
     background-color: #3498db;
     color: #fff;
   }
 
-  .user-details .order-btn:hover {
+  .order-btn:hover {
     background-color: #2980b9;
   }
 
-  .user-details .chat-btn {
-    background-color: #555;
-    color: #fff;
+  .header-tools {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    /* Dịch phần header-tools về phải */
   }
 
-  .user-details .chat-btn:hover {
-    background-color: #333;
+  .header-tools button {
+    margin-right: 5px;
+    /* Khoảng cách giữa các nút */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
   }
 
-  .user-details .chat-box {
-    max-height: 150px;
-    overflow: auto;
+  .header-tools .user-info {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    /* Khoảng cách giữa nút và thông tin người dùng */
+  }
+
+  .header-tools .user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  /* CSS for the gameDetails container */
+  #gameSelect {
+    width: 40%;
+    padding: 10px;
+    font-size: 18px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-    display: none;
+    margin-bottom: 10px;
   }
 
+  #gameDetails {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+    padding: 20px;
+    /* Thêm padding cho container */
+    border: 1px solid #ccc;
+    /* Đường viền */
+    border-radius: 10px;
+    /* Bo tròn góc */
+    background-color: #f9f9f9;
+    /* Màu nền */
+    margin-bottom: 20px;
+    margin-left: 405pt;
+    margin-top: -80pt;
+    width: 590pt;
+
+  }
+
+  #gameImage {
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    margin-right: 20px; /* Khoảng cách giữa gameImage và gameName/gamePrice */
+  }
+
+  #gameName,
+  #gamePrice {
+      font-size: 18px;
+      position: absolute;
+  }
+
+  #gameName {
+      top: 40px;
+      left: 340px; /* Khoảng cách từ bên trái của gameImage */
+      color: #333;
+  }
+
+  #gamePrice {
+      left: 340px; /* Khoảng cách từ bên trái của gameImage */
+      color: #555;
+  }
   /*CSS ĐẶT ĐƠN*/
 
   /* Style the modal */
@@ -306,90 +415,4 @@
   /* Add a subtle box shadow to the modal for depth */
   .modal-content {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
-
-  /* CSS for the gameDetails container */
-
-  #orderForm {
-    margin-right: 20px;
-    position: relative;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  #gameSelect {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-
-  #gameDetails {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    position: relative;
-    padding: 20px;
-    /* Thêm padding cho container */
-    border: 1px solid #ccc;
-    /* Đường viền */
-    border-radius: 10px;
-    /* Bo tròn góc */
-    background-color: #f9f9f9;
-    /* Màu nền */
-    margin-bottom: 20px;
-
-  }
-
-  #gameImage {
-    width: 100px;
-    height: 100px;
-    border-radius: 10%;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-
-  #gameName,
-  #gamePrice {
-    font-size: 18px;
-    margin: 0;
-    position: absolute;
-  }
-
-  #gameName {
-    margin-left: 20px;
-    margin-top: 40px;
-    top: 0;
-    left: 130px;
-    color: #333;
-    /* Màu chữ */
-  }
-
-  #gamePrice {
-    margin-left: 20px;
-    margin-bottom: 40px;
-    bottom: 0;
-    left: 130px;
-    color: #555;
-    /* Màu chữ */
-  }
-
-  /* Hover effect */
-  #gameDetails:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    /* Hiệu ứng box shadow khi hover */
-    background-color: #fff;
-    /* Thay đổi màu nền khi hover */
-  }
-
-  #gameDetails p {
-    color: #555;
-    /* Màu chữ */
   }

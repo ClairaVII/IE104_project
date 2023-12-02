@@ -6,10 +6,11 @@
     <title>Đặt cuộc hẹn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="/Home/header.css">
-    <link rel="stylesheet" href="/Home/base.css">
+    <link rel="stylesheet" href="../Home/header.css">
+    <link rel="stylesheet" href="../Home/base.css">
     <link rel="stylesheet" href="/player_orderConfirmation/MainTTND.css">
-    <link rel="stylesheet" href="/Home/assets/font-icon/themify-icons/themify-icons.css">
+    <!-- <link rel="stylesheet" href="/player_orderConfirmation/base.css"> -->
+    <link rel="stylesheet" href="../Home/assets/font-icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <body class="body">
@@ -91,110 +92,122 @@
         </div>
     </header>
 
-        <div class="user-profile" id="userProfile">
-            <div class="user-profile-info">
-                <div class="user-info">
-                    <img id="user_avatar1" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
-                    <div>
-                        <h2 id="user_name"></h2>
-                        <p class="user-id" id="user_id"></p>
-                    </div>
+    <!--thông tin người dùng-->
+    <div class="user-profile" id="userProfile">
+        <div class="user-profile-info">
+            <div class="user-info">
+                <img id="user_avatar1" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
+                <div>
+                    <h2 id="user_name"></h2>
+                    <p class="user-id" id="user_id"></p>
                 </div>
-                <div class="user-buttons">
-                    <button class="share-btn" onclick="shareUserInfo()">Chia sẻ</button>
-                    <!-- Thêm một phần tử để chứa ID và ẩn nó -->
-                    <div id="userIdContainer" style="display: none;"></div>
-                    <button class="follow-btn" id="follow">Theo dõi</button>
-                </div>
+            </div>
+            <div class="user-buttons">
+                <button class="share-btn" onclick="shareUserInfo()">Chia sẻ</button>
+                <!-- Thêm một phần tử để chứa ID và ẩn nó -->
+                <div id="userIdContainer" style="display: none;"></div>
+                <button class="follow-btn" id="follow">Theo dõi</button>
             </div>
         </div>
+    </div>
 
-        <!-- Mục Lý Lịch Người Dùng -->
-        <div class="user-details-container">
-            <div class="user-details">
-                <h2>Hình ảnh</h2>
-                <!-- Thêm menu hiển thị ảnh -->
-                <div class="image-menu">
-                    <img id="user_avatar2" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg">
-                </div>
-                <div class="additional-details">
-                    <!-- Nội dung của khung nhỏ mới -->
-                    <h2> Hồ Sơ</h2>
-                    <p id="pr_name"></p>
-                    <p id="pr_birthday"></p>
-                    <p id="pr_address"></p>
-                    <p id="pr_phone"></p>
-                    <p id="pr_email"></p>
-                    <p id="pr_joningDay"></p>
-                    <p id="pr_numberOfRentals"></p>
-                    <p id="pr_evaluate"></p>
-                </div>
+    <!-- Mục Lý Lịch Người Dùng -->
+    <div class="user-details-container">
+        <div class="user-details">
+            <h2>Hình ảnh</h2>
+            <!-- Thêm menu hiển thị ảnh -->
+            <div class="image-menu">
+                <img id="user_avatar2" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg">
             </div>
-
-            <!-- Mục Kỹ Năng Người Dùng -->
-            <div class="user-details">
-                <h2>Đặt đơn</h2>
-                <!-- Thanh cuộn và ô tìm kiếm -->
-                <div class="skills-list">
-                    <form id="orderForm">
-                        <!-- Ô chọn tên game và đơn giá -->
-                        <label for="gameSelect">Chọn game:</label>
-                        <select id="gameSelect" name="game">
-                            <option value="lien_minh_50" data-image="/player_orderConfirmation/image-order/lien-minh-huyen-thoai.jpg"
-                                data-name="Liên Minh Huyền Thoại" data-price="50💰">Liên Minh Huyền Thoại</option>
-                            <option value="fifa_60" data-image="/player_orderConfirmation/image-order/fifa.jpg" data-name="FIFA"
-                                data-price="60💰">FIFA</option>
-                            <option value="tan_gau_40" data-image="/player_orderConfirmation/image-order/Tangau.jpg" data-name="Tán Gẫu"
-                                data-price="40💰">Tán Gẫu</option>
-                            <option value="lien_quan_50" data-image="/player_orderConfirmation/image-order/lien-quan.jpg"
-                                data-name="Liên Quân Moblile" data-price="50💰">Liên Quân Mobile</option>
-                            <!-- Thêm các game và đơn giá khác vào đây -->
-                        </select>
-
-                        <!-- Hiển thị ảnh, tên game và đơn giá -->
-                        <div id="gameDetails">
-                            <img id="gameImage" src="" alt="Game Image">
-                            <p id="gameName"></p>
-                            <p id="gamePrice"></p>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Nút Đặt Đơn -->
+        </div>
+            <!-- Thêm hồ sơ người dùng -->
+        <div class="user-details">
+            <h2> Hồ Sơ</h2>
+            <div class="additional-details">
+                <!-- Nội dung của khung nhỏ mới -->
+                <p id="pr_name"></p>
+                <p id="pr_birthday"></p>
+                <p id="pr_address"></p>
+                <p id="pr_phone"></p>
+                <p id="pr_email"></p>
+                <p id="pr_joningDay"></p>
+                <p id="pr_numberOfRentals"></p>
+                <p id="pr_evaluate"></p>
+            </div>
+        </div>
+    </div>
+        <!-- Mục Kỹ Năng Người Dùng -->
+        <div class="order">
+            <h2>Đặt đơn</h2>
+            <!-- Thanh cuộn và ô tìm kiếm -->
+            <div class="skills-list">
+                    <!-- Ô chọn tên game và đơn giá -->
+                    <h3>Trò Chơi</h3>
+                    <select id="gameSelect" name="game">
+                        <option value="lien_minh_50" data-image="/player_orderConfirmation/image-order/lien-minh-huyen-thoai.jpg"
+                            data-name="Liên Minh Huyền Thoại" data-price="50💰">Liên Minh Huyền Thoại</option>
+                        <option value="fifa_60" data-image="/player_orderConfirmation/image-order/fifa.jpg" data-name="FIFA"
+                            data-price="60💰">FIFA</option>
+                        <option value="tan_gau_40" data-image="/player_orderConfirmation/image-order/Tangau.jpg" data-name="Tán Gẫu"
+                            data-price="40💰">Tán Gẫu</option>
+                        <option value="lien_quan_50" data-image="/player_orderConfirmation/image-order/lien-quan.jpg"
+                            data-name="Liên Quân Moblile" data-price="50💰">Liên Quân Mobile</option>
+                        <!-- Thêm các game và đơn giá khác vào đây -->
+                    </select>
+            </div>
+             <!-- Hiển thị ảnh, tên game và đơn giá -->
+             <div id="gameDetails">
+                <img id="gameImage" src="" alt="Game Image">
+                <p id="gameName"></p>
+                <p id="gamePrice"></p>
                 <button id="orderBtn" class="order-btn" onclick="displayOrderDetails()">Đặt Đơn</button>
-                <!-- Nút Chat -->
-                <button class="chat-btn" onclick="openChat()">Chat</button>
-                <!-- Phần hiển thị nội dung chat -->
-                <div class="chat-box" id="chatBox">
-                    <!-- Nội dung chat sẽ được hiển thị ở đây -->
+            </div>
+                <!-- Nút Đặt Đơn -->
+                
+        </div>
+    </div>
+    <!-- Order Confirmation Modal -->
+    <!-- Order Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác Nhận Đơn Hàng</h5>
+                    <button type="button" class="close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="order-details">
+                    <!-- Order details will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+                    <button type="button" class="btn btn-primary" onclick="confirmOrder()">Xác Nhận</button>
                 </div>
             </div>
         </div>
-        </div>
-
-        <!-- Order Confirmation Modal -->
-        <!-- Order Confirmation Modal -->
-        <div id="confirmationModal" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Xác Nhận Đơn Hàng</h5>
-                        <button type="button" class="close" onclick="closeModal()">&times;</button>
-                    </div>
-                    <div class="modal-body" id="order-details">
-                        <!-- Order details will be displayed here -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
-                        <button type="button" class="btn btn-primary" onclick="confirmOrder()">Xác Nhận</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    </div>
 
         <footer>
-            &copy; 2023 Hiney. Tất cả các quyền đã được đăng ký.
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h2>Contact Us</h2>
+                    <p>Email: hoangphuc@gmail.com</p>
+                    <p>Phone: +84223453232</p>
+                </div>
+                <div class="footer-section">
+                    <h2>Follow Us</h2>
+                    <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Facebook</a></p>
+                    <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Twitter</a></p>
+                    <p><a href="https://www.facebook.com/hoangphuc261103" class="social-link">Instagram</a></p>
+                </div>
+                <div class="footer-section">
+                    <h2>Quick Links</h2>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HINEY. All Rights Reserved.</p>
+            </div>
         </footer>
         <script src="/player_orderConfirmation/script.js"></script>
 </body>
