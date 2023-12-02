@@ -39,6 +39,7 @@ body {
 }
 
 #chat-button {
+  
   background-color:blueviolet;
   color: #fff; /*Màu chữ */
   padding: 10px; /*tạo ra một khoảng cách giữa nội dung và viền*/
@@ -51,7 +52,7 @@ body {
   background-color: #fff;
   border: 1px solid #ccc; 
   padding: 10px;
-  max-height: 800px;
+  max-height: 500px;
   width: 400px;
   overflow-y: auto;
   /*display: flex;
@@ -60,11 +61,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.message {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-}
 
 .user-message {
   align-self: flex-end;
@@ -80,24 +76,21 @@ body {
   color: #fff;
   padding: 10px;
   border-radius: 10px;
-  max-width: 80%;
 }
 
-.honey-message {
-  align-self: flex-start;
+.chatbot-message {
+  align-self: flex-end;
   flex-grow: 1;
   margin-bottom: 10px;
-  margin-left: 0;
 }
 
-.honey-message .message-content {
+.chatbot-message .message-content{
+  display: inline-block;
   background-color: palevioletred;
-  color: #000;
+  color: #fff;
   padding: 10px;
   border-radius: 10px;
-  max-width: 80%;
-  word-break: break-word;
-  overflow-wrap: break-word;
+
 }
 
 #user-input {
