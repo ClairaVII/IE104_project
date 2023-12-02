@@ -218,6 +218,14 @@
     justify-content: center;
 }
 
+.service-selection > #img_LMHT,
+.service-selection > #img_PUBG,
+.service-selection > #img_NARAKA,
+.service-selection > #img_LQM,
+.service-selection > #img_CSGO {
+    display: flex;
+}
+
 .wallet-info > .service-confirm {
     display: flex;
     flex-direction: column;

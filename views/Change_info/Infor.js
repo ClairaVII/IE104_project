@@ -50,6 +50,52 @@ changePass.addEventListener('click', function () {
 logout.addEventListener('click', function () {
 });
 
+function updateServiceInPage_add(sv){
+    if (sv == '6558bafe119a10741addee4d'){
+        document.getElementById("LMHT").style.display = "flex";
+        document.getElementById("img_LMHT").style.display = "none";
+    }
+    else if (sv == '6558bb3c119a10741ade0c94'){
+        document.getElementById("PUBG").style.display = "flex";
+        document.getElementById("img_PUBG").style.display = "none";
+    }
+    else if (sv == '6566122c36d1e73951e9d381'){
+        document.getElementById("NARAKA").style.display = "flex";
+        document.getElementById("img_NARAKA").style.display = "none";
+    }
+    else if (sv == '6566124436d1e73951e9d382'){
+        document.getElementById("LQM").style.display = "flex";
+        document.getElementById("img_LQM").style.display = "none";
+    }
+    else if (sv == '6566128036d1e73951e9d383'){
+        document.getElementById("CSGO").style.display = "flex";
+        document.getElementById("img_CSGO").style.display = "none";
+    }
+}
+
+function updateServiceInPage_sub(sv){
+    if (sv == '6558bafe119a10741addee4d'){
+        document.getElementById("LMHT").style.display = "none";
+        document.getElementById("img_LMHT").style.display = "flex";
+    }
+    else if (sv == '6558bb3c119a10741ade0c94'){
+        document.getElementById("PUBG").style.display = "none";
+        document.getElementById("img_PUBG").style.display = "flex";
+    }
+    else if (sv == '6566122c36d1e73951e9d381'){
+        document.getElementById("NARAKA").style.display = "none";
+        document.getElementById("img_NARAKA").style.display = "flex";
+    }
+    else if (sv == '6566124436d1e73951e9d382'){
+        document.getElementById("LQM").style.display = "none";
+        document.getElementById("img_LQM").style.display = "flex";
+    }
+    else if (sv == '6566128036d1e73951e9d383'){
+        document.getElementById("CSGO").style.display = "none";
+        document.getElementById("img_CSGO").style.display = "flex";
+    }
+}
+
 async function setUpLogIn(){
     if (user_role == "renter"){
         const response = await fetch('/Data/Renters');
@@ -118,6 +164,11 @@ async function setUpLogIn(){
                 document.getElementById("adjust_birthday").value = adjust_birthday;
                 document.getElementById("adjust_phone").value = item.phone;
                 document.getElementById("adjust_address").value = item.address;
+
+                //đăng kí thêm dịch vụ
+                item.service.forEach(sv => {
+                    updateServiceInPage_add(sv);
+                })
             }
         })
     }
@@ -171,16 +222,52 @@ async function lognout() {
     window.location.href = "http://localhost:3000";
 }
 
+async function addService(ID, update){
+    console.log(ID);
+    console.log(update);
+    const response = await fetch('/Infor/updateService', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ serviceId: ID, update: update})
+      });
+}
 
+function confirmChange(Number) {
+    var serviceId = null;
+    
+    if (Number == 1){serviceId = '6558bafe119a10741addee4d'}
+    else if (Number == 2){serviceId = '6558bb3c119a10741ade0c94'}
+    else if (Number == 3){serviceId = '6566122c36d1e73951e9d381'}
+    else if (Number == 4){serviceId = '6566124436d1e73951e9d382'}
+    else {serviceId = '6566128036d1e73951e9d383'}
 
-
-function confirmChange(imageNumber) {
     var result = confirm("Bạn có chắc chắn muốn thay đổi không?");
     if (result) {
         alert('Thay đổi thành công');
-        // Add your desired functionality for "Yes" here
+        addService(serviceId, 'add');
+        updateServiceInPage_add(serviceId);
     } else {
-        //
-        // Add your desired functionality for "No" here
+        alert('Hủy thành công');
     }
+}
+
+function confirmDelete(Number) {
+    var serviceId = null;
+    
+    if (Number == 1){serviceId = '6558bafe119a10741addee4d'}
+    else if (Number == 2){serviceId = '6558bb3c119a10741ade0c94'}
+    else if (Number == 3){serviceId = '6566122c36d1e73951e9d381'}
+    else if (Number == 4){serviceId = '6566124436d1e73951e9d382'}
+    else {serviceId = '6566128036d1e73951e9d383'}
+
+    var result = confirm("Bạn có chắc chắn muốn thay đổi không?");
+    if (result) {
+        alert('Thay đổi thành công');
+        addService(serviceId, 'sub');
+        updateServiceInPage_sub(serviceId);
+    } else {
+        alert('Hủy thành công');
     }
+}

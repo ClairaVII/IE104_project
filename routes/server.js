@@ -48,6 +48,28 @@ async function updateInforByID(ID_client, adjust_img, adjust_name, adjust_gender
   }
 }
 
+async function updateServiceByID(newData, ID, up) {
+  try {
+    const user = await Rented.findOne({ _id: ID });
+
+    if (user) {
+      if (up == "add"){
+        user.service.push(newData);
+      }
+      else {
+        var index = user.service.indexOf(newData);
+        user.service.splice(index, 1);
+      }
+      await user.save();
+      console.log(`Dữ liệu của người dùng ${user.name} đã được cập nhật.`);
+    } else {
+      console.log(`Không tìm thấy người dùng với username: ${user.name}.`);
+    }
+  } catch (error) {
+    console.error('Lỗi khi cập nhật dữ liệu người dùng:', error.message);
+  }
+}
+
 //----------Send full html----------
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/Home/Home.html'));
@@ -255,6 +277,13 @@ router.post('/Infor/updateInfor', (req, res) => {
   const role = req.body.role;
 
   updateInforByID(_id, NewImg, NewName, NewGender, NewBirthday, NewPhone, NewAddress, role);
+});
+
+router.post('/Infor/updateService', (req, res) => {
+  const NewService = req.body.serviceId;
+  const up = req.body.update;
+
+  updateServiceByID(NewService, req.session.userId, up);
 });
 
 module.exports = router;
