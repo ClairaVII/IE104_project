@@ -610,6 +610,10 @@ async function loginUser() {
     });
 }
 
+function adjustUserInfo(){
+    window.location.href = "http://localhost:3000/Infor";
+}
+
   // lấy id khi reload lại trang
 async function getLoggedInUser() {
     const response = await fetch('Logged-In-User');

@@ -76,8 +76,9 @@
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
+    margin-left: 20px;
 }
-  
+
 .edit-profile > .edit > .avatar {
     display: flex;
     flex-direction: column;
@@ -108,6 +109,10 @@
     position: absolute;
 }
 
+.edit-profile > .edit > .avatar > .input-link-img {
+    margin-top: 20px;
+}
+
 .avatar-images > [class="ti-plus"] {
     font-size: 2rem;
     color: rgb(200, 200, 200)
@@ -126,8 +131,8 @@
 
 /* Code của phần chỉnh sửa thông tin */
 .edit-profile > .edit > .editor {
-    width: 75%;
-    height: auto;
+    width: 60%;
+    height: 100%;
     background: white;
     display: flex;
     flex-direction: column;
@@ -143,22 +148,31 @@
 
 .editor > .input-attribute {
     margin: 0.15rem 0;
+    margin-left: 20px;
 }
 
 .editor > .input-attribute > .input-content {
     margin: 0.2rem 0;
 }
 
+.editor > .input-attribute > #adjust_gender{
+    border: 0.2rem solid rgb(200, 200, 200);
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    width: 30%;
+    background: transparent;
+}
+
 .editor > .input-attribute > input {
     border: 0.2rem solid rgb(200, 200, 200);
     border-radius: 0.5rem;
     padding: 0.1rem;
-    width: 50%;
+    width: 70%;
     background: transparent;
 }
 
 .editor > .submit-change {
-    width: 20%;
+    width: 30%;
     /* height: 10%; */
     background: black; 
     color: white;
@@ -166,6 +180,7 @@
     border-radius: 0.5rem;
     font-weight: 700;
     margin-top: 1rem;
+    margin-left: 300px;
 }
 
 .editor > .submit-change:hover{
