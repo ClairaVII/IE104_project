@@ -55,6 +55,7 @@ header .header-bottom .search-container .search-bar {
   padding: 0 20px;
   border: none;
   outline: none;
+  margin-bottom: 4.5px;
 }
 
 header .header-bottom .search-container .search-button {
