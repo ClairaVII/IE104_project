@@ -207,3 +207,17 @@ async function lognout() {
 
     window.location.href = "http://localhost:3000";
 }
+
+
+
+
+function confirmChange(imageNumber) {
+    var result = confirm("Bạn có chắc chắn muốn thay đổi không?");
+    if (result) {
+        alert('Thay đổi thành công');
+        // Add your desired functionality for "Yes" here
+    } else {
+        //
+        // Add your desired functionality for "No" here
+    }
+    }

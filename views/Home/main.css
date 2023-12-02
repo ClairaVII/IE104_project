@@ -10,60 +10,54 @@ body {
   margin: 0;
   font-family: "Fuggles", cursive;
 }
-#navbar .nav .nav-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 18px;
-  width: 206px;
-}
-
-#navbar .nav .nav-content .home-main {
-  text-decoration: none;
-  color: black;
-}
-#navbar .nav .nav-content .home-main:hover{
-  color: rgb(224, 42, 42);;
-}
 
 /* Chatbot ở đây */
 #chatbot-container {
-  position: fixed;
+  position: fixed; /*phần tử sẽ được cố định ở một vị trí cố định trên trang web, không bị ảnh hưởng bởi cuộn trang*/
   bottom: 20px;
   left: 20px;
-  z-index: 9999;
+  z-index: 9999; /*xác định thứ tự hiển thị của phần tử trong trường hợp có nhiều phần tử chồng chéo lên nhau. Giá trị càng lớn, phần tử càng hiển thị phía trên*/
 }
 
 #chat-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* cho phép các phần tử con bên trong phần tử #chat-header sắp xếp linh hoạt và căn chỉnh theo hướng mà bạn chỉ định */
+  justify-content: space-between;  /*căn ngang các phần tử con */
+  align-items: center; /*ăn chỉnh các phần tử con dọc theo trục dọc trong phần tử #chat-header. Các phần tử con sẽ được căn giữa theo chiều dọc trong không gian của #chat-header*/
+
+}
+
+.close-button {
+  display: none; /* Ẩn nút close ban đầu */
+  font-size: 20px;
+  cursor: pointer;
+  justify-self: end; /*Căn phải header */
+  background-color: #f2f2f2;
+}
+
+.header-with-close {
+  background-color: blueviolet; /* Màu chung cho chat-header và closeButton */
 }
 
 #chat-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px;
+  background-color:blueviolet;
+  color: #fff; /*Màu chữ */
+  padding: 10px; /*tạo ra một khoảng cách giữa nội dung và viền*/
   cursor: pointer;
 }
 
-#close-button {
-  font-size: 20px;
-  cursor: pointer;
-  margin-left: auto;
-}
 
 #chat-container {
   display: none;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; 
   padding: 10px;
   max-height: 800px;
   width: 400px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  /*display: flex;
+  
+  flex-wrap: wrap;*/
+  scroll-behavior: smooth;
 }
 
 .message {
@@ -89,15 +83,15 @@ body {
   max-width: 80%;
 }
 
-.hiney-message {
+.honey-message {
   align-self: flex-start;
   flex-grow: 1;
   margin-bottom: 10px;
   margin-left: 0;
 }
 
-.hiney-message .message-content {
-  background-color: #ccc;
+.honey-message .message-content {
+  background-color: palevioletred;
   color: #000;
   padding: 10px;
   border-radius: 10px;
@@ -122,9 +116,6 @@ body {
   white-space: nowrap;
 }
 
-.visible {
-  display: block;
-}
 
 /* nút scroll ở đây */
 .scroll-to-top-btn {
@@ -144,7 +135,7 @@ body {
   background-color: #0056b3;
 }
 #main {
-  width: 100%;
+  width: 214.87vh;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -203,9 +194,9 @@ body {
   margin-bottom: 1rem;
 }
 
-#main > .game-container > .game:hover{
+/* #main > .game-container > .game:hover{
   background-color: #a8f5ff;
-}
+} */
 #main > .game-container > .game > .game-img {
   border-radius: 10px;
   overflow: hidden;
