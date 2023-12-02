@@ -99,18 +99,25 @@ document.addEventListener("DOMContentLoaded", function() {
     var sendButton = document.getElementById("send-button");
     var chatMessages = document.getElementById("chat-messages");
 
-    // Show the chatbox when the "Chat" element is clicked
+    // Biến đếm số lần người dùng đã gửi tin nhắn
+    var userMessageCount = 0;
+
+    //Hiển thị chatbox khi nhấp vào Chat-button
     chatButton.addEventListener("click", function() {
         chatContainer.style.display = "block";
         userMessageInput.focus(); // Focus vào ô nhập tin nhắn người dùng khi chatbox hiển thị
+        closeButton.style.display = "block"; // Hiển thị nút close khi nhấp vào chat-button
+        hatHeader.style.width = chatContainer.offsetWidth + "px"; // Thiết lập độ rộng của chat-header bằng độ rộng của chat-container
     });
 
-    // Hide the chatbox when the close button is clicked
+    //Ẩn chatbox khi nhấp vào nút CLOSE
     closeButton.addEventListener("click", function() {
         chatContainer.style.display = "none";
+        closeButton.style.display = "none"; // Ẩn nút close khi nhấp vào nút close
+        chatHeader.style.width = ""; // Xóa độ rộng được thiết lập để chat-header trở về trạng thái mặc định
     });
 
-    // Send message when the send button is clicked or Enter key is pressed
+    //Gửi tin nhắn khi nhấp vào nút gửi hoặc nhấn phim Enter
     sendButton.addEventListener("click", sendMessage);
     userMessageInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
@@ -151,7 +158,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function simulateChatbotResponse(userMessage) {
-        var chatbotMessage = "Hiney: " + userMessage;
+        userMessageCount++;
+    
+        var chatbotMessage = "";
+        if (userMessageCount === 1) {
+            chatbotMessage = "Hilay: Xin chào, tôi có thể giúp gì được cho bạn?";
+        } else {
+            chatbotMessage = "Hilay: " + userMessage;
+        }
+    
         setTimeout(function() {
             appendChatbotMessage(chatbotMessage);
         }, 500); // Độ trễ trước khi hiển thị phản hồi của chatbot (đơn vị ms)
