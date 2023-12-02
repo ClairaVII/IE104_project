@@ -73,7 +73,7 @@ function redirectToHome() {
     modal_body_reg.style.display = "none";
 }
 
-// Script của chatbox
+// Script của chatbot
 
 document.addEventListener("DOMContentLoaded", function() {
     var chatButton = document.getElementById("chat-button");
