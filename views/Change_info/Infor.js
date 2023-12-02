@@ -175,3 +175,17 @@ function change_infor(){
         body: JSON.stringify({_id: user_id, })
       })
 }
+
+
+
+
+function confirmChange(imageNumber) {
+    var result = confirm("Bạn có chắc chắn muốn thay đổi không?");
+    if (result) {
+        alert('Thay đổi thành công');
+        // Add your desired functionality for "Yes" here
+    } else {
+        //
+        // Add your desired functionality for "No" here
+    }
+    }
