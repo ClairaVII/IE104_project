@@ -16,6 +16,7 @@ body {
   position: fixed; /*phần tử sẽ được cố định ở một vị trí cố định trên trang web, không bị ảnh hưởng bởi cuộn trang*/
   bottom: 20px;
   left: 20px;
+  border-radius: 10px;
   z-index: 9999; /*xác định thứ tự hiển thị của phần tử trong trường hợp có nhiều phần tử chồng chéo lên nhau. Giá trị càng lớn, phần tử càng hiển thị phía trên*/
 }
 
@@ -59,6 +60,7 @@ body {
   
   flex-wrap: wrap;*/
   scroll-behavior: smooth;
+  border-radius: 10px;
 }
 
 
@@ -145,7 +147,7 @@ body {
 }
 #main > .img >.img-content{
   position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -468,7 +470,7 @@ body {
 }
 
 .auth-form_socials--google{
-  background-color: #fff;
+  background-color: #f46868;
 }
 
 .auth-form_help{
@@ -512,8 +514,9 @@ footer {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: #333;
+  font-weight: 500;
 }
 
 p {
