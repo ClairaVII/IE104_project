@@ -3,7 +3,7 @@
     margin-top: 0;
     background: rgb(200, 200, 200);
     height: fit-content;
-    width: 214.87vh;
+    width: 199.1vh; 
 }
 
 .main-container {
@@ -187,45 +187,6 @@
     background:transparent;
     color: rgb(107, 100, 100);
     border: 0.2rem solid rgb(200, 200, 200);
-}
-
-/* Phần đơn hàng */
-.order-history {
-    display:flex;
-    flex-direction: column;
-}
-
-.order-history > .order-selection {
-    display: flex;
-    background-color: transparent;
-    width: 100%;
-    height: 3.2rem;
-    margin-top: 1rem;
-    border-bottom: 0.2rem solid black;
-}
-
-.order-history > .order-selection .order-kind-content{
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.order-history > .order-selection > .order-kind:hover{
-    cursor: pointer;
-}
-
-.order-history > .order-selection > .sent-order{
-    margin-left: 5rem;
-}
-
-.order-history > .order-selection .selected-order-kind-content{
-    color: #308296;
-}
-
-.order-history > .order-selection .selected-order-kind{
-    width: 100%;
-    height: 0.5rem;
-    background-color: #308296;
-    margin-top: 0.5rem;
 }
 
 /* Dich vu */

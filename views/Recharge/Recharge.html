@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../Home/main.css">
-    <link rel="stylesheet" href="../Home/base.css">
-    <link rel="stylesheet" href="../Home/header.css">
-    <link rel="stylesheet" href="../Home/assets/font-icon/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="../player_orderConfirmation/script.js">
+    <link rel="stylesheet" href="/Home/main.css">
+    <link rel="stylesheet" href="/Home/base.css">
+    <link rel="stylesheet" href="/Home/header.css">
+    <link rel="stylesheet" href="/Home/assets/font-icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/player_orderConfirmation/script.js">
     <link rel="stylesheet" href="/Recharge/Recharge.css">
     <title>Nạp Tiền</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
@@ -15,83 +15,83 @@
 </head>
 <body>
   
-  <header>
-    <!-- navbar -->
-    <div id="navbar">
-        <nav class="nav">
-            <div class="logo">
-                <a href="/" class="home">Hilay</a>
-            </div>
-            <div class="menu">
-                <div class="menu-button">☰ Menu </div>
-                <ul class="menu-list">
-                    <li onclick="scrollToDiv('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
-                    <li onclick="scrollToDiv('CSGO')">CSGO</li>
-                    <li onclick="scrollToDiv('NARAKA')">NARAKA</li>
-                    <li onclick="scrollToDiv('PUBG')">PUBG</li>
-                    <li onclick="scrollToDiv('LQM')">LIÊN QUÂN MOBILE</li>
-                </ul>
-            </div>
-            <div class="nav-content">
-                <a href="/" class="home-main">Trang chủ</a>
-            </div>
-            <div class="star">
-                <div class="star-button"> ☰ Ngôi sao ⭐ </div>
-                <ul class="star-list">
-                    <li>Tiến Trung</li>
-                    <li>Thanh Tùng(BTQ)</li>
-                    <li>Nhật Lâm</li>
-                    <li>Khả Trình (Bé mèo)</li>
-                    <li>Hoàng Phúc</li>
-                    <li>Hoàng Văn</li>
-                </ul>
-            </div>
-            <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
-        </nav>
-       
-
-        <!-- thanh tìm kiếm -->
-        <div>
-            <div class="header-bottom">
-                <div class="recharge-button" id="recharge-button">
-                    <button id="recharge_but" onclick="redirectToRecharge()"> + </button>
-                    <a id="money"></a>
-                    <a > 🪙  </a>
+    <header>
+        <!-- navbar -->
+        <div id="navbar">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/" class="home">Hilay</a>
                 </div>
-                <button class="chat-btn" id="chat" onclick="openChat()">Chat 💬</button>
-                <form class="search-container">
-                    <input class="search-bar" type="text" placeholder="Search" />
-                    <button class="search-button">🔍</button>
-                </form>
-                <button class="cart-button" id="login-button" onclick="redirectToLogin()">
-                    Login 👌🏻
-                </button>
+                <div class="menu">
+                    <div class="menu-button">☰ Menu </div>
+                    <ul class="menu-list">
+                        <li onclick="scrollToDiv('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
+                        <li onclick="scrollToDiv('CSGO')">CSGO</li>
+                        <li onclick="scrollToDiv('NARAKA')">NARAKA</li>
+                        <li onclick="scrollToDiv('PUBG')">PUBG</li>
+                        <li onclick="scrollToDiv('LQM')">LIÊN QUÂN MOBILE</li>
+                    </ul>
+                </div>
+                <div class="nav-content">
+                    <a href="/" class="home-main">Trang chủ</a>
+                </div>
+                <div class="star">
+                    <div class="star-button"> ☰ Ngôi sao ⭐ </div>
+                    <ul class="star-list">
+                        <li>Tiến Trung</li>
+                        <li>Thanh Tùng(BTQ)</li>
+                        <li>Nhật Lâm</li>
+                        <li>Khả Trình (Bé mèo)</li>
+                        <li>Hoàng Phúc</li>
+                        <li>Hoàng Văn</li>
+                    </ul>
+                </div>
+                <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
+            </nav>
+           
 
-                <!-- after signing in -->
-                <div class="header-tools" id="tools-button">
-                    <div class="user-info" >
-                            <img id="avatar1" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
-                            <div class="user-info-popup" >
-                                <!-- Thông tin số người theo dõi và số xu sẽ được hiển thị ở đây -->
-                                <img id="avatar2" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
-                                <div>
-                                    <h2 id="user-info-name"></h2>
-                                    <p class="user-id" id="user-info-id"></p>
+            <!-- thanh tìm kiếm -->
+            <div>
+                <div class="header-bottom">
+                    <div class="recharge-button" id="recharge-button">
+                        <button id="recharge_but" onclick="redirectToRecharge()"> + </button>
+                        <a id="money"></a>
+                        <a > 🪙  </a>
+                    </div>
+                    <button class="chat-btn" id="chat" onclick="openChat()">Chat 💬</button>
+                    <form class="search-container">
+                        <input class="search-bar" type="text" placeholder="Search" />
+                        <button class="search-button">🔍</button>
+                    </form>
+                    <button class="cart-button" id="login-button" onclick="redirectToLogin()">
+                        Login 👌🏻
+                    </button>
+
+                    <!-- after signing in -->
+                    <div class="header-tools" id="tools-button">
+                        <div class="user-info" >
+                                <img id="avatar1" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
+                                <div class="user-info-popup" >
+                                    <!-- Thông tin số người theo dõi và số xu sẽ được hiển thị ở đây -->
+                                    <img id="avatar2" src="https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg" alt="Avatar">
+                                    <div>
+                                        <h2 id="user-info-name"></h2>
+                                        <p class="user-id" id="user-info-id"></p>
+                                    </div>
+                                    <div class="user-stats">
+                                        <p id="joining-date"></p>
+                                    </div>
+                                    <div class="user-actions">
+                                        <button onclick="adjustUserInfo()">🛠️ Điều Chỉnh Thông Tin</button>
+                                        <button onclick="logout()">🚪 Đăng Xuất</button>
+                                    </div>
                                 </div>
-                                <div class="user-stats">
-                                    <p id="joining-date"></p>
-                                </div>
-                                <div class="user-actions">
-                                    <button onclick="adjustUserInfo()">🛠️ Điều Chỉnh Thông Tin</button>
-                                    <button onclick="logout()">🚪 Đăng Xuất</button>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
 <div class="main-content">
 

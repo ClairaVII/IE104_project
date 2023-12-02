@@ -4,87 +4,50 @@ getLoggedInUser();
 
 const info = document.querySelector('.info');
 const wallet = document.querySelector('.wallet');
-const order = document.querySelector('.order');
 const changePass = document.querySelector('.change-pass');
 const logout = document.querySelector('.logout');
 
 const infoDisplay = 'flex';
 const walletDisplay = 'flex';
-const orderDisplay = 'flex';
 const changePassDisplay = 'flex';
 
 const editProfileSection = document.querySelector('.edit-profile');
 const walletInfoSection = document.querySelector('.wallet-info');
-const orderHistorySection = document.querySelector('.order-history');
 const changePasswordSection = document.querySelector('.change-password');
 
 info.classList.add('selected-li');
         
 walletInfoSection.style.display = 'none';
-orderHistorySection.style.display = 'none';
 changePasswordSection.style.display = 'none';
 
 info.addEventListener('click', function () {
     info.classList.add('selected-li');
     wallet.classList.remove('selected-li');
-    order.classList.remove('selected-li');
     changePass.classList.remove('selected-li');
     editProfileSection.style.display = infoDisplay;
     walletInfoSection.style.display = 'none';
-    orderHistorySection.style.display = 'none';
     changePasswordSection.style.display = 'none';
 });
 
 wallet.addEventListener('click', function () {
     info.classList.remove('selected-li');
     wallet.classList.add('selected-li');
-    order.classList.remove('selected-li');
     changePass.classList.remove('selected-li');
     editProfileSection.style.display = 'none';
     walletInfoSection.style.display = walletDisplay;
-    orderHistorySection.style.display = 'none';
-    changePasswordSection.style.display = 'none';
-});
-        
-order.addEventListener('click', function () {
-    info.classList.remove('selected-li');
-    wallet.classList.remove('selected-li');
-    order.classList.add('selected-li');
-    changePass.classList.remove('selected-li');
-    document.querySelector('.receive-content').classList.add('selected-order-kind-content');
-    document.querySelector('.sent-order-selected').style.display = 'none';
-    editProfileSection.style.display = 'none';
-    walletInfoSection.style.display = 'none';
-    orderHistorySection.style.display = orderDisplay;
     changePasswordSection.style.display = 'none';
 });
         
 changePass.addEventListener('click', function () {
     info.classList.remove('selected-li');
     wallet.classList.remove('selected-li');
-    order.classList.remove('selected-li');
     changePass.classList.add('selected-li');
     editProfileSection.style.display = 'none';
     walletInfoSection.style.display = 'none';
-    orderHistorySection.style.display = 'none';
     changePasswordSection.style.display = changePassDisplay;
 });
 
 logout.addEventListener('click', function () {
-});
-
-document.querySelector('.receive-order').addEventListener('click', function() {
-    document.querySelector('.sent-content').classList.remove('selected-order-kind-content');
-    document.querySelector('.receive-content').classList.add('selected-order-kind-content');
-    document.querySelector('.receive-order-selected').style.display = 'block';
-    document.querySelector('.sent-order-selected').style.display = 'none';
-});
-
-document.querySelector('.sent-order').addEventListener('click', function() {
-    document.querySelector('.receive-content').classList.remove('selected-order-kind-content');
-    document.querySelector('.sent-content').classList.add('selected-order-kind-content');
-    document.querySelector('.sent-order-selected').style.display = 'block';
-    document.querySelector('.receive-order-selected').style.display = 'none';
 });
 
 async function setUpLogIn(){
