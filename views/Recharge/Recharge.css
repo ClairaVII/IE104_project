@@ -148,3 +148,39 @@ body {
   color: green;
   font-weight: bold;
 }
+/* footer */
+
+footer {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+h2 {
+  font-size: 1.6em;
+  color: #333;
+  font-weight: 500;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.social-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+}

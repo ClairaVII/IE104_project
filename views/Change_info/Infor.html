@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,7 +57,7 @@
                     </div>
                     <button class="chat-btn" id="chat" onclick="openChat()">Chat 💬</button>
                     <form class="search-container">
-                        <input class="search-bar" type="text" placeholder="Search" />
+                        <input class="search-bar" type="text" placeholder="Search">
                         <button class="search-button">🔍</button>
                     </form>
                     <button class="cart-button" id="login-button" onclick="redirectToLogin()">
@@ -95,7 +96,7 @@
 
                 <div class="personal-list">
                     <ul class="list">
-                        <li class="info" class="selected-li">
+                        <li class="info selected-li">
                             <i class="ti-user"></i>
                             Thông tin cá nhân
                         </li>
@@ -120,11 +121,11 @@
                     <div class="avatar">
                         <p class="avatar-content">Ảnh</p>
                         <div class="avatar-images">
-                            <i class="ti-plus" class="icon"></i>
-                            <input type="file" class="img"></input>
+                            <i class="ti-plus icon"></i>
+                            <input type="file" class="img">
                         </div>
                         <p class="input-link-img">Nhập link ảnh</p>
-                        <input id="link_img" type="text"></input>
+                        <input id="link_img" type="text">
                     </div>
                     <div class="editor">
                         <div class="editor-content">Hồ sơ</div>
@@ -134,7 +135,7 @@
                         </div>
                         <div class="input-attribute">
                             <div >Giới tính</div>
-                            <select class="input-list" id="adjust_gender" type="text">
+                            <select class="input-list" id="adjust_gender">
                                 <option value="Male">Nam</option>
                                 <option value="Female">Nữ</option>
                                 <option value="Other">Khác</option>
@@ -211,22 +212,24 @@
                 <!--thay đổi mật khẩu-->
             </div>  
         <!-- <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button> -->         
-        <div class="change-password section">
-            <div class="password_mk">
-            <h2>Đổi mật khẩu</h2>
-            <div class="section-content">
-                <label for="currentPassword">Mật khẩu hiện tại</label>
-                <input type="password" id="currentPassword" name="currentPassword" required>
-                <p id="Message_current" class="error-message"></p>
-        
-                <label for="newPassword">Mật khẩu mới</label>
-                <input type="password" id="newPassword" name="newPassword" required>
+            <div class="change-password section">
+                <div class="password_mk">
+                        <h2>Đổi mật khẩu</h2>
+                    <div class="section-content">
+                        <label for="currentPassword">Mật khẩu hiện tại</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                        <p id="Message_current" class="error-message"></p>
+                
+                        <label for="newPassword">Mật khẩu mới</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
 
-                <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
-                <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
-                <p id="Message_confirm" class="error-message"></p>
+                        <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
+                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                        <p id="Message_confirm" class="error-message"></p>
 
-                <button class ="password_change" onclick="changePassword()">Đổi mật khẩu</button>
+                        <button class ="password_change" onclick="changePassword()">Đổi mật khẩu</button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
