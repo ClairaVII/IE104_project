@@ -1,6 +1,7 @@
 var express = require('express');
 var session = require('express-session');
 var router = express.Router();
+var Transection = require('../models/transections')
 var Renter = require('../models/renters')
 var Rented = require('../models/rented_persons')
 var Service = require('../models/services')
@@ -169,11 +170,14 @@ router.post('/Logout', (req, res) => {
 router.get('/Logged-In-User', (req, res) => {
   const loggedInUser = req.session.userId;
   const typeInUser = req.session.type;
+  const interact = req.session.interact;
+
+  req.session.interact = null; //không tương tác với Home
 
   if (loggedInUser) {
-    res.json({ loggedIn: true, type: typeInUser, userId: loggedInUser });
+    res.json({ loggedIn: true, type: typeInUser, userId: loggedInUser , interact: interact});
   } else {
-    res.json({ loggedIn: false });
+    res.json({ loggedIn: false , interact: interact});
   }
 });
 
@@ -193,7 +197,6 @@ router.get('/Home/Rented_Current', (req, res) => {
 router.post('/Register', (req, res) => {
   res.json({success: true});
   if (req.body.res_role == "renter"){
-    const User = require('../models/renters'); 
     const dummyUser = {
       name: req.body.res_name,
       birthday: new Date(req.body.res_birthday),
@@ -207,7 +210,7 @@ router.post('/Register', (req, res) => {
       password: req.body.res_password,
       avatar: "",
     };
-    User.create(dummyUser)
+    Renter.create(dummyUser)
     .then((createdUser) => {
       console.log('Thêm vào database thành công:', createdUser);
     })
@@ -216,7 +219,6 @@ router.post('/Register', (req, res) => {
     }); 
   }
   else {
-    const User = require('../models/rented_persons'); 
     const dummyUser = {
       name: req.body.res_name,
       birthday: new Date(req.body.res_birthday),
@@ -230,7 +232,7 @@ router.post('/Register', (req, res) => {
       password: req.body.res_password,
       avatar: "",
     };
-    User.create(dummyUser)
+    Rented.create(dummyUser)
     .then((createdUser) => {
       console.log('Thêm vào database thành công:', createdUser);
     })
@@ -303,6 +305,43 @@ router.post('/Infor/updateService', (req, res) => {
 router.post('/Infor/updateNewPassword', (req, res) => {
   const NewPassword = req.body.password;
   updatePasswordById(req.session.userId, NewPassword, req.session.type);
+});
+
+//----------Order----------
+router.post('/Order/interactHome', (req, res) => {
+  const interact = req.body.interact;
+  req.session.interact = interact;
+  res.send('done');
+});
+
+router.post('/Order/orderConfirm', async (req, res) => {
+  const rented_Id = req.body.rented_Id;
+  const number_match = req.body.number_match;
+  const total = req.body.total;
+  const game_Id = req.body.game_Id;
+
+  const dumyService = {
+    id_renter: req.session.userId,
+    id_rented_person: rented_Id,
+    id_service: game_Id,
+    rental_date: new Date(),
+    number_match: number_match,
+    price: total,
+  };
+  Transection.create(dumyService)
+  .then((createdUser) => {
+    console.log('Thêm vào database thành công:', createdUser);
+  })
+  .catch((err) => {
+    console.error('Lỗi khi thêm vào database:', err);
+  }); 
+  res.send('done');
+
+  const data = await Renter.find({ _id: req.session.userId});
+  data.forEach(user => {
+    const newMoney = user.money - total;
+    updateMoneyById(req.session.userId, newMoney);
+  })
 });
 
 module.exports = router;

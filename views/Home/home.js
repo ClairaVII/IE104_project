@@ -176,7 +176,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //Go to Game
 function scrollToDiv(divId) {
     var targetDiv = document.getElementById(divId);
-    targetDiv.scrollIntoView({ behavior: 'smooth' });
+
+    targetDiv.scrollIntoView({ behavior: 'smooth'});
 }
 
 //lấy dữ liệu từ database để xử lí
@@ -366,13 +367,13 @@ async function Register(){
 
 }
 
-async function setUpLogIn(){
+async function setUpLogIn(interact){
     if (user_role == "renter"){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
+        document.getElementById("login-button").style.display = "none";
 
         result.forEach(item => {
             if (item._id == user_id){
@@ -392,11 +393,12 @@ async function setUpLogIn(){
             }
         })
     }
-    else {
+    else if (user_role == "rented"){
         const response = await fetch('/Data/Rented_persons');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
+        document.getElementById("login-button").style.display = "none";
+
         result.forEach(item => {
             if (item._id == user_id){
                 const Birthday = new Date(item.joining_date);
@@ -415,7 +417,14 @@ async function setUpLogIn(){
             }
         })
     }
-    document.getElementById("login-button").style.display = "none";
+    setTimeout(() => {
+            if (interact == "login"){redirectToLogin();}
+            else if (interact == "LMHT"){scrollToDiv('LMHT')}
+            else if (interact == "CSGO"){scrollToDiv('CSGO')}
+            else if (interact == "NARAKA"){scrollToDiv('NARAKA')}
+            else if (interact == "PUBG"){scrollToDiv('PUBG')}
+            else if (interact == "LQM"){scrollToDiv('LQM')}
+    }, 600);
 }
 
 //hàm thêm vào list theo từng loại game
@@ -619,7 +628,6 @@ async function logout() {
     });
 
     document.getElementById("tools-button").style.display = "none";
-    document.getElementById("chat").style.display = "none";
     document.getElementById("recharge-button").style.display = "none";
     document.getElementById("login-button").style.display = "flex";
 }
@@ -647,9 +655,37 @@ async function getLoggedInUser() {
       console.log('Logged In User:', result.userId);
       user_id = result.userId;
       user_role = result.type;
-      setUpLogIn();
     } else {
       console.log('User not logged in');
     }
+
+    setUpLogIn(result.interact);
 }
 
+getTopStar();
+async function getTopStar(){
+    const response = await fetch('/Data/Rented_persons');
+    const data = await response.json();
+    var rented = [];
+
+    data.sort((a, b) => b.number_of_rentals - a.number_of_rentals);
+
+    data.forEach(item => {
+        rented.push(item._id);
+    })
+
+    const start_list = document.getElementById("star_list");
+    const fiveLargest = rented.slice(0, 5);
+
+    const selectElement = document.createElement("ul");
+    selectElement.classList.add("star-list");
+    fiveLargest.forEach(fl => {
+        data.forEach(item => {
+            if (fl == item._id){
+                selectElement.innerHTML += `
+                    <li onclick="redirectToOrder('${item._id}')">${item.name} - ${item.number_of_rentals} lượt thuê</li>`;
+            }
+        })
+    })
+    start_list.appendChild(selectElement);
+}

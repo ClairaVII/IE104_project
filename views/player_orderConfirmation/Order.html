@@ -24,26 +24,18 @@
                 <div class="menu">
                     <div class="menu-button">☰ Menu </div>
                     <ul class="menu-list">
-                        <li onclick="scrollToDiv('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
-                        <li onclick="scrollToDiv('CSGO')">CSGO</li>
-                        <li onclick="scrollToDiv('NARAKA')">NARAKA</li>
-                        <li onclick="scrollToDiv('PUBG')">PUBG</li>
-                        <li onclick="scrollToDiv('LQM')">LIÊN QUÂN MOBILE</li>
+                        <li onclick="redirectToHome('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
+                        <li onclick="redirectToHome('CSGO')">CSGO</li>
+                        <li onclick="redirectToHome('NARAKA')">NARAKA</li>
+                        <li onclick="redirectToHome('PUBG')">PUBG</li>
+                        <li onclick="redirectToHome('LQM')">LIÊN QUÂN MOBILE</li>
                     </ul>
                 </div>
                 <div class="nav-content">
                     <a href="/" class="home-main">Trang chủ</a>
                 </div>
-                <div class="star">
+                <div class="star" id="star_list">
                     <div class="star-button"> ☰ Ngôi sao ⭐ </div>
-                    <ul class="star-list">
-                        <li>Tiến Trung</li>
-                        <li>Thanh Tùng(BTQ)</li>
-                        <li>Nhật Lâm</li>
-                        <li>Khả Trình (Bé mèo)</li>
-                        <li>Hoàng Phúc</li>
-                        <li>Hoàng Văn</li>
-                    </ul>
                 </div>
                 <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
             </nav>
@@ -57,12 +49,11 @@
                         <a id="money"></a>
                         <a > 💰  </a>
                     </div>
-                    <button class="chat-btn" id="chat" onclick="openChat()">Chat 💬</button>
                     <form class="search-container">
                         <input class="search-bar" type="text" placeholder="Search">
                         <button class="search-button">🔍</button>
                     </form>
-                    <button class="cart-button" id="login-button" onclick="redirectToLogin()">
+                    <button class="cart-button" id="login-button" onclick="redirectToHome('login')">
                         Login 👌🏻
                     </button>
 
@@ -82,7 +73,7 @@
                                     </div>
                                     <div class="user-actions">
                                         <button onclick="adjustUserInfo()">🛠️ Điều Chỉnh Thông Tin</button>
-                                        <button onclick="logout()">🚪 Đăng Xuất</button>
+                                        <button onclick="lognout()">🚪 Đăng Xuất</button>
                                     </div>
                                 </div>
                         </div>
@@ -137,26 +128,12 @@
         </div>
     </div>
         <!-- Mục Kỹ Năng Người Dùng -->
-    <div class="order">
+    <div class="order" id="order_complete">
         <h2>Đặt đơn</h2>
         <!-- Thanh cuộn và ô tìm kiếm -->
-        <div class="skills-list">
-                <!-- Ô chọn tên game và đơn giá -->
-                <h3>Trò Chơi</h3>
-                <select id="gameSelect" name="game">
-                    <option value="lien_minh_50" data-image="/player_orderConfirmation/image-order/lien-minh-huyen-thoai.jpg"
-                        data-name="Liên Minh Huyền Thoại" data-price="50💰">Liên Minh Huyền Thoại</option>
-                    <option value="fifa_60" data-image="/player_orderConfirmation/image-order/fifa.jpg" data-name="FIFA"
-                        data-price="60💰">FIFA</option>
-                    <option value="tan_gau_40" data-image="/player_orderConfirmation/image-order/Tangau.jpg" data-name="Tán Gẫu"
-                        data-price="40💰">Tán Gẫu</option>
-                    <option value="lien_quan_50" data-image="/player_orderConfirmation/image-order/lien-quan.jpg"
-                        data-name="Liên Quân Moblile" data-price="50💰">Liên Quân Mobile</option>
-                    <!-- Thêm các game và đơn giá khác vào đây -->
-                </select>
-        </div>
-            <!-- Hiển thị ảnh, tên game và đơn giá -->
-            <div id="gameDetails">
+        <div class="skills-list" id="order_list"></div>
+        <!-- Hiển thị ảnh, tên game và đơn giá -->
+        <div id="gameDetails">
             <img id="gameImage" src="./image-order/lien-minh-huyen-thoai.jpg" alt="Game Image">
             <p id="gameName"></p>
             <p id="gamePrice"></p>
@@ -165,7 +142,6 @@
             <!-- Nút Đặt Đơn -->
             
     </div>
-    <!-- Order Confirmation Modal -->
     <!-- Order Confirmation Modal -->
     <div id="confirmationModal" class="modal">
         <div class="modal-dialog">

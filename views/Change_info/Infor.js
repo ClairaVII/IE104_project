@@ -101,7 +101,6 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
@@ -136,7 +135,6 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Rented_persons');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
         document.getElementById("wallet_id").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
@@ -351,10 +349,73 @@ async function changePassword(){
     }
 }
 
-function adjustUserInfo(){
-    window.location.href = "http://localhost:3000/Infor";
+async function lognout() {
+    const response = await fetch('/Logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: null, type: null })
+    });
+    window.location.href = "http://localhost:3000";
 }
 
 function redirectToRecharge(){
     window.location.href = "http://localhost:3000/Recharge";
+}
+
+function adjustUserInfo(){
+    window.location.href = "http://localhost:3000/Infor";
+}
+
+async function redirectToHome(interact){
+    const response = await fetch('/Order/interactHome', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ interact: interact })
+    });
+
+    window.location.href = "http://localhost:3000";
+}
+
+async function redirectToOrder(ID){
+    const response = await fetch('/Home/Rented', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ rentedId: ID })
+      });
+    const responseData = await response.json();
+    window.location.href = "http://localhost:3000/Order";
+}
+
+getTopStar();
+async function getTopStar(){
+    const response = await fetch('/Data/Rented_persons');
+    const data = await response.json();
+    var rented = [];
+
+    data.forEach(item => {
+        rented.push(item._id);
+    })
+
+    rented.sort((a, b) => b - a);
+
+    const start_list = document.getElementById("star_list");
+    const fiveLargest = rented.slice(0, 5);
+
+    const selectElement = document.createElement("ul");
+    selectElement.classList.add("star-list");
+    fiveLargest.forEach(fl => {
+        data.forEach(item => {
+            if (fl == item._id){
+                selectElement.innerHTML += `
+                    <li onclick="redirectToOrder('${item._id}')">${item.name} - ${item.number_of_rentals} lượt thuê</li>`;
+            }
+        })
+    })
+    start_list.appendChild(selectElement);
 }
