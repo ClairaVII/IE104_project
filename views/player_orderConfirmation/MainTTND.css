@@ -334,10 +334,10 @@
   }
   /* CSS for the gameDetails container */
   #gameSelect {
-    width: 40%;
+    width: 20%;
     padding: 10px;
     font-size: 18px;
-    border: 1px solid #ddd;
+    border: 1px solid #0b0b0b;
     border-radius: 5px;
     margin-bottom: 10px;
   }
