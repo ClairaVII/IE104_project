@@ -1,4 +1,6 @@
 var rented_id = null;
+var rented_name = null;
+var rented_img = null;
 var user_id = null;
 var user_role = null;
 getRentedCurrent();
@@ -56,22 +58,6 @@ function displayImage(imagePath) {
     document.getElementById('selectedImage').src = imagePath;
 }
 
-function reloadCoins() {
-    // Thêm logic xử lý cho chức năng nạp xu
-    alert('Coins reloaded!');
-}
-
-function placeOrder() {
-    // Thêm logic xử lý cho chức năng đặt đơn
-    // Ở đây, chúng ta sẽ chuyển hướng sang trang web khác
-    window.location.href = 'Dat Don.html';
-}
-
-function openChat() {
-    // Chuyển sang trang chat.html
-    window.location.href = "Chat.html";
-}
-
 function shareUserInfo() {
     // Lấy ID từ nơi bạn lưu trữ ID (trong trường hợp này, tôi giả sử bạn đã có một phần tử với ID 'userIdContainer')
     var userId = document.getElementById('userIdContainer').innerText;
@@ -102,50 +88,55 @@ function copyToClipboard(text) {
 }
 
 const orderData = {
-    playerName: "User123",
+    playerName: rented_name ,
 };
 
 let price;
 
 function displayOrderDetails() {
-    // Mock data, replace with actual data from your application
-    const orderData = {
-        playerName: "User123",
-    };
-
-    // Lấy giá trị từ data attributes của option được chọn
-    var selectedOption = document.getElementById("gameSelect").options[document.getElementById("gameSelect").selectedIndex];
-    var gameName = selectedOption.getAttribute("data-name");
-    price = selectedOption.getAttribute("data-price");
-    price = parseFloat(price);
-    const orderDetails = document.getElementById("order-details");
-    const quantityInput = document.createElement("input");
-    quantityInput.type = "number";
-    quantityInput.min = "1";
-    quantityInput.value = 1;
-    quantityInput.id = "quantityInput";
-
-    orderDetails.innerHTML = `
-    <div style="display: flex; align-items: center; margin-bottom: 10px;">
-        <img src="https://data-resize.lita.cool/user/12487481/album/photo_20231114_163248_624_R48916.jpg.resize/299*" alt="" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <p><strong>${orderData.playerName}</strong></p>
-    </div>
-    <div style="margin-bottom: 10px;">
-        <p>Dịch Vụ: ${gameName}</p>
-        <p>Đơn Giá: ${price} 💰/trận</p>
-    </div>
-    <div style="margin-bottom: 10px;">
-        <p>Số Lượng: <input type="number" min="1" value="1" id="quantityInput"></p>
-    </div>`;
-
-    const totalValueElement = document.createElement("p");
-    totalValueElement.id = "totalValue";
-    orderDetails.appendChild(totalValueElement);
-
-    document.getElementById("quantityInput").addEventListener("input", updateTotalValue);
-
-    openModal();
-    updateTotalValue();
+    console.log(user_id);
+    if (user_id == null){
+        alert ("Chưa đăng nhập tài khoản!");
+    }
+    else{
+        const orderData = {
+            playerName: rented_name ,
+        };
+    
+        // Lấy giá trị từ data attributes của option được chọn
+        var selectedOption = document.getElementById("gameSelect").options[document.getElementById("gameSelect").selectedIndex];
+        var gameName = selectedOption.dataset.name;
+        price = selectedOption.dataset.price;
+        price = parseFloat(price);
+        const orderDetails = document.getElementById("order-details");
+        const quantityInput = document.createElement("input");
+        quantityInput.type = "number";
+        quantityInput.min = "1";
+        quantityInput.value = 1;
+        quantityInput.id = "quantityInput";
+    
+        orderDetails.innerHTML = `
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <img src="${rented_img}" alt="" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+            <p><strong>${orderData.playerName}</strong></p>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <p>Dịch Vụ: ${gameName}</p>
+            <p>Đơn Giá: ${price} 💰/trận</p>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <p>Số Lượng: <input type="number" min="1" value="1" id="quantityInput"></p>
+        </div>`;
+    
+        const totalValueElement = document.createElement("p");
+        totalValueElement.id = "totalValue";
+        orderDetails.appendChild(totalValueElement);
+    
+        document.getElementById("quantityInput").addEventListener("input", updateTotalValue);
+    
+        openModal();
+        updateTotalValue();
+    }
 }
 
 function updateTotalValue() {
@@ -159,9 +150,23 @@ function updateTotalValue() {
     }
 }
 
-function confirmOrder() {
+async function confirmOrder() {
     alert('Đơn hàng đã được xác nhận!');
     closeModal();
+
+    var selectedOption = document.getElementById("gameSelect").options[document.getElementById("gameSelect").selectedIndex];
+    var gameId = selectedOption.dataset.value;
+    const quantityInput = document.getElementById("quantityInput");
+    const quantity = parseInt(quantityInput.value);
+    const totalValue = quantity * price;
+
+    const response = await fetch('/Order/orderConfirm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ rented_Id: rented_id, game_Id: gameId, number_match: quantity, total: totalValue })
+      });
 
     // Show a success feedback pop-up
     const feedbackPopup = document.createElement("div");
@@ -179,7 +184,8 @@ function confirmOrder() {
     // Automatically close the feedback pop-up after 3 seconds
     setTimeout(() => {
         document.body.removeChild(feedbackPopup);
-    }, 3000);
+        window.location.href = "http://localhost:3000/Order";
+    }, 1000);
     // Thêm hàm này để cập nhật số người theo dõi và số xu
 
 function updateStats() {
@@ -195,19 +201,6 @@ function updateStats() {
     // Gọi hàm updateStats khi trang web tải xong
     document.addEventListener('DOMContentLoaded', updateStats);
 }
-
-document.getElementById("gameSelect").addEventListener("change", function () {
-    // Lấy giá trị từ data attributes của option được chọn
-    selectedOption = this.options[this.selectedIndex];
-    var imageSource = selectedOption.getAttribute("data-image");
-    var gameName = selectedOption.getAttribute("data-name");
-    var price = selectedOption.getAttribute("data-price");
-
-    // Hiển thị thông tin của game được chọn
-    document.getElementById("gameImage").src = imageSource;
-    document.getElementById("gameName").textContent = "Tên Game: " + gameName;
-    document.getElementById("gamePrice").textContent = "Đơn giá: " + price;
-});
 
 // Hiển thị thông tin khi trang web được tải
 window.onload = function () {
@@ -231,8 +224,8 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
+        document.getElementById("login-button").style.display = "none";
 
         result.forEach(item => {
             if (item._id == user_id){
@@ -256,7 +249,8 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Rented_persons');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        // document.getElementById("chat").style.display = "flex";
+        document.getElementById("login-button").style.display = "none";
+
         result.forEach(item => {
             if (item._id == user_id){
                 const Birthday = new Date(item.joining_date);
@@ -276,7 +270,54 @@ async function setUpLogIn(){
             }
         })
     }
-    document.getElementById("login-button").style.display = "none";
+}
+
+async function selectGame(service){
+    const response = await fetch('/Data/Services');
+    const data = await response.json();
+
+    const gameSelect = document.getElementById("order_list");
+    const selectElement = document.createElement("select");
+    selectElement.id = "gameSelect";
+    selectElement.name = "game";
+    gameSelect.appendChild(selectElement);
+
+    service.forEach(sv => {
+        data.forEach(game => {
+            if (sv == game._id){    
+                    const option = document.createElement('option');
+                    option.dataset.value = game._id;
+                    option.dataset.image = game.img;
+                    option.dataset.name = game.name;
+                    option.dataset.price = '50💰';
+                    option.textContent = game.name;
+                    selectElement.appendChild(option);
+            }
+        })
+    })
+
+    var selectedOption = document.getElementById("gameSelect").options[document.getElementById("gameSelect").selectedIndex];
+    var imageSource = selectedOption.dataset.image;
+    var gameName = selectedOption.dataset.name;
+    var price = selectedOption.dataset.price;
+    
+    // Hiển thị thông tin của game được chọn
+    document.getElementById("gameImage").src = imageSource;
+    document.getElementById("gameName").textContent = "Tên Game: " + gameName;
+    document.getElementById("gamePrice").textContent = "Đơn giá: " + price;
+
+    document.getElementById("gameSelect").addEventListener("change", function () {
+        // Lấy giá trị từ data attributes của option được chọn
+        const selectedOption = this.options[this.selectedIndex];
+        var imageSource = selectedOption.dataset.image;
+        var gameName = selectedOption.dataset.name;
+        var price = selectedOption.dataset.price;
+    
+        // Hiển thị thông tin của game được chọn
+        document.getElementById("gameImage").src = imageSource;
+        document.getElementById("gameName").textContent = "Tên Game: " + gameName;
+        document.getElementById("gamePrice").textContent = "Đơn giá: " + price;
+    });
 }
 
 async function getRentedData(){
@@ -308,6 +349,11 @@ async function getRentedData(){
             document.getElementById("pr_joningDay").textContent = "Ngày đăng kí: " + day_joing + "-" + month_joing + "-" + year_joing;
             document.getElementById("pr_numberOfRentals").textContent = "Đã phục vụ: " + item.number_of_rentals;
             document.getElementById("pr_evaluate").textContent = "Đánh giá: " + item.evaluate + "⭐";
+
+            rented_name = item.name;
+            rented_img = item.avatar;
+
+            selectGame(item.service);
         }
     })
 }
@@ -343,20 +389,65 @@ async function lognout() {
       },
       body: JSON.stringify({ userId: null, type: null })
     });
-
-    document.getElementById("tools-button").style.display = "none";
-    document.getElementById("chat").style.display = "none";
-    document.getElementById("recharge-button").style.display = "none";
-    document.getElementById("login-button").style.display = "flex";
-
     window.location.href = "http://localhost:3000";
-}
-
-function adjustUserInfo(){
-    window.location.href = "http://localhost:3000/Infor";
 }
 
 function redirectToRecharge(){
     window.location.href = "http://localhost:3000/Recharge";
 }
 
+function adjustUserInfo(){
+    window.location.href = "http://localhost:3000/Infor";
+}
+
+async function redirectToHome(interact){
+    const response = await fetch('/Order/interactHome', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ interact: interact })
+    });
+
+    window.location.href = "http://localhost:3000";
+}
+
+async function redirectToOrder(ID){
+    const response = await fetch('/Home/Rented', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ rentedId: ID })
+      });
+    const responseData = await response.json();
+    window.location.href = "http://localhost:3000/Order";
+}
+
+getTopStar();
+async function getTopStar(){
+    const response = await fetch('/Data/Rented_persons');
+    const data = await response.json();
+    var rented = [];
+
+    data.forEach(item => {
+        rented.push(item._id);
+    })
+
+    rented.sort((a, b) => b - a);
+
+    const start_list = document.getElementById("star_list");
+    const fiveLargest = rented.slice(0, 5);
+
+    const selectElement = document.createElement("ul");
+    selectElement.classList.add("star-list");
+    fiveLargest.forEach(fl => {
+        data.forEach(item => {
+            if (fl == item._id){
+                selectElement.innerHTML += `
+                    <li onclick="redirectToOrder('${item._id}')">${item.name} - ${item.number_of_rentals} lượt thuê</li>`;
+            }
+        })
+    })
+    start_list.appendChild(selectElement);
+}

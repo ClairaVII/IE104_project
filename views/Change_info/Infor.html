@@ -23,26 +23,18 @@
                 <div class="menu">
                     <div class="menu-button">☰ Menu </div>
                     <ul class="menu-list">
-                        <li onclick="scrollToDiv('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
-                        <li onclick="scrollToDiv('CSGO')">CSGO</li>
-                        <li onclick="scrollToDiv('NARAKA')">NARAKA</li>
-                        <li onclick="scrollToDiv('PUBG')">PUBG</li>
-                        <li onclick="scrollToDiv('LQM')">LIÊN QUÂN MOBILE</li>
+                        <li onclick="redirectToHome('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
+                        <li onclick="redirectToHome('CSGO')">CSGO</li>
+                        <li onclick="redirectToHome('NARAKA')">NARAKA</li>
+                        <li onclick="redirectToHome('PUBG')">PUBG</li>
+                        <li onclick="redirectToHome('LQM')">LIÊN QUÂN MOBILE</li>
                     </ul>
                 </div>
                 <div class="nav-content">
                     <a href="/" class="home-main">Trang chủ</a>
                 </div>
-                <div class="star">
+                <div class="star" id="star_list">
                     <div class="star-button"> ☰ Ngôi sao ⭐ </div>
-                    <ul class="star-list">
-                        <li>Tiến Trung</li>
-                        <li>Thanh Tùng(BTQ)</li>
-                        <li>Nhật Lâm</li>
-                        <li>Khả Trình (Bé mèo)</li>
-                        <li>Hoàng Phúc</li>
-                        <li>Hoàng Văn</li>
-                    </ul>
                 </div>
                 <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
             </nav>
@@ -60,7 +52,7 @@
                         <input class="search-bar" type="text" placeholder="Search">
                         <button class="search-button">🔍</button>
                     </form>
-                    <button class="cart-button" id="login-button" onclick="redirectToLogin()">
+                    <button class="cart-button" id="login-button" onclick="redirectToHome('login')">
                         Login 👌🏻
                     </button>
 

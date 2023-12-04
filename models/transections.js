@@ -17,7 +17,7 @@ const TransectionSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    number_of_rental_day: {
+    number_match: {
         type: Number,
     },
     price: {
@@ -25,6 +25,6 @@ const TransectionSchema = new mongoose.Schema({
     },
   });
 
-const Renter = mongoose.model('transections', TransectionSchema);
+const transection = mongoose.model('transections', TransectionSchema);
 
 module.exports = transection;

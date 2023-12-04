@@ -145,23 +145,6 @@ function checkPlayerId() {
     Payment_successful();
   }
 
-  async function lognout() {
-    const response = await fetch('/Logout', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ userId: null, type: null })
-    });
-
-    document.getElementById("tools-button").style.display = "none";
-    document.getElementById("chat").style.display = "none";
-    document.getElementById("recharge-button").style.display = "none";
-    document.getElementById("login-button").style.display = "flex";
-
-    window.location.href = "http://localhost:3000";
-  }
-
   function adjustUserInfo(){
     window.location.href = "http://localhost:3000/Infor";
   }
@@ -261,3 +244,69 @@ async function getLoggedInUser() {
     console.log('Không có user trên server');
   }
 }
+
+async function redirectToHome(interact){
+  const response = await fetch('/Order/interactHome', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ interact: interact })
+  });
+
+  window.location.href = "http://localhost:3000";
+}
+
+async function lognout() {
+  const response = await fetch('/Logout', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ userId: null, type: null })
+  });
+  window.location.href = "http://localhost:3000";
+}
+
+async function redirectToOrder(ID){
+  const response = await fetch('/Home/Rented', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ rentedId: ID })
+    });
+  const responseData = await response.json();
+  window.location.href = "http://localhost:3000/Order";
+}
+
+getTopStar();
+async function getTopStar(){
+    const response = await fetch('/Data/Rented_persons');
+    const data = await response.json();
+    var rented = [];
+
+    data.forEach(item => {
+        rented.push(item._id);
+    })
+
+    rented.sort((a, b) => b - a);
+
+    const start_list = document.getElementById("star_list");
+    const fiveLargest = rented.slice(0, 5);
+
+    const selectElement = document.createElement("ul");
+    selectElement.classList.add("star-list");
+    fiveLargest.forEach(fl => {
+        data.forEach(item => {
+            if (fl == item._id){
+                selectElement.innerHTML += `
+                    <li onclick="redirectToOrder('${item._id}')">${item.name} - ${item.number_of_rentals} lượt thuê</li>`;
+            }
+        })
+    })
+    start_list.appendChild(selectElement);
+}
+
+
+
