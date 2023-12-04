@@ -1,8 +1,8 @@
   /* Code từ đây */
 
   .body {
-    background-color: #f4f7f8;
-    color: #000;
+    background-color: #F8EDE3;
+    color: #3F2305;
     letter-spacing: 0.05rem;
   }
 
@@ -12,8 +12,8 @@
   }
     /* footer */
   footer {
-    background-color: #fff;
-    color: #333;
+    background-color: #B0A695;
+    color: #3F2305;
     padding: 20px;
     text-align: center;
     border-radius: 0 0 15px 15px;
@@ -34,7 +34,7 @@
 
   h2 {
     font-size: 1.5em;
-    color: #333;
+    color: #3F2305;
   }
 
   p {
@@ -43,7 +43,7 @@
 
   .social-link {
     text-decoration: none;
-    color: #007bff;
+    color: #3A5A98;
   }
 
   .footer-bottom {
@@ -67,26 +67,26 @@
   }
 
   .share-btn {
-    background-color: #3498db;
-    color: #fff;
+    background-color: #2D69E4;
+    color: #F8EDE3;
   }
 
   .follow-btn {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: #D9534F;
+    color: #F8EDE3;
   }
 
   .follow-btn:hover,
   .share-btn:hover {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
     /* Màu nền thay đổi khi hover */
     transform: scale(1.1);
     /* Hiệu ứng scale khi hover */
   }
 
   .following{
-    background-color: #2ecc71 !important; /* Màu xanh khi đã theo dõi */
-    color: #ffffff !important; /* Màu chữ khi đã theo dõi */
+    background-color: #5CB85C !important; /* Màu xanh khi đã theo dõi */
+    color: #F8EDE3 !important; /* Màu chữ khi đã theo dõi */
     width:200pt;
     height:40pt;
     border-radius:5pt;
@@ -97,7 +97,7 @@
     max-width: 90%;
     /* Đặt kích thước tối đa của khung thông tin người dùng */
     width: 100%;
-    background-color: #fff;
+    background-color: #BDD2B6;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -131,20 +131,20 @@
   .user-profile-info p {
     margin: 0;
     font-size: 1em;
-    color: #333;
+    color: #3F2305;
     text-align: left;
   }
 
   .user-id {
     margin-top: 5px;
-    color: #666;
+    color: #3F2305;
     font-size: 0.8em;
   }
 
   h1,
   h2,
   h3 {
-    color: #333;
+    color: #3F2305;
   }
   .h_3{
     font-weight: 700;
@@ -160,7 +160,7 @@
   h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #F3EEEA;
     padding-bottom: 10px;
   }
 
@@ -173,16 +173,17 @@
   .user-details-container {
     display: flex;
     gap: 5px;
+    
     /* Khoảng cách giữa các khối */
     justify-content: space-between;
     width: 90%;
     margin-top: 20px;
-    margin-left: 70px
+    margin-left: 70px;
   }
 
   .additional-details {
     flex: 1;
-    background-color: #32ffcf;
+    background-color: transparent;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     overflow: hidden;
@@ -194,20 +195,20 @@
 
   .user-details {
     flex: 1;
-    background-color: #fff;
+    background-color: #BDD2B6;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     overflow: hidden;
     box-sizing: border-box;
     padding: 20px;
     /* Thêm padding để làm đẹp */
-    border: 2px solid #ddd;
+    border: 2px solid #A2B29F;
   }
 
   .user-details h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #333;
+    color: #3F2305;
   }
 
   .user-details img {
@@ -223,10 +224,10 @@
     margin-top: 10pt;
     margin-left: 53pt;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #A2B29F;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #BDD2B6;
   }
 
   /* Định dạng tiêu đề "Đặt đơn" */
@@ -243,7 +244,7 @@
 
   .skills-list input {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #A2B29F;
     border-radius: 5px;
     margin-bottom: 10px;
   }
@@ -251,7 +252,7 @@
   .scrollable-skills {
     max-height: 200px;
     overflow: auto;
-    border: 1px solid #ddd;
+    border: 1px solid #A2B29F;
     border-radius: 5px;
     padding: 10px;
   }
@@ -262,8 +263,8 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1em;
-    background-color: #eee;
-    border-bottom: 2px solid #ccc;
+    background-color: #798777;
+    border-bottom: 2px solid #F8EDE3;
   }
 
   .scrollable-skills p.active {
@@ -295,12 +296,12 @@
   }
 
   .order-btn {
-    background-color: #3498db;
-    color: #fff;
+    background-color: #A2B29F;
+    color: #F8EDE3;
   }
 
   .order-btn:hover {
-    background-color: #2980b9;
+    background-color: #798777;
   }
 
   /* CSS for the gameDetails container */
@@ -311,6 +312,8 @@
     border: 1px solid #0b0b0b;
     border-radius: 5px;
     margin-bottom: 10px;
+    background-color: #F8EDE3;
+    color:#3F2305;
   }
 
   #gameDetails {
@@ -320,16 +323,15 @@
     position: relative;
     padding: 20px;
     /* Thêm padding cho container */
-    border: 1px solid #ccc;
+    border: 1px solid #B0A695;
     /* Đường viền */
     border-radius: 10px;
     /* Bo tròn góc */
-    background-color: #f9f9f9;
+    background-color: #F8EDE3;
     /* Màu nền */
     margin-bottom: 20px;
     margin-left: 460px;
     margin-top: -55px;
-    width: 57%;
 
   }
 
@@ -349,12 +351,12 @@
   #gameName {
       top: 40px;
       left: 340px; /* Khoảng cách từ bên trái của gameImage */
-      color: #333;
+      color: #3F2305;
   }
 
   #gamePrice {
       left: 340px; /* Khoảng cách từ bên trái của gameImage */
-      color: #555;
+      color: #3F2305;
   }
   /*CSS ĐẶT ĐƠN*/
 
@@ -365,9 +367,9 @@
   }
 
   .modal-header {
-    background-color: #007bff;
+    background-color: #B0A695;
     /* Set a background color for the modal header */
-    color: #fff;
+    color: #F3EEEA;
     border-radius: 15px 15px 0 0;
     /* Adjust border-radius for a rounded top */
   }
@@ -377,11 +379,26 @@
     /* Adjust border-radius for a rounded bottom */
   }
 
+  .modal-footer {
+    background-color: #F8EDE3;
+  }
+
+  .modal-footer > button{
+    color:#F8EDE3;
+    background-color: #B0A695;
+  }
+  .modal-footer > button:hover{
+    background-color: #776B5D;
+  }
+
   /* Add styling for order details */
+  #order-details {
+    background-color: #F8EDE3;
+  }
   #order-details p {
     border-radius: 8px;
     padding: 10px;
-    background-color: #e9ecef;
+    background-color: #BDD2B6;
     margin-bottom: 8px;
     width: 350pt;
   }
@@ -389,6 +406,10 @@
   #order-details img {
     width: 100%;
     border-radius: 8px;
+  }
+
+  #order-details input {
+    background-color: #F8EDE3;
   }
 
   /* Add a subtle box shadow to the modal for depth */
