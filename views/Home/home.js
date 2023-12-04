@@ -466,7 +466,7 @@ function change_displayRented(list, n, k){
                         const day = Birthday.getDate().toString().padStart(2, '0');
 
                         playerDiv.innerHTML += `
-                            <div class="player">
+                            <div class="player" onclick="redirectToOrder('${player._id}')">
                                 <div class="player-img"><img src="${player.avatar}" alt=""></div>
                                 <div class="info">
                                     <div>${player.name}</div>
