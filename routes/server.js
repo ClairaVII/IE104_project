@@ -214,7 +214,7 @@ router.post('/Register', (req, res) => {
       money: 0,
       rented_object: [],
       password: req.body.res_password,
-      avatar: "",
+      avatar: "https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg",
     };
     Renter.create(dummyUser)
     .then((createdUser) => {
@@ -236,7 +236,7 @@ router.post('/Register', (req, res) => {
       evaluate: 0,
       service: [],
       password: req.body.res_password,
-      avatar: "",
+      avatar: "https://i.postimg.cc/sfQbt6Jj/c6e56503cfdd87da299f72dc416023d4.jpg",
     };
     Rented.create(dummyUser)
     .then((createdUser) => {
