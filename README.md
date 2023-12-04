@@ -35,9 +35,13 @@ git clone https://github.com/hoangphuc2611/IE104_project
 cd IE104_project
 ```
 
-3. Cài đặt các extensions: Mongo for VS code
+3. Cài đặt các extensions: 
+```bash
+MongoDB for VS code
+```
 
-4. Link đến database
+4. Link đến database:
+
 -	Mở biểu tượng mongodb (hình cái lá)
 -	Chọn add conection
 -	Bấm connect
