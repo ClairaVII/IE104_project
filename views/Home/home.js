@@ -432,7 +432,7 @@ async function setUpLogIn(interact){
             else if (interact == "NARAKA"){scrollToDiv('NARAKA')}
             else if (interact == "PUBG"){scrollToDiv('PUBG')}
             else if (interact == "LQM"){scrollToDiv('LQM')}
-    }, 600);
+    }, 1000);
 }
 
 //hàm thêm vào list theo từng loại game
