@@ -462,7 +462,7 @@ body {
   color:#3F2305;
 }
 .auth-form_controls > .return-btn:hover{
-  background-color: 798777;
+  background-color: #798777;
 }
 
 .auth-form_controls > .login-confirm-btn{
@@ -472,7 +472,7 @@ body {
 }
 
 .auth-form_controls > .login-confirm-btn:hover{
-  background-color: 798777;
+  background-color: #798777;
 }
 
 .auth-form_controls-back{
