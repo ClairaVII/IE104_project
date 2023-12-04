@@ -79,10 +79,10 @@ header .header-bottom .cart-button {
 
 header .header-bottom .recharge-button {
   display: none;
-  background-color: #4fcafa;
-  color: rgb(0, 0, 0);
+  background-color: #A2B29F;
+  color: #3F2305;
   border: none;
-  width: 140px;
+  width: fit-content;
   font-size: 1.2rem;
   border-radius: 9999px;
   margin-right: 10px;
@@ -90,10 +90,12 @@ header .header-bottom .recharge-button {
 
 header .header-bottom .recharge-button #recharge_but {
   border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.473);
-  margin-left: 10px;
+  background-color: #A2B29F;
+  /* margin-left: 10px; */
   position: absolute;
   font-size: 14px;
+  align-self: center;
+  cursor: pointer;
 }
 
 header .header-bottom .recharge-button #money {
