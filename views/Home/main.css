@@ -211,6 +211,7 @@ body {
   gap: 3rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  
 }
 #main > #rented-persons > .player-title {
   /* background: #c3bbbb; */
@@ -262,6 +263,7 @@ body {
   overflow: hidden;
   background-color: #A2B29F;
   cursor: pointer;
+  box-shadow: 0 0 10px #798777;
 }
 #main > #rented-persons > .player-container > .player:hover {
   transform: scale(1.05);

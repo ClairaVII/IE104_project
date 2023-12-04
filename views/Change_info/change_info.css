@@ -94,6 +94,7 @@
     width: 20%;
     align-items: center;
     border-radius: 1rem;
+    box-shadow: 0 0 10px #798777;
 }
   
 .edit-profile > .edit > .avatar > .avatar-content {
@@ -173,6 +174,7 @@
     flex-direction: column;
     border-radius: 1rem;
     padding: 1rem 2rem 2rem 2rem;
+    box-shadow: 0 0 10px #798777;
 }
 
 .edit > .editor > .editor-content{
@@ -235,7 +237,6 @@
     background: #F8EDE3;
     color: #3F2305;
     border: 0.2rem solid #3F2305;
-    text-shadow: none;
 }
 
 /* Dich vu */
@@ -282,11 +283,11 @@
     padding: 10px;
     width: 60%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #798777;
 }
 
 .service-confirm-header {
-    margin-bottom: 10px;
+    padding: 0.2rem 1rem;
     font-size: 24px;
     text-align: center; /* Center the header text */
 }
@@ -309,22 +310,22 @@
     margin-bottom: 3px;
     margin-left: 15px;
     padding: 10px;
-    background-color: #f0f0f0; /* Add a background color for better visibility */
+    background-color: #F8EDE3; /* Add a background color for better visibility */
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .service-confirm-button {
     padding: 8px 15px;
-    background-color: #3498db;
-    color: #BDD2B6;
+    background-color: #B0A695;
+    color: #3F2305;
     border: none;
     cursor: pointer;
-    border-radius: 9999px;
+    border-radius: 0.2rem;
     transition: background-color 0.3s;
 }
 .service-confirm-button:hover {
-    background-color: #2c3e50;
+    background-color: #776B5D;
 }
 
 /* footer */
@@ -368,45 +369,83 @@ footer {
 .change-password {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
+}
+
+.password_mk {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #A2B29F;
     padding: 20px;
-    background-color: #fff;
+    background-color: #BDD2B6;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #798777;
     max-width: 700px;
-    margin-left: 180pt;
     text-decoration: center;
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
 }
-
-.password_main label{
-    text-align: center;
-    font-size: 1rem;
-}
-
-/* .change-password  {
-    display: block;
-    margin-top: 10px;
-    font-size: 1rem;
-} */
 
 .change-password input {
     width: 100%;
-    height:20pt;
     padding: 8px;
     box-sizing: border-box;
     border: 0.2rem solid #F8EDE3;
     border-radius: 5pt;
 }
 
+.change-password input:hover {
+    border-color: #A2B29F;
+}
+
+.change-password input:focus {
+    border-color: #776B5D;
+    outline: none;
+}
+
+.change-password label {
+    margin-top: 0.5rem;
+}
+
 .password_change{
-    margin-left: 350pt;
-    width:100pt;
-    font-size:1rem;
-    border-radius: 5pt;
-    background-color: #000;
-    color: #fff;
+    align-self: flex-end;
+    width:fit-content;
+    font-size:1.5rem;
+    border-radius: 0.2rem;
+    background: #776B5D; 
+    color: #F8EDE3;
+    padding: 0.5rem;
+}
+
+.password_change:hover{
+    background: #F8EDE3;
+    color: #3F2305;
+    border: 0.2rem solid #3F2305;
 }
 
 .error-message {
     color: red;
+}
+/* footer */
+footer {
+    background-color: #B0A695;
+    padding: 20px 0;
+    text-align: center;
+}
+  
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+  
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+.footer-bottom {
+    margin-top: 20px;
+}
+  
+.social-link {
+    text-decoration: none;
+    color: #3A5A98;
 }

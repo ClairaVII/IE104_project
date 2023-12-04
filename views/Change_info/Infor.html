@@ -207,20 +207,18 @@
             <div class="change-password section">
                 <div class="section-content change-pass-content">Đổi mật khẩu</div>
                 <div class="password_mk">
-                    <div class="section-content">
-                        <label for="currentPassword">Mật khẩu hiện tại</label>
-                        <input type="password" id="currentPassword" name="currentPassword" required>
-                        <p id="Message_current" class="error-message"></p>
-                
-                        <label for="newPassword">Mật khẩu mới</label>
-                        <input type="password" id="newPassword" name="newPassword" required>
+                    <label for="currentPassword">Mật khẩu hiện tại</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+                    <p id="Message_current" class="error-message"></p>
+            
+                    <label for="newPassword">Mật khẩu mới</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                    <p></p>
+                    <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
+                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                    <p id="Message_confirm" class="error-message"></p>
 
-                        <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
-                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
-                        <p id="Message_confirm" class="error-message"></p>
-
-                        <button class ="password_change" onclick="changePassword()">Đổi mật khẩu</button>
-                    </div>
+                    <button class ="password_change" onclick="changePassword()">Đổi mật khẩu</button>
                 </div>
             </div>
         </div>
