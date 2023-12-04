@@ -51,14 +51,20 @@ async function updateInforByID(ID_client, adjust_img, adjust_name, adjust_gender
   const adjust_birthday  = new Date(year_b + '-' + month_b + '-' + day_b);
 
   const filter = { _id: ID_client };
-  const update = { $set: { name: adjust_name, gender: adjust_gender, birthday: adjust_birthday, phone: adjust_phone, address: adjust_address , avatar: adjust_img} };
+  const update_infor = { $set: { name: adjust_name, gender: adjust_gender, birthday: adjust_birthday, phone: adjust_phone, address: adjust_address } };
+  const update_avatar = {$set: {avatar: adjust_img}};
+
+  if (adjust_img != ""){
+    const result1 = await Renter.updateMany(filter, update_avatar);
+    const result2 = await Rented.updateMany(filter, update_avatar);
+  }
 
   if (role == "renter"){
-    const result = await Renter.updateMany(filter, update);
+    const result = await Renter.updateMany(filter, update_infor);
     console.log(`${result.modifiedCount} documents were updated in renter`);
   }
   else {
-    const result = await Rented.updateMany(filter, update);
+    const result = await Rented.updateMany(filter, update_infor);
     console.log(`${result.modifiedCount} documents were updated in rented`);
   }
 }

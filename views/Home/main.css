@@ -260,6 +260,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   background-color: #fff;
+  cursor: pointer;
 }
 #main > #rented-persons > .player-container > .player:hover {
   transform: scale(1.05);

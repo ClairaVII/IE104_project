@@ -286,11 +286,11 @@ async function getTopStar(){
     const data = await response.json();
     var rented = [];
 
+    data.sort((a, b) => b.number_of_rentals - a.number_of_rentals);
+
     data.forEach(item => {
         rented.push(item._id);
     })
-
-    rented.sort((a, b) => b - a);
 
     const start_list = document.getElementById("star_list");
     const fiveLargest = rented.slice(0, 5);

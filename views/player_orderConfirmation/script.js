@@ -220,12 +220,12 @@ function closeModal() {
 }
 
 async function setUpLogIn(){
+    document.getElementById("login-button").style.display = "none";
     if (user_role == "renter"){
         const response = await fetch('/Data/Renters');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
         document.getElementById("recharge-button").style.display = "flex";
-        document.getElementById("login-button").style.display = "none";
 
         result.forEach(item => {
             if (item._id == user_id){
@@ -249,8 +249,8 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Rented_persons');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        document.getElementById("login-button").style.display = "none";
-
+        document.getElementById("order_complete").style.display = "none";
+        
         result.forEach(item => {
             if (item._id == user_id){
                 const Birthday = new Date(item.joining_date);
@@ -430,11 +430,11 @@ async function getTopStar(){
     const data = await response.json();
     var rented = [];
 
+    data.sort((a, b) => b.number_of_rentals - a.number_of_rentals);
+
     data.forEach(item => {
         rented.push(item._id);
     })
-
-    rented.sort((a, b) => b - a);
 
     const start_list = document.getElementById("star_list");
     const fiveLargest = rented.slice(0, 5);
