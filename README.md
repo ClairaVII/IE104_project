@@ -37,7 +37,10 @@ git clone https://github.com/hoangphuc2611/IE104_project
 -	Mở biểu tượng mongodb (hình cái lá)
 -	Chọn add conection
 -	Bấm connect
--	Nhập link database: mongodb+srv://vanle246811:000999888@cluster0.ehghzeg.mongodb.net/
+-	Nhập link database:
+```bash
+mongodb+srv://vanle246811:000999888@cluster0.ehghzeg.mongodb.net/
+```
 
 2. Di chuyển vào thư mục dự án:
 ```bash
