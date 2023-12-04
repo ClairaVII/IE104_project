@@ -30,10 +30,14 @@ Thực hiện các lệnh sau theo thứ tự:
 ```bash
 git clone https://github.com/hoangphuc2611/IE104_project
 ```
+2. Di chuyển vào thư mục dự án:
+```bash
+cd IE104_project
+```
 
-2. Cài đặt các extensions: Mongo for VS code
+3. Cài đặt các extensions: Mongo for VS code
 
-3. Link đến database
+4. Link đến database
 -	Mở biểu tượng mongodb (hình cái lá)
 -	Chọn add conection
 -	Bấm connect
@@ -42,17 +46,12 @@ git clone https://github.com/hoangphuc2611/IE104_project
 mongodb+srv://vanle246811:000999888@cluster0.ehghzeg.mongodb.net/
 ```
 
-2. Di chuyển vào thư mục dự án:
-```bash
-cd IE104_project
-```
-
-3. Cài đặt dependencies (Yêu cầu có Nodejs) :
+5. Cài đặt dependencies (Yêu cầu có Nodejs) :
 ```bash
 npm install
 ```
 
-4. Chạy cục bộ:
+6. Chạy cục bộ:
 ```bash
 npm start
 ```
