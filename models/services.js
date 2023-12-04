@@ -10,6 +10,9 @@ const ServiceSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    img: {
+        type: String,
+    }
   });
 
 const service = mongoose.model('services', ServiceSchema);
