@@ -34,7 +34,7 @@
                     <a href="/" class="home-main">Trang chủ</a>
                 </div>
                 <div class="star" id="star_list">
-                    <div class="star-button"> ☰ Ngôi sao ⭐ </div>
+                    <div class="star-button">☆ Ngôi sao</div>
                 </div>
                 <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
             </nav>
@@ -108,13 +108,13 @@
     </main>
 
     <!-- Nút scroll -->
-    <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button>
+    <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-angle-up"></i></button>
     
      <!-- chat button ở đây -->
      <div id="chatbot-container">
         <div id="chat-header" class="header-with-close">
           <div id="chat-button">Chat 💬</div>
-          <button id="close-button" class="close-button">CLOSE</button>
+          <button id="close-button" class="close-button">X</button>
         </div>
 
         <div id="chat-container">
@@ -163,8 +163,8 @@
                         <p id="Message_role" class="error-message"></p>
                     </div>
                     <div class="auth-form_controls">
-                        <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
-                        <button class="btn btn--primary" onclick="signUp('sigup','','','')">ĐĂNG NHẬP</button>
+                        <button class="btn auth-form_controls-back btn--normal return-btn" onclick="redirectToHome()">TRỞ LẠI</button>
+                        <button class="btn btn--primary login-confirm-btn" onclick="signUp('sigup','','','')">ĐĂNG NHẬP</button>
                     </div>
                 </div>
                 <div class="auth-form_socials">
@@ -250,8 +250,8 @@
                         </p>
                     </div>
                     <div class="auth-form_controls">
-                        <button class="btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
-                        <button class="btn btn--primary" onclick="Register()">ĐĂNG KÝ</button>
+                        <button class="return-btn btn auth-form_controls-back btn--normal " onclick="redirectToHome()">TRỞ LẠI</button>
+                        <button class="login-confirm-btn btn btn--primary" onclick="Register()">ĐĂNG KÝ</button>
                     </div>
                 </div>
                 <div class="auth-form_socials">

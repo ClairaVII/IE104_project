@@ -142,10 +142,11 @@ p{
 
 }
 .btn.btn--normal{
-    background-color: #fff;
+    background-color: #F8EDE3;
 }
 .btn.btn--normal:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: #776B5D;
+    color: #F8EDE3;
 }
 
 .btn.btn--size-s{
@@ -155,12 +156,18 @@ p{
 }
 .btn.btn--primary{
     color: var(--text-color);
-    background-color: aqua;
+    background-color: #F8EDE3;
+}
+
+.btn.btn--primary:hover{
+  background-color: #776B5D;
+  color: #F8EDE3;
+
 }
 
 .btn.btn--disable{
     color: #949494;
     cursor: default;
-    background-color: #c3c3c3;
+    background-color: #F8EDE3;
     filter: brightness(80%);
 }

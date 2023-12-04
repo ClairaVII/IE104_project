@@ -1,8 +1,8 @@
 /* Code từ đây */
 
 .body {
-  background-color: #f4f7f8;
-  color: #000;
+  background-color: #F8EDE3;
+  color: #3F2305;
   letter-spacing: 0.05rem;
 }
 
@@ -32,17 +32,17 @@ body {
   font-size: 20px;
   cursor: pointer;
   justify-self: end; /*Căn phải header */
-  background-color: #f2f2f2;
+  background-color: #F8EDE3;
 }
 
 .header-with-close {
-  background-color: blueviolet; /* Màu chung cho chat-header và closeButton */
+  background-color: #798777; /* Màu chung cho chat-header và closeButton */
 }
 
 #chat-button {
   
-  background-color:blueviolet;
-  color: #fff; /*Màu chữ */
+  background-color:#798777;
+  color: #F8EDE3; /*Màu chữ */
   padding: 10px; /*tạo ra một khoảng cách giữa nội dung và viền*/
   cursor: pointer;
 }
@@ -50,8 +50,8 @@ body {
 
 #chat-container {
   display: none;
-  background-color: #fff;
-  border: 1px solid #ccc; 
+  background-color: #F8EDE3;
+  border: 1px solid #BDD2B6; 
   padding: 10px;
   max-height: 500px;
   width: 400px;
@@ -75,7 +75,7 @@ body {
 .user-message .message-content {
   display: inline-block;
   background-color: #007bff;
-  color: #fff;
+  color: #F8EDE3;
   padding: 10px;
   border-radius: 10px;
 }
@@ -89,7 +89,7 @@ body {
 .chatbot-message .message-content{
   display: inline-block;
   background-color: palevioletred;
-  color: #fff;
+  color: #F8EDE3;
   padding: 10px;
   border-radius: 10px;
 
@@ -119,22 +119,23 @@ body {
   right: 20px;
   display: none;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #776B5D;
+  color: #F8EDE3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
 }
 
 .scroll-to-top-btn:hover {
-  background-color: #0056b3;
+  background-color: #B0A695;
 }
 #main {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f5f7f8;
+  background: #F8EDE3;
   justify-content: center;
 }
 
@@ -150,7 +151,7 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #F3EEEA;
     z-index: 1;
     font: bold;
     font-family: Gilroy-Medium-2,gilroy-bold-4;
@@ -232,7 +233,7 @@ body {
 }
 
 #main > #rented-persons > .player-title > .moreLeft {
-  background-color: #b1abab;
+  background-color: #B0A695;
   border-radius: 10px;
   padding: 5px;
   line-height: 43.6px;
@@ -241,7 +242,7 @@ body {
   transition: transform 1s ease;
 }
 #main > #rented-persons > .player-title > .moreRight {
-  background-color: #b1abab;
+  background-color: #B0A695;
   border-radius: 10px;
   padding: 5px;
   line-height: 43.6px;
@@ -259,7 +260,7 @@ body {
 #main > #rented-persons > .player-container > .player {
   border-radius: 10px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #A2B29F;
   cursor: pointer;
 }
 #main > #rented-persons > .player-container > .player:hover {
@@ -337,7 +338,7 @@ body {
   overflow-y: auto; /* Thêm thanh cuộn dọc khi cần thiết */
   width: 750px;
   height: 500px;
-  background-color: #a8f5ff;
+  background-color: #BDD2B6;
   border-radius: 10px;
   margin: 0; /* Loại bỏ lề ngoại vi */
 }
@@ -346,7 +347,7 @@ body {
   overflow-y: auto; /* Thêm thanh cuộn dọc khi cần thiết */
   width: 750px;
   height: 650px;
-  background-color: #a8f5ff;
+  background-color: #BDD2B6;
   border-radius: 10px;
   margin: 0; /* Loại bỏ lề ngoại vi */
 }
@@ -374,8 +375,12 @@ body {
 .auth-form_switch-btn{
   font-size: 1.6rem;
   font-weight: 400;
-  color: blue;
+  color: #2D9596;
   cursor: pointer;
+}
+
+.auth-form_switch-btn:hover{
+  color: #4C4B16;
 }
 
 /* .auth-form_form{
@@ -388,12 +393,15 @@ body {
   margin-top: 16px;
   padding: 0 12px;
   font-size: 1.3rem;
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
+  border: 0.2rem solid transparent;
+  border-radius: 0.5rem;
+  background-color: #F8EDE3;
+  color: #3F2305;
 }
 
 .auth-form_input:focus{
-  border-color: #777;
+  border-color: #776B5D;
+  outline: none;
 }
 
 .auth-form_input_box1 {
@@ -404,8 +412,9 @@ body {
   padding: 0 12px;
   font-size: 1.3rem;
   border: 1px solid var(--border-color);
-  border-radius: 3px;
+  border-radius: 0.2rem;
   text-align: center;
+  background-color: #F8EDE3;
 }
 
 .auth-form_input_box2 {
@@ -417,6 +426,7 @@ body {
   font-size: 1.3rem;
   border: 1px solid var(--border-color);
   border-radius: 3px;
+  background-color: #F8EDE3;
 }
 
 .auth-form_aside{
@@ -432,7 +442,11 @@ body {
 
 .auth-form_text-link{
   text-decoration: none;
-  color: red;
+  color: #606C5D;
+}
+
+.auth-form_text-link:hover{
+  color:red;
 }
 
 .auth-form_controls{
@@ -440,11 +454,30 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+.auth-form_controls > .return-btn{
+  border-radius: 0.5rem;
+  background-color: #F8EDE3;
+  color:#3F2305;
+}
+.auth-form_controls > .return-btn:hover{
+  background-color: 798777;
+}
+
+.auth-form_controls > .login-confirm-btn{
+  border-radius: 0.5rem;
+  background-color: #F8EDE3;
+  color:#3F2305;
+}
+
+.auth-form_controls > .login-confirm-btn:hover{
+  background-color: 798777;
+}
+
 .auth-form_controls-back{
   margin-right: 10px;
 }
 .auth-form_socials {
-  background-color: #f5f5f5;
+  background-color: #F8EDE3;
   padding: 16px 36px;
   display: flex;
   justify-content: space-between;
@@ -474,6 +507,7 @@ body {
 
 .auth-form_socials--google{
   background-color: #f46868;
+  color: white;
 }
 
 .auth-form_help{
@@ -484,7 +518,11 @@ body {
 .auth-form_help-link{
   text-decoration: none;
   font-size: 1.2rem;
-  color: #939393;
+  color: #606C5D;
+}
+
+.auth-form_help-link:hover{
+  color: red;
 }
 
 .auth-form_help-separate{
@@ -495,13 +533,17 @@ body {
 }
 
 .auth-form_help-forgot{
+  color: #606C5D;
+}
+
+.auth-form_help-forgot:hover{
   color: red;
 }
 
 /* footer */
 
 footer {
-  background-color: #f4f4f4;
+  background-color: #B0A695;
   padding: 20px 0;
   text-align: center;
 }
@@ -528,7 +570,7 @@ p {
 
 .social-link {
   text-decoration: none;
-  color: #007bff;
+  color: #3A5A98;
 }
 
 .footer-bottom {
