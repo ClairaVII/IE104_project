@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the maximum screen width
+    var maxScreenWidth = window.screen.width || window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Set the variable in CSS
+    document.documentElement.style.setProperty('--max-screen-width', maxScreenWidth + 'px');
+});
+
 getLoggedInUser();
 
 // JavaScript function to scroll to the top of the page
