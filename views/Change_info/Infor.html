@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="Change_info/change_info.css">
     <link rel="stylesheet" href="/Change_info/base.css">
-    <link rel="stylesheet" href="/Change_info/MainTTND.css">
+    <!-- <link rel="stylesheet" href="/Change_info/MainTTND.css"> -->
     <link rel="stylesheet" href="/Home/header.css">
     <link rel="stylesheet" href="/Home/base.css">
     <link rel="stylesheet" href="/Home/assets/font-icon/themify-icons/themify-icons.css">
@@ -21,7 +21,7 @@
                     <a href="/" class="home">Hilay</a>
                 </div>
                 <div class="menu">
-                    <div class="menu-button">☰ Menu </div>
+                    <div class="menu-button">☰ Menu</div>
                     <ul class="menu-list">
                         <li onclick="redirectToHome('LMHT')">LIÊN MINH HUYỀN THOẠI</li>
                         <li onclick="redirectToHome('CSGO')">CSGO</li>
@@ -34,7 +34,7 @@
                     <a href="/" class="home-main">Trang chủ</a>
                 </div>
                 <div class="star" id="star_list">
-                    <div class="star-button"> ☰ Ngôi sao ⭐ </div>
+                    <div class="star-button">☆ Ngôi sao</div>
                 </div>
                 <!-- <div class="nav-content" id="chat-button">Liên hệ</div> -->
             </nav>
@@ -45,7 +45,7 @@
                     <div class="recharge-button" id="recharge-button">
                         <button id="recharge_but" onclick="redirectToRecharge()"> + </button>
                         <a id="money"></a>
-                        <a > 💰  </a>
+                        <a >💰</a>
                     </div>
                     <button class="chat-btn" id="chat" onclick="openChat()">Chat 💬</button>
                     <form class="search-container">
@@ -92,8 +92,8 @@
                             <i class="ti-user"></i>
                             Thông tin cá nhân
                         </li>
-                        <li class="wallet" id="wallet_id">
-                            <i class="ti-wallet"></i>
+                        <li class="service" id="service_id">
+                            <i class="ti-check-box"></i>
                             Dịch vụ
                         </li>
                         <li class="change-pass">
@@ -109,7 +109,7 @@
             </div>
             <div class="edit-profile section">
                 <div class="edit-content section-content" >Sửa hồ sơ</div>
-                <div class="edit section">
+                <div class="edit">
                     <div class="avatar">
                         <p class="avatar-content">Ảnh</p>
                         <div class="avatar-images">
@@ -118,6 +118,7 @@
                         </div>
                         <p class="input-link-img">Nhập link ảnh</p>
                         <input id="link_img" type="text">
+                        
                     </div>
                     <div class="editor">
                         <div class="editor-content">Hồ sơ</div>
@@ -126,7 +127,7 @@
                             <input class="input-list" id="adjust_name" type="text">
                         </div>
                         <div class="input-attribute">
-                            <div >Giới tính</div>
+                            <div class="input-content">Giới tính</div>
                             <select class="input-list" id="adjust_gender">
                                 <option value="Male">Nam</option>
                                 <option value="Female">Nữ</option>
@@ -152,7 +153,7 @@
 
             <!-- Dịch vụ -->
 
-            <div class="wallet-info section">
+            <div class="service-info section">
                 <!-- content -->
                 <div class="section-content">Dịch vụ</div>
 
@@ -203,10 +204,9 @@
                 </div>
                 <!--thay đổi mật khẩu-->
             </div>  
-        <!-- <button onclick="scrollToTop()" class="scroll-to-top-btn"><i class="ti-arrow-circle-up"></i></button> -->         
             <div class="change-password section">
+                <div class="section-content change-pass-content">Đổi mật khẩu</div>
                 <div class="password_mk">
-                        <h2>Đổi mật khẩu</h2>
                     <div class="section-content">
                         <label for="currentPassword">Mật khẩu hiện tại</label>
                         <input type="password" id="currentPassword" name="currentPassword" required>

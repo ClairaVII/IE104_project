@@ -1,7 +1,7 @@
 header {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: #3F2305;
     width: 100%;
     /* padding: 5px; */
 }
@@ -18,7 +18,7 @@ header .header-top .service {
 
 header .header-top .login {
   border: none;
-  background-color: black;
+  background-color: #3F2305;
   color: aliceblue;
   font-weight: 700;
   text-decoration: none;
@@ -55,6 +55,7 @@ header .header-bottom .search-container .search-bar {
   padding: 0 20px;
   border: none;
   outline: none;
+  background: #F8EDE3;
 }
 
 header .header-bottom .search-container .search-button {
@@ -62,22 +63,23 @@ header .header-bottom .search-container .search-button {
   padding: 0;
   height: 100%;
   width: 2rem;
-  background-color: #a8f5ff;
+  background-color: #798777;
   border-radius: 0 30px 30px 0;
 }
 
 header .header-bottom .search-container .search-button:hover {
-  background-color: #32ffee;
+  background-color: #A2B29F;
 }
 
 header .header-bottom .cart-button {
-  background-color: #ffb79d;
-  color: rgb(0, 0, 0);
+  background-color: #798777;
+  color: #F8EDE3;
   border: none;
-  width: 100px;
-  font-size: 1.2rem;
-  border-radius: 9999px;
-  margin-left: 10px;
+  width: fit-content;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin:0 1rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.8rem;
 }
 
 header .header-bottom .recharge-button {
@@ -104,7 +106,7 @@ header .header-bottom .recharge-button #money {
 }
 
 header .header-bottom .cart-button:hover {
-  color: rgb(237, 16, 16);
+  color: #3F2305;
   /* background-color: rgb(65, 65, 65); */
 }
 
@@ -112,36 +114,50 @@ header .header-bottom .cart-button:hover {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #adebf0;
+  background-color: #B0A695;
   width: 100%;
   align-items: center;
   /* padding: 0px 100px; */
 }
+
+#navbar .nav {
+  display: flex;
+  gap: 2rem;
+  /* margin-left: -2rem; */
+  /* align-items: center; */
+}
+
 #navbar > .nav > .logo {
   font-family: lucy;
-  font-size: xx-large;
-  color: #2f3d3f;
-  padding-right: 10px; /* Adjust padding to your liking */
-  padding-left: 10px; /* Adjust padding to your liking */
-  background-color: #ffb79d; /* Replace with your desired background color */
-  border-radius: 9999px; /* This creates a circular shape */
-  /* width: 100px; Adjust the width to your liking */
-  height: 50px; /* Adjust the height to your liking */
-  font-weight: 700;
-  letter-spacing: 0.45rem;
-  margin-top: 4.5px;
+  font-size: 2rem;
+  background: #798777;
+  border-radius: 1rem;
+  letter-spacing: 0.5rem;
+  margin-left: 1rem;
+  padding: 0rem 0.3rem 0rem 0.5rem;
+  
+}
+
+#navbar .logo .home {
+  text-decoration: none;
+  color: #F8EDE3;
+  font-family: 'lucy';
 }
 
 #navbar > .nav > .menu {
-  background-color: #2fc8c4;
+  display: flex;
   position: relative;
-  
-  /* height: auto; */
+  justify-items: center;
+  align-items: center;
 }
 
 #navbar > .nav > .menu .menu-button {
-  padding: 18px;
-  width: 206px;
+  width: fit-content;
+  font-size: 1.5rem;
+  color: #3F2305;
+}
+#navbar > .nav > .menu .menu-button:hover{
+  color: #F8EDE3;
 }
 
 #navbar > .nav > .menu .menu-list {
@@ -152,36 +168,42 @@ header .header-bottom .cart-button:hover {
   left: 0;
   list-style: none;
   flex-direction: column;
+  color: #3F2305;
   padding: 0;
-  background-color: #2fc8c4;
-  width: 100%;
-  /* border: 1px solid black; */
+  background-color: #B0A695;
+  width: 15rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;  
+  /* border: 1px solid #3F2305; */
 }
 
 #navbar > .nav > .menu .menu-list li {
-  border: 1px solid black;
-  padding: 20px;
+  width: 100%;
+  border: 0.25rem solid transparent;
+  padding:  0.75rem 1rem;
+  border-radius: 0.5rem;
 }
+
+#navbar > .nav > .menu .menu-list li:hover {
+  border-color: #776B5D;
+}
+
 #navbar .nav .nav-content{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  padding: 18px;
-  width: 206px;
+  /* padding: 0.75rem 18px 0 18px; */
+  width: fit-content;
+  font-size: 1.5rem;
 }
 
 #navbar .nav .nav-content .home-main {
   text-decoration: none;
-  color: black;
+  color: #3F2305;
 }
 #navbar .nav .nav-content .home-main:hover{
-  color: rgb(224, 42, 42);;
-}
-#navbar .nav {
-  display: flex;
-  gap: 5px;
-  /* margin-left: -2rem; */
-  /* align-items: center; */
+  color: #F8EDE3;
+  cursor: pointer;
 }
 
 #navbar > .nav > .menu:hover .menu-list {
@@ -192,21 +214,28 @@ header .header-bottom .cart-button:hover {
 
 #navbar > .nav > .star {
   /*background-color: #2fc8c4;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   height: auto;
-  margin-left: -40px;
 }
 
 #navbar > .nav > .nav-content {
   /*background-color: #2fc8c4;*/
   position: relative;
   height: auto;
-  margin-left: -40px;
+  /* margin-left: -40px; */
 }
 
 #navbar > .nav > .star .star-button {
-  padding: 18px;
-  width: 206px;
+  width: fit-content;
+  font-size: 1.5rem;
+  color: #3F2305;
+}
+
+#navbar > .nav > .star .star-button:hover{
+  color: #F8EDE3;
 }
 
 #navbar > .nav > .star .star-list {
@@ -218,14 +247,23 @@ header .header-bottom .cart-button:hover {
   list-style: none;
   flex-direction: column;
   padding: 0;
-  background-color: #adebf0;
-  width: 100%;
-  /* border: 1px solid black; */
+  background-color: #B0A695;
+  width: 15rem;
+  /* border: 1px solid #3F2305; */
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 #navbar > .nav > .star .star-list li {
-  border: 1px solid black;
+  color: #3F2305;
+  border: 0.25rem solid transparent;
   padding: 20px;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+#navbar > .nav > .star .star-list li:hover {
+  border-color:#776B5D;
 }
 
 #navbar > .nav > .star:hover .star-list {
@@ -233,15 +271,8 @@ header .header-bottom .cart-button:hover {
   z-index: 10;
   cursor: pointer;
 }
-#navbar .nav .nav-content:hover {
-  color: rgb(224, 42, 42);
-  cursor: pointer;
-}
-#navbar .logo .home {
-  text-decoration: none;
-  color: black;
-  font-family: 'lucy';
-}
+
+
 /* Phần header sau khi đăng nhập */
 
 .header-tools {
@@ -252,8 +283,8 @@ header .header-bottom .cart-button:hover {
 
 .chat-btn {
   display: none;
-  background-color: #868585;
-  color: #fff;
+  background-color: #798777;
+  color: #F8EDE3;
   margin-right: 10px;
   border-radius: 9999px;
 }
@@ -274,7 +305,7 @@ header .header-bottom .cart-button:hover {
 .user-info p {
   margin: 0;
   font-size: 1em;
-  color: #333;
+  color: #3F2305;
 }
 
 
@@ -284,7 +315,7 @@ header .header-bottom .cart-button:hover {
 display: flex;
 align-items: center; /* Căn giữa theo chiều dọc */
 position: absolute;
-background-color: #fff;
+background-color: #EBE3D5;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 padding: 15px;
 border-radius: 8px;
@@ -292,7 +323,7 @@ top: 40pt;
 right: 30pt;
 z-index: 50;
 display: none;
-width: 250px;
+width: 20rem;
 height: auto;
 text-align: left;
 margin-top: -3px;
@@ -301,8 +332,8 @@ margin-top: -3px;
 .user-info-popup button {
   padding: 10px 15px;
   cursor: pointer;
-  background-color: #adebf0;
-  color: #000;
+  background-color: #A2B29F;
+  color: #F3EEEA;
   border: none;
   border-radius: 3px;
   margin: 5px 0;

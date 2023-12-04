@@ -1,7 +1,9 @@
 /* main */
+
+
 #main {
     margin-top: 0;
-    background: rgb(200, 200, 200);
+    background: #F8EDE3;
     height: fit-content;
     width: 100%;
 }
@@ -14,7 +16,8 @@
 
 #main > .main-container .section-content {
     font-weight: 700;
-    font-size: 1.75rem; 
+    font-size: 1.75rem;
+    color: #3F2305; 
 }
 
 #main > .main-container > .section {
@@ -22,7 +25,7 @@
     width: 82%;
 }
 
-.personal-list .list .wallet {
+.personal-list .list .service {
     display: none;
 }
 
@@ -30,7 +33,7 @@
 .personal-nav {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: #BDD2B6;
     width: 18%;
     height:auto;
 }
@@ -40,6 +43,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     align-self: center;
+    color: #3F2305;
 }
 
 .personal-nav > .personal-list > .list{
@@ -51,6 +55,7 @@
 .personal-nav > .personal-list > .list > li{
     margin: 1rem 0;
     padding: 1rem 1.5rem;
+    color:#3F2305;
 }
 
 .personal-nav > .personal-list > .list > li > [class^="ti-"] {
@@ -62,12 +67,12 @@
 }
  
 .personal-nav > .personal-list > .list > li:hover:not(.selected-li){
-    background: rgb(200, 200, 200);
+    background: #A2B29F;
 }
 
 .personal-nav > .personal-list > .list > .selected-li{
-    background:#308296;
-    color:white;
+    background: #776B5D;
+    color:#F8EDE3;
 }
 
 /* Phần chỉnh sửa thông tin */
@@ -78,15 +83,14 @@
   
 .edit-profile > .edit {
     display: flex;
-    gap: 2rem;
+    gap: 3%;
     margin-top: 1rem;
-    margin-left: 20px;
 }
 
 .edit-profile > .edit > .avatar {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: #BDD2B6;
     width: 20%;
     align-items: center;
     border-radius: 1rem;
@@ -95,33 +99,60 @@
 .edit-profile > .edit > .avatar > .avatar-content {
     font-size: 1.5rem;
     margin-top: 1rem;
+    color: #3F2305;
 }
   
 .edit-profile > .edit > .avatar > .avatar-images {
     position: relative;
     width: 75%;
     height: 30%;
-    border: 5px solid rgb(200, 200, 200);
+    border: 0.2rem solid #F8EDE3;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3rem 0 0 0;
+    margin-top: 1.5rem;
+    background-color: #F8EDE3;
+}
+
+.edit-profile > .edit > .avatar > .avatar-images:hover {
+    border-color: #A2B29F;
+}
+
+.edit-profile > .edit > .avatar > .avatar-images:focus {
+    border-color: #776B5D;
+    outline: none;
 }
   
 /* Plus icon của avatar */
 .edit-profile > .edit > .avatar > .avatar-images > .icon {
     position: absolute;
+    color: #BDD2B6;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .edit-profile > .edit > .avatar > .input-link-img {
-    margin-top: 20px;
+    margin-top: 1.3rem;
 }
 
-.avatar-images > [class="ti-plus"] {
-    font-size: 2rem;
-    color: rgb(200, 200, 200)
+.avatar > #link_img {
+    width: 75%;
+    height: 7%;
+    align-self: center;
+    border: 0.2rem solid #F8EDE3; 
+    border-radius: 0.5rem; 
+    background-color: #F8EDE3;
 }
 
+.avatar > #link_img:hover {
+    border: 0.2rem solid #A2B29F; 
+}
+
+.avatar > #link_img:focus {
+    border-color: #776B5D; 
+    outline: none;
+}
 
 .edit-profile > .edit > .avatar > .avatar-images > input {
     overflow: hidden;
@@ -137,7 +168,7 @@
 .edit-profile > .edit > .editor {
     width: 60%;
     height: 100%;
-    background: white;
+    background: #BDD2B6;
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
@@ -146,78 +177,90 @@
 
 .edit > .editor > .editor-content{
     font-size: 1.5rem;
-    color: black;
-    
+    color: #3F2305;
 }
 
 .editor > .input-attribute {
     margin: 0.15rem 0;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .editor > .input-attribute > .input-content {
     margin: 0.2rem 0;
+    color: #3F2305;
 }
 
 .editor > .input-attribute > #adjust_gender{
-    border: 0.2rem solid rgb(200, 200, 200);
+    border: 0.2rem solid #F8EDE3;
     border-radius: 0.5rem;
     padding: 0.1rem;
     width: 30%;
-    background: transparent;
+    background: #F8EDE3;
 }
 
-.editor > .input-attribute > input {
-    border: 0.2rem solid rgb(200, 200, 200);
+.editor > .input-attribute > .input-list {
+    border: 0.2rem solid #F8EDE3;
     border-radius: 0.5rem;
     padding: 0.1rem;
-    width: 70%;
-    background: transparent;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    width: 100%;
+    background: #F8EDE3;
+    /* margin-top: 5px;
+    margin-bottom: 15px; */
+}
+
+.editor > .input-attribute > .input-list:hover {
+    border-color: #A2B29F;
+}
+
+.editor > .input-attribute > .input-list:focus {
+    border-color: #776B5D;
+    outline: none;
 }
 
 .editor > .submit-change {
     width: 30%;
-    /* height: 10%; */
-    background: black; 
-    color: white;
-    /* border: 0.2rem solid black; */
+    height: 20%;
+    background: #776B5D; 
+    color: #F8EDE3;
     border-radius: 0.5rem;
     font-weight: 700;
     margin-top: 1rem;
-    margin-left: 243px;
+    align-self: flex-end;
+    outline: none;
+    border: none;
+    border: 0.2rem solid transparent;
 }
 
 .editor > .submit-change:hover{
-    background:transparent;
-    color: rgb(107, 100, 100);
-    border: 0.2rem solid rgb(200, 200, 200);
+    background: #F8EDE3;
+    color: #3F2305;
+    border: 0.2rem solid #3F2305;
+    text-shadow: none;
 }
 
 /* Dich vu */
 
-.wallet-info {
+.service-info {
     display: flex;
     flex-direction: column;
 }
 
-.wallet-info div {
+.service-info div {
     display: flex;
 }
 
-.wallet-info img {
+.service-info img {
     width: 200px;
     height: 256px;
     cursor: pointer;
 }
-.wallet-info > .service-selection {
+.service-info > .service-selection {
     display: flex;
     margin-top: 1rem;
     margin-bottom: 1rem;
     gap: 1rem;
 }
-.wallet-info > .service-selection >.game-imgs {
+.service-info > .service-selection >.game-imgs {
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -232,10 +275,10 @@
     display: flex;
 }
 
-.wallet-info > .service-confirm {
+.service-info > .service-confirm {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #BDD2B6;
     padding: 10px;
     width: 60%;
     border-radius: 10px;
@@ -274,7 +317,7 @@
 .service-confirm-button {
     padding: 8px 15px;
     background-color: #3498db;
-    color: white;
+    color: #BDD2B6;
     border: none;
     cursor: pointer;
     border-radius: 9999px;
@@ -322,7 +365,9 @@ footer {
 }
 
 /* đổi mật khẩu */
-.change-password.section {
+.change-password {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ccc;
     padding: 20px;
     background-color: #fff;
@@ -333,25 +378,23 @@ footer {
     text-decoration: center;
 }
 
-.password_main.h2{
+.password_main label{
     text-align: center;
     font-size: 1rem;
 }
 
-
-
-label {
+/* .change-password  {
     display: block;
     margin-top: 10px;
     font-size: 1rem;
-}
+} */
 
-input {
+.change-password input {
     width: 100%;
     height:20pt;
     padding: 8px;
     box-sizing: border-box;
-    border: 0.2rem solid rgb(200, 200, 200);
+    border: 0.2rem solid #F8EDE3;
     border-radius: 5pt;
 }
 

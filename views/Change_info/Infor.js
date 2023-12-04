@@ -3,47 +3,47 @@ var user_role = null;
 getLoggedInUser();
 
 const info = document.querySelector('.info');
-const wallet = document.querySelector('.wallet');
+const services = document.querySelector('.service');
 const changePass = document.querySelector('.change-pass');
 const logout = document.querySelector('.logout');
 
 const infoDisplay = 'flex';
-const walletDisplay = 'flex';
+const servicesDisplay = 'flex';
 const changePassDisplay = 'flex';
 
 const editProfileSection = document.querySelector('.edit-profile');
-const walletInfoSection = document.querySelector('.wallet-info');
+const servicesInfoSection = document.querySelector('.service-info');
 const changePasswordSection = document.querySelector('.change-password');
 
 info.classList.add('selected-li');
         
-walletInfoSection.style.display = 'none';
+servicesInfoSection.style.display = 'none';
 changePasswordSection.style.display = 'none';
 
 info.addEventListener('click', function () {
     info.classList.add('selected-li');
-    wallet.classList.remove('selected-li');
+    services.classList.remove('selected-li');
     changePass.classList.remove('selected-li');
     editProfileSection.style.display = infoDisplay;
-    walletInfoSection.style.display = 'none';
+    servicesInfoSection.style.display = 'none';
     changePasswordSection.style.display = 'none';
 });
 
-wallet.addEventListener('click', function () {
+services.addEventListener('click', function () {
     info.classList.remove('selected-li');
-    wallet.classList.add('selected-li');
+    services.classList.add('selected-li');
     changePass.classList.remove('selected-li');
     editProfileSection.style.display = 'none';
-    walletInfoSection.style.display = walletDisplay;
+    servicesInfoSection.style.display = servicesDisplay;
     changePasswordSection.style.display = 'none';
 });
         
 changePass.addEventListener('click', function () {
     info.classList.remove('selected-li');
-    wallet.classList.remove('selected-li');
+    services.classList.remove('selected-li');
     changePass.classList.add('selected-li');
     editProfileSection.style.display = 'none';
-    walletInfoSection.style.display = 'none';
+    servicesInfoSection.style.display = 'none';
     changePasswordSection.style.display = changePassDisplay;
 });
 
@@ -135,7 +135,7 @@ async function setUpLogIn(){
         const response = await fetch('/Data/Rented_persons');
         const result = await response.json();
         document.getElementById("tools-button").style.display = "flex";
-        document.getElementById("wallet_id").style.display = "flex";
+        document.getElementById("service_id").style.display = "flex";
         result.forEach(item => {
             if (item._id == user_id){
                 const Joning_day = new Date(item.joining_date);
