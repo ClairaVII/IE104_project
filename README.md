@@ -73,5 +73,8 @@ npm start
 
 ## Liên kết:
 
-- Github: https://github.com/hoangphuc2611/IE104_project
-- Trello: https://trello.com/b/9u24QAb6/doanie104
+- Quản lý mã nguồn: https://github.com/hoangphuc2611/IE104_project
+- Quản lý dự án: https://trello.com/b/9u24QAb6/doanie104
+- Báo cáo: https://drive.google.com/drive/folders/yK-bYMV1DgGzAX7tOHvv0ycRreygCciO?usp=sharing
+- Video demo: https://youtu.be/kt9GrH3nSZk
+- Video báo cáo: https://youtu.be/isnUbI1ePyc
